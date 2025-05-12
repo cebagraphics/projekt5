@@ -26,3 +26,36 @@
       behavior: 'smooth'
     });
   });
+
+
+  // TOP BAR SOM SKIFTER TEKST START
+document.addEventListener("DOMContentLoaded", () => {
+    const messages = [
+        "Gaver til alle anledninger – sammensæt din egen gavekurv",
+        "Bestil online – afhent i butikken eller få leveret direkte",
+        "Støt lokalt – vi samarbejder med fynske producenter",
+        "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
+        "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
+    ];
+
+    let index = 0;
+    const el = document.getElementById("changing-text");
+    if (!el) return;
+
+    function change() {
+        el.classList.remove("show-text");
+        setTimeout(() => {
+            el.textContent = messages[index];
+            index = (index + 1) % messages.length;
+            el.classList.add("show-text");
+        }, 50);
+    }
+
+    change();
+    setInterval(change, 3500);
+});
+
+
+    // TOP BAR SOM SKIFTER TEKST SLUT
+
+
