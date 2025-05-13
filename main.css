@@ -145,7 +145,7 @@ body, html {
 
   .parallax-section {
     height: 99vh;
-    background-image: url('img/homepage-main-img-enhanced.jpg');
+    background-image: url('img/homepage-backgroundimage.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
