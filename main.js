@@ -10,6 +10,29 @@
     }
   });
 
+  window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  const searchIcon = document.querySelector(".search-icon");
+  const shopIcon = document.querySelector(".shop-icon");
+
+  if (window.scrollY > 50) {
+    navbar.classList.remove("transparent");
+    navbar.classList.add("solid");
+
+    // Skift til sorte ikoner
+    searchIcon.src = "img/search-icon_black.png";
+    shopIcon.src = "img/shop-icon_black.png";
+  } else {
+    navbar.classList.remove("solid");
+    navbar.classList.add("transparent");
+
+    // Skift tilbage til hvide ikoner
+    searchIcon.src = "img/search_icon-white.png";
+    shopIcon.src = "img/shop_icon-white.png";
+  }
+});
+
+
   
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
