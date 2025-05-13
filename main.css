@@ -232,8 +232,12 @@ body, html {
     left: 0; 
   }
 
-  .navbar-icon {
-    width: 25px;
+  .search-icon {
+    width: 23px;
+  }
+
+   .shop-icon {
+    width: 22px;
   }
 
   /* Dropdown-menu skjult som standard */
