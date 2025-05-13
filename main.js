@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const messages = [
         "Gaver til alle anledninger – sammensæt din egen gavekurv",
         "Bestil online – afhent i butikken eller få leveret direkte",
-        "Støt lokalt – vi samarbejder med fynske producenter",
+        "Støt lokalt – vi samarbejder med fynske leverandører",
         "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
         "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
     ];
