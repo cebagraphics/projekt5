@@ -213,6 +213,11 @@ body, html {
   .navbar.transparent a {
     color: white;
   }
+
+  /* For undersiderne ændres tekstfarven til sort */
+  body.page-subs .navbar.transparent a {
+    color: black; /* ændrer farven til sort på undersiderne */
+  }
   
   /* Efter scroll */
   .navbar.scrolled {
