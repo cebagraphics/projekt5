@@ -173,7 +173,8 @@ body, html {
   }
   
   .hvad-leder-du-efter-section {
-    padding: 100px;
+    padding: 80px;
+    padding-bottom: 0px;
     background-color: #fff;
     text-align: center;
   }
@@ -350,6 +351,7 @@ body, html {
     font-weight: 500;
     font-size: 13px;
   }
+
 
   .forsidebilleder__container {
     display: grid;
