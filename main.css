@@ -499,7 +499,6 @@ img {
   }
 }
 
-HEAD
 
 /* Underside produkter */
 body.page-subs {
@@ -510,21 +509,19 @@ body.page-subs {
   padding: 0;
 }
 
-.product-header {
-  padding: 3rem 2rem 1rem;
-  text-align: left;
-}
 
-.product-header h1 {
+.product-header h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  text-align: left !important;
 }
 
 .product-header p {
   font-size: 1rem;
   max-width: 600px;
   color: #333;
+  text-align: left;
 }
 
 .product-controls {
@@ -603,24 +600,25 @@ body.page-subs {
     width: 100%;
     height: 100%;
     color: white;
-    background: rgba(0, 0, 0, 0.4); /* mørkt overlay */
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;    /* ← centrer vertikalt */
+    align-items: center;        /* ← centrer horisontalt */
     padding: 2rem;
     text-align: center;
+    gap: 1rem;                /* ← ens afstand mellem elementerne */
   }
   
   .store-overlay h2 {
     font-size: 42pt;
-    margin-bottom: 1rem;
     font-family: 'Inria Serif', sans-serif;
+    margin: 0;                 /* ← vigtigt! fjern margin */
   }
   
   .store-overlay p {
     max-width: 700px;
-    margin-bottom: 1.5rem;
+    margin: 0;
   }
   
   .store-overlay .button {
@@ -633,89 +631,7 @@ body.page-subs {
     font-family: 'Montserrat', sans-serif;
   }
   
-  /* Footer */
-  .site-footer {
-    background: #caa7a1;
-    color: white;
-    padding: 3rem 2rem;
-  }
-  
-  .footer-info {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-    border-top: 1px solid #fff;
-    padding-top: 1rem;
-  }
-  
-  .footer-bottom a {
-    color: white;
-    text-decoration: none;
-    margin-left: 1rem;
-  }
-
-
-/* Butik overlay med billede */
-.visit-store {
-  position: relative;
-  height: 500px;
-  margin-top: 4rem;
-  overflow: hidden;
-}
-
-.store-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.store-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  /* mørkt overlay */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  text-align: center;
-}
-
-.store-overlay h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.store-overlay p {
-  max-width: 600px;
-  margin-bottom: 1.5rem;
-}
-
-.store-overlay .button {
-  background: white;
-  color: black;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* Footer */
+ /* Footer */
 .site-footer {
   background: #caa7a1;
   color: white;
