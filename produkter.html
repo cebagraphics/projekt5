@@ -51,10 +51,76 @@
 
   <!-- DIT UNIKKE INDHOLD HER -->
   <main>
-    <section>
+    <section class="product-header">
       <h1>VORES PRODUKTER</h1>
-      <p>Alle vores produkter er udvalgt med hjertet – mange fra fynske og danske producenter. Når du handler hos Liwira, støtter du små leverandører og lokalt engagement.</p>
+      <p>
+        Alle vores produkter er udvalgt med hjertet – mange fra fynske og danske producenter. Når du handler hos Liwira, støtter du små leverandører og lokalt engagement.
+      </p>
     </section>
+  
+    <div class="product-controls">
+      <span>Filter ▾</span>
+      <div class="sort-dropdown">
+        <label for="sorter">Sortér efter</label>
+        <select id="sorter">
+          <option>Standard</option>
+          <option>Pris: Lav til høj</option>
+          <option>Pris: Høj til lav</option>
+          <option>Nyeste</option>
+        </select>
+      </div>
+    </div>
+  
+    <section class="product-grid">
+      <!-- Produktkort -->
+      <div class="product-card">
+        <img src="img/summerbird-heartmade.jpg" alt="Summerbird hjerteboks">
+        <p class="product-title">Summerbird heartmade boks</p>
+        <p class="product-price">229,95 kr</p>
+      </div>
+      <!-- Gentag for flere produkter -->
+    </section>
+  
+    <div class="pagination">
+      <a href="#">&#60;</a>
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <span>…</span>
+      <a href="#">16</a>
+      <a href="#">&#62;</a>
+    </div>
+  
+    <section class="visit-store">
+      <div class="visit-store-text">
+        <h2>Besøg vores hyggelige butik i Langeskov</h2>
+        <p>Hos os finder du et nøje udvalg af kunst, interiør og delikatesser – og altid en varm velkomst.</p>
+        <a href="#" class="button">FIND VEJ TIL OS</a>
+      </div>
+      <img src="img/footer-image.png" alt="Butik interiør">
+    </section>
+  
+    <footer class="site-footer">
+      <div class="footer-info">
+        <div class="contact">
+          <h3>KONTAKT</h3>
+          <p>Jernbanegade 16<br>DK-5550 Langeskov<br>Danmark</p>
+          <p>📞 +45 4246 7911<br>✉️ kontakt@godnips.dk</p>
+        </div>
+        <div class="hours">
+          <h3>ÅBNINGSTIDER</h3>
+          <p>Man-fre: 11.00–17.00<br>Lørdag: 10.00–12.00<br>(Efter aftale)</p>
+          <p>LUKKET PÅ HELLIGDAGE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>LIWIRA</p>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
 </body>
