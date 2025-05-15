@@ -838,6 +838,9 @@ body.page-subs {
   display: block;
 }
 
+.store-overlay-bg {
+  padding: 2rem;
+}
   /* Tekstlag */
   .store-text-content {
     position: absolute;
