@@ -23,6 +23,8 @@ window.addEventListener("scroll", function () {
   }
 });
 
+
+// SMOOTH SCROLL PÅ FORSIDE PIL
   document.querySelector('.arrow').addEventListener('click', function () {
     window.scrollBy({
       top: window.innerHeight,
