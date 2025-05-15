@@ -712,6 +712,12 @@ color: #B58585;
 
 
 /* --------- PRODUCTSITE START --------- */
+.content-wrapper {
+  width: 85%;
+  max-width: 1200px; /* valgfrit, for at begrænse meget store skærme */
+  margin: 0 auto;
+}
+
 body.page-subs {
   font-family: 'Montserrat', sans-serif;
   background: #fff;
@@ -737,6 +743,45 @@ body.page-subs {
   color: #333;
 }
 
+.product-categories {
+  display: flex;
+  justify-content: center;
+  gap: 13rem;
+  margin: 4rem 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px;
+}
+
+.image-circle {
+  background-color: #F3F3F3;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.image-circle img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.category p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #333;
+}
+
 .product-controls {
   display: flex;
   justify-content: space-between;
@@ -747,18 +792,27 @@ body.page-subs {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
   padding: 0 2rem;
 }
 
 .product-card {
+  background: white;
+  padding: 1rem;
   text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-card img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Ens højde */
+  object-fit: cover;
+  border-radius: 0;
+  margin-bottom: 1rem;
 }
 
 .product-title {
@@ -1016,6 +1070,10 @@ body.page-subs {
   flex-wrap: wrap;
 }
 
+.hours {
+  text-align: right;
+}
+
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -1043,7 +1101,6 @@ body.page-subs {
 .site-footer h3 {
   font-size: 1rem;
   font-weight: normal;
-  /* fjerner bold fra h3 */
   margin-bottom: 0.5rem;
 }
 
