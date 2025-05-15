@@ -339,6 +339,13 @@ body.page-subs .navbar.transparent a {
   text-align: center;
 }
 
+.what-are-you-looking-for-section {
+  padding: 5%;
+  width: 85%;         /* fylder 90% af skærmens bredde */
+  margin: 0 auto;      /* centrerer sektionen vandret */
+  text-align: center;
+}
+
 .what-are-you-looking-for-section h2::before,
 .what-are-you-looking-for-section h2::after {
   content: "";
@@ -375,13 +382,13 @@ body.page-subs .navbar.transparent a {
   place-items: center;
   align-content: center;
   text-align: center;
-  width: 90%;
+  width: 85%;
   height: 100%;
-  padding: 2%;
   margin: 5% auto;
   gap: 2%;
   background-color: #FFFEFE;
 }
+
 
 img {
   width: 100%;
