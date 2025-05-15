@@ -723,7 +723,9 @@ body.page-subs {
   background: #fff;
   color: #000;
   margin: 0;
-  padding: 0;
+  padding: 50px 0 0 0; /* Giver plads fra toppen */
+  min-height: 120vh; /* Sørger for, at siden altid har nok højde */
+  overflow-y: auto; /* Bevarer almindelig scrolling uden at "hoppe" */
 }
 
 .product-categories {

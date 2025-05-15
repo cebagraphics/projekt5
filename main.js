@@ -32,6 +32,24 @@
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.body.classList.contains("page-subs")) {
+    window.scrollTo(0, 50);
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY < 50) {
+        // Deaktiver native scrolling for en glidende effekt
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+          window.scrollTo(0, 50);
+          document.body.style.overflow = "auto";
+        }, 100); // Giver en kort pause, så det føles naturligt
+      }
+    });
+  }
+});
+
+
 
   
   const hamburger = document.querySelector('.hamburger');
