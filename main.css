@@ -381,7 +381,7 @@ body.page-subs .navbar.transparent a {
 }
 
 
-/* What are yoy looking for section */
+/* What are you looking for section */
 
 .what-are-you-looking-for-section h2 {
   font-family: 'Montserrat';
@@ -769,7 +769,7 @@ body.page-subs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  width: 90%;
+  width: 85%;
   align-items: start;
 }
 
