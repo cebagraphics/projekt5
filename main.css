@@ -351,6 +351,15 @@ body.page-subs .navbar.transparent a {
   gap: 20px;
   width: 100%;
   text-align: center;
+  padding-left: 0%;
+  padding-top: 0%;
+}
+
+.what-are-you-looking-for-section {
+  padding: 5%;
+  width: 85%;         /* fylder 90% af skærmens bredde */
+  margin: 0 auto;      /* centrerer sektionen vandret */
+  text-align: center;
 }
 
 .what-are-you-looking-for-section h2::before,
@@ -383,17 +392,14 @@ body.page-subs .navbar.transparent a {
 
 .front-page-images__container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr); /* renere måde at skrive 4 x 1fr */
   grid-template-rows: auto;
-  margin-top: 5%;
   box-sizing: border-box;
   place-items: center;
   align-content: center;
   text-align: center;
-  width: 90%;
-  height: 100%;
-  padding: 2%;
-  margin: 5% auto;
+  width: 85%;
+  margin: 0 auto; /* centrer containeren vandret */
   gap: 2%;
   background-color: #FFFEFE;
 }
@@ -440,7 +446,38 @@ img {
   grid-column: 1/5;
 }
 
-/* Responsiv design */
+
+.front-page-images-caption {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #FFFEFE;
+  color: black;
+  padding: 2%;
+  font-size: 20px;
+}
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 3s ease;
+}
+
+.image-box:hover img {
+  transform: scale(1.1); 
+}
+
+
+/* Responsivt design Forside */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -509,9 +546,13 @@ img {
     grid-row: 3;
     grid-column: 1;
   }
+
+  .front-page-images-caption {
+    font-size: 13px;
+  }
+
 }
 
-HEAD
 
 /* Underside produkter */
 body.page-subs {
@@ -522,21 +563,19 @@ body.page-subs {
   padding: 0;
 }
 
-.product-header {
-  padding: 3rem 2rem 1rem;
-  text-align: left;
-}
 
-.product-header h1 {
+.product-header h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  text-align: left !important;
 }
 
 .product-header p {
   font-size: 1rem;
   max-width: 600px;
   color: #333;
+  text-align: left;
 }
 
 .product-controls {
@@ -591,61 +630,72 @@ body.page-subs {
 .pagination .active {
   background-color: #ddd;
 }
-
-/* Butik overlay med billede */
-.visit-store {
-  position: relative;
-  height: 500px;
-  margin-top: 4rem;
-  overflow: hidden;
-}
-
-.store-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.store-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  /* mørkt overlay */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  text-align: center;
-}
-
-.store-overlay h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.store-overlay p {
-  max-width: 600px;
-  margin-bottom: 1.5rem;
-}
-
-.store-overlay .button {
-  background: white;
-  color: black;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* Footer */
+  
+  /* Butik overlay med billede */
+  .visit-store {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  /* Baggrundsbillede */
+  .store-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Mørkt overlay */
+  .store-overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  
+  /* Tekstlag */
+  .store-text-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    max-width: 100%;
+    width: 800px;
+    padding: 2rem;
+  }
+  
+  /* Overskrift */
+  .store-text-content h2 {
+    font-size: 42pt;
+    font-family: 'Inria Serif', sans-serif;
+    margin: 0 0 1rem;
+  }
+  
+  /* Brødtekst */
+  .store-text-content p {
+    margin: 0 0 2rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Knap */
+  .store-text-content .button {
+    background: #F9F2F2;
+    color: #B58585;
+    padding: 0.6rem 3rem;
+    border-radius: 30px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+ /* Footer */
 .site-footer {
   background: #caa7a1;
   color: white;
