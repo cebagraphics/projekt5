@@ -747,18 +747,27 @@ body.page-subs {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
   padding: 0 2rem;
 }
 
 .product-card {
+  background: white;
+  padding: 1rem;
   text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-card img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Ens højde */
+  object-fit: cover;
+  border-radius: 0;
+  margin-bottom: 1rem;
 }
 
 .product-title {
