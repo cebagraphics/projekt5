@@ -87,9 +87,21 @@ h2 {
   padding-left: 90px;
 }
 
-/* BASICS SLUT */
+h3 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 24px;
+}
 
-/* TOP BAR SOM SKIFTER TEKST START */
+h4 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 20px;
+}
+
+/* BASICS END */
+
+/* --------- TOP BAR THAT CHANGES TEKST START --------- */
 #top-bar {
   background-color: var(--pink);
   color: var(--white);
@@ -131,42 +143,9 @@ h2 {
   }
 }
 
-/* TOP BAR SOM SKIFTER TEKST SLUT */
+/* --------- TOP BAR THAT CHANGES TEKST END --------- */
 
-.parallax-section {
-  height: 99vh;
-  background-image: url('img/homepage-backgroundimage.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
-
-.parallax-section_content {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-}
-
-.parallax-section_bodytext {
-  font-size: 20px;
-  padding-bottom: 195px;
-}
-
-.what-are-you-looking-for-section {
-  padding: 80px;
-  padding-bottom: 0px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.arrow {
-  width: 50px;
-}
-
-/* NAV BAR */
+/* --------- NAV BAR START --------- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -327,7 +306,82 @@ body.page-subs .navbar.transparent a {
   transition: 0.4s;
 }
 
-/* Her kommer CSS for forsiden */
+/* Responsiv design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+
+  .front-page-images__5 {
+    grid-row: 4;
+    grid-column: 1;
+  }
+
+  .front-page-images__6 {
+    grid-row: 3/5;
+    grid-column: 2;
+  }
+
+  .front-page-images__button {
+    grid-row: 5;
+    grid-column: 1/3;
+  }
+}
+
+/* --------- NAV BAR END --------- */
+
+/* --------- FORSIDE START --------- */
+.parallax-section {
+  height: 99vh;
+  background-image: url('img/homepage-backgroundimage.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.parallax-section_content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.parallax-section_bodytext {
+  font-size: 20px;
+  padding-bottom: 195px;
+}
+
+.what-are-you-looking-for-section {
+  padding: 80px;
+  padding-bottom: 0px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.arrow {
+  width: 50px;
+}
+
+
+/* What are yoy looking for section */
 
 .what-are-you-looking-for-section h2 {
   font-family: 'Montserrat';
@@ -338,15 +392,6 @@ body.page-subs .navbar.transparent a {
   align-items: center;
   gap: 20px;
   width: 100%;
-  text-align: center;
-  padding-left: 0%;
-  padding-top: 0%;
-}
-
-.what-are-you-looking-for-section {
-  padding: 5%;
-  width: 85%;         /* fylder 90% af skærmens bredde */
-  margin: 0 auto;      /* centrerer sektionen vandret */
   text-align: center;
 }
 
@@ -380,14 +425,17 @@ body.page-subs .navbar.transparent a {
 
 .front-page-images__container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* renere måde at skrive 4 x 1fr */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
+  margin-top: 5%;
   box-sizing: border-box;
   place-items: center;
   align-content: center;
   text-align: center;
-  width: 85%;
-  margin: 0 auto; /* centrer containeren vandret */
+  width: 90%;
+  height: 100%;
+  padding: 2%;
+  margin: 5% auto;
   gap: 2%;
   background-color: #FFFEFE;
 }
@@ -480,6 +528,7 @@ img {
 }
 
 /* Responsivt design Forside */
+/* Responsiv design */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -548,15 +597,10 @@ img {
     grid-row: 3;
     grid-column: 1;
   }
-
-  .front-page-images-caption {
-    font-size: 13px;
-  }
-
 }
 
 
-/* Underside produkter */
+/* --------- PRODUCTSITE START --------- */
 body.page-subs {
   font-family: 'Montserrat', sans-serif;
   background: #fff;
@@ -565,19 +609,21 @@ body.page-subs {
   padding: 0;
 }
 
+.product-header {
+  padding: 3rem 2rem 1rem;
+  text-align: left;
+}
 
-.product-header h2 {
+.product-header h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  text-align: left !important;
 }
 
 .product-header p {
   font-size: 1rem;
   max-width: 600px;
   color: #333;
-  text-align: left;
 }
 
 .product-controls {
@@ -632,62 +678,108 @@ body.page-subs {
 .pagination .active {
   background-color: #ddd;
 }
-  
-  /* Butik overlay med billede */
-  .visit-store {
-    position: relative;
-    height: 500px;
-    margin-top: 4rem;
-    overflow: hidden;
+
+/* Responsivt layout produktside */
+@media (max-width: 768px) {
+
+  .product-header,
+  .product-controls,
+  .product-grid {
+    padding: 1rem;
   }
-  
-  .store-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .store-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    color: white;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
+
+  .product-controls {
     flex-direction: column;
-    justify-content: center;    /* ← centrer vertikalt */
-    align-items: center;        /* ← centrer horisontalt */
-    padding: 2rem;
-    text-align: center;
-    gap: 1rem;                /* ← ens afstand mellem elementerne */
+    align-items: flex-start;
+    gap: 0.5rem;
   }
-  
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
   .store-overlay h2 {
-    font-size: 42pt;
-    font-family: 'Inria Serif', sans-serif;
-    margin: 0;                 /* ← vigtigt! fjern margin */
+    font-size: 1.5rem;
   }
-  
+
   .store-overlay p {
-    max-width: 700px;
-    margin: 0;
+    font-size: 0.95rem;
   }
-  
+
   .store-overlay .button {
-    background: #F9F2F2;
-    color: #B58585;
-    padding: 0.6rem 3rem;
-    border-radius: 30px;
-    font-weight: normal;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
   }
-  
- /* Footer */
+
+  .footer-info {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+/* --------- PRODUCTSITE END --------- */
+
+/* --------- VISIT OUT SHOP START --------- */
+.visit-store {
+  position: relative;
+  height: 500px;
+  margin-top: 4rem;
+  overflow: hidden;
+}
+
+.store-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.store-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  /* mørkt overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.store-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.store-overlay p {
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.store-overlay .button {
+  background: white;
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* --------- VISIT OUR SHOP END --------- */
+
+/* --------- FOOTER START --------- */
 .site-footer {
   background: #caa7a1;
   color: white;
@@ -744,90 +836,11 @@ body.page-subs {
   font-weight: normal;
 }
 
+/* --------- FOOTER END --------- */
+
 /* Produktpris ikke bold */
 .product-price {
   font-weight: normal;
   font-size: 0.95rem;
   color: #222;
-}
-
-/* Responsivt layout produktside */
-@media (max-width: 768px) {
-
-  .product-header,
-  .product-controls,
-  .product-grid {
-    padding: 1rem;
-  }
-
-  .product-controls {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  }
-
-  .store-overlay h2 {
-    font-size: 1.5rem;
-  }
-
-  .store-overlay p {
-    font-size: 0.95rem;
-  }
-
-  .store-overlay .button {
-    font-size: 0.95rem;
-  }
-
-  .footer-info {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-}
-
-/* Responsiv design */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
-    flex-direction: column;
-    width: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-
-  .front-page-images__5 {
-    grid-row: 4;
-    grid-column: 1;
-  }
-
-  .front-page-images__6 {
-    grid-row: 3/5;
-    grid-column: 2;
-  }
-
-  .front-page-images__button {
-    grid-row: 5;
-    grid-column: 1/3;
-  }
 }
