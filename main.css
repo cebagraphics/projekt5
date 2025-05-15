@@ -701,7 +701,7 @@ body.page-subs {
 .product-categories {
   display: flex;
   justify-content: center;
-  gap: 10rem;
+  gap: 13rem;
   margin: 4rem 0;
   flex-wrap: wrap;
   text-align: center;
