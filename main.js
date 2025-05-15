@@ -83,3 +83,22 @@
     // TOP BAR SOM SKIFTER TEKST SLUT
 
 
+    // Video på forsiden
+// Hent videoen og knappen
+var video = document.getElementById("myVideo");
+var playPauseButton = document.getElementById("playPauseButton");
+
+// Når knappen bliver klikket
+playPauseButton.addEventListener("click", function() {
+  if (video.paused) {
+    // Hvis videoen er paused, afspil den
+    video.play();
+    // Ændre knaptekst til "Pause"
+    playPauseButton.textContent = "Pause";
+  } else {
+    // Hvis videoen afspilles, pause den
+    video.pause();
+    // Ændre knaptekst til "Play"
+    playPauseButton.textContent = "Play";
+  }
+});
