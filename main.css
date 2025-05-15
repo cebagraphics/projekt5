@@ -369,12 +369,7 @@ body.page-subs .navbar.transparent a {
   padding-bottom: 195px;
 }
 
-.what-are-you-looking-for-section {
-  padding: 80px;
-  padding-bottom: 0px;
-  background-color: #fff;
-  text-align: center;
-}
+
 
 .arrow {
   width: 50px;
@@ -382,6 +377,15 @@ body.page-subs .navbar.transparent a {
 
 
 /* What are you looking for section */
+
+.what-are-you-looking-for-section {
+  padding: 2%;
+  padding-top: 5%;
+  background-color: #fff;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+}
 
 .what-are-you-looking-for-section h2 {
   font-family: 'Montserrat';
@@ -391,7 +395,7 @@ body.page-subs .navbar.transparent a {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 20px;
-  width: 100%;
+
   text-align: center;
   padding: 0%;
 }
@@ -428,17 +432,17 @@ body.page-subs .navbar.transparent a {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  margin-top: 5%;
   box-sizing: border-box;
   place-items: center;
   align-content: center;
   text-align: center;
-  width: 90%;
+  width: 85%;
   height: 100%;
-  padding: 2%;
-  margin: 5% auto;
+  padding: 2% 0% 2% 0%;
+  margin: 0% 5%;
   gap: 2%;
   background-color: #FFFEFE;
+  margin: 0 auto;
 }
 
 img {
@@ -484,8 +488,6 @@ img {
 }
 
 
-
-
 .image-box {
   position: relative;
   overflow: hidden;
@@ -512,23 +514,94 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(128, 128, 128, 0.4);
-  /* grå wash */
+  background-color: rgba(89, 89, 89, 0.3);
   z-index: 1;
   pointer-events: none;
-  /* så hover stadig virker på img */
 }
 
 .front-page-images-caption {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0px;
+  right: 0px;
   background-color: #FFFEFE;
   color: black;
-  padding: 2%;
+  padding: 10px;
   font-size: 20px;
   z-index: 2;
 }
+
+video {
+width: 100%;
+}
+
+
+.local-suppliers-section {
+  padding: 2%;
+  padding-top: 5%;
+  background-color: #fff;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.local-suppliers-section h2 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+
+  text-align: center;
+  padding: 0%;
+}
+
+.local-suppliers-section h2::before,
+.local-suppliers-section h2::after {
+  content: "";
+  height: 1px;
+  background-color: black;
+  width: 100%;
+  display: block;
+  align-self: center;
+  /* centrér stregen vertikalt i grid-rækken */
+}
+
+.wrapper {
+  width: 95.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.wrapper i {
+padding: 2%;
+font-size: 20px;
+color: #B58585;
+}
+
+.wrapper .carousel {
+  font-size: 0px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.carousel img {
+   height: 340px;
+   object-fit: cover;
+   width: calc(100% / 3);
+   margin-left: 13px;
+}
+
+.carousel img:first-child {
+  margin-left: 0px;
+
+}
+
 
 /* Responsivt design Forside */
 /* Responsiv design */
@@ -555,10 +628,6 @@ img {
   .what-are-you-looking-for-section h2 {
     font-size: 20px;
     gap: 10px;
-  }
-
-  .what-are-you-looking-for-section {
-    padding: 5%;
   }
 
   h1 {
@@ -620,6 +689,22 @@ img {
     font-size: 13px;
   }
 
+  .local-suppliers-section h2 {
+    font-size: 20px;
+    gap: 10px;
+    margin-top: 10%;
+  }
+
+  .carousel img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .wrapper i {
+    padding: 1%;
+    font-size: 15px;
+    }
+
 }
 
 
@@ -627,12 +712,57 @@ img {
 
 
 /* --------- PRODUCTSITE START --------- */
+.content-wrapper {
+  width: 85%;
+  max-width: 1200px; /* valgfrit, for at begrænse meget store skærme */
+  margin: 0 auto;
+}
+
 body.page-subs {
   font-family: 'Montserrat', sans-serif;
   background: #fff;
   color: #000;
   margin: 0;
   padding: 0;
+}
+
+.product-categories {
+  display: flex;
+  justify-content: center;
+  gap: 13rem;
+  margin: 4rem 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px;
+}
+
+.image-circle {
+  background-color: #F3F3F3;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.image-circle img{
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.category p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #333;
 }
 
 .product-header {
@@ -662,18 +792,36 @@ body.page-subs {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  padding: 0 2rem;
+  margin: 0;
 }
 
 .product-card {
   text-align: center;
+
 }
 
 .product-card img {
   width: 100%;
   height: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.product-box {
+  width: 180px;
+  height: 180px;
+  background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.product-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .product-title {
@@ -876,11 +1024,51 @@ body.page-subs {
   font-family: 'Montserrat', sans-serif;
 }
 
+
+  /* Tekstlag */
+  .store-text-content {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    max-width: 100%;
+    width: 800px;
+    padding: 0.5rem;
+  }
+  
+  /* Overskrift */
+  .store-text-content h2 {
+    font-size: 52pt;
+    font-family: 'Inria Serif', sans-serif;
+    margin: 0 0 1rem;
+  }
+  
+  /* Brødtekst */
+  .store-text-content p {
+    margin: 0 0 2rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Knap */
+  .store-text-content .button {
+    background: #F9F2F2;
+    color: #B58585;
+    padding: 0.6rem 3rem;
+    border-radius: 30px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+
 /* --------- VISIT OUR SHOP END --------- */
 
 /* --------- FOOTER START --------- */
 .site-footer {
-  background: #caa7a1;
+  background-color: #B58585 !important;
   color: white;
   padding: 3rem 2rem;
 }
@@ -908,7 +1096,7 @@ body.page-subs {
 
 /* Footer tekst ikke bold + skrifttype til LIWIRA */
 .site-footer {
-  background: #caa7a1;
+  background: #B58585;
   color: white;
   padding: 3rem 2rem;
   font-weight: normal;

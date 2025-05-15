@@ -82,4 +82,51 @@
 
     // TOP BAR SOM SKIFTER TEKST SLUT
 
+// Galleri med leverandører på forside
+const carousel = document.querySelector(".carousel");
 
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+// Start drag - kun med venstre museknap
+const dragStart = (e) => {
+  if (e.type === "mousedown" && e.button !== 0) return;
+
+  isDragging = true;
+  carousel.classList.add("dragging");
+  startX = e.pageX;
+  scrollLeft = carousel.scrollLeft;
+
+  // Stopper native scroll hvis man forsøger at bruge touchpad
+  e.preventDefault();
+};
+
+// Drag bevægelse
+const dragging = (e) => {
+  if (!isDragging) return;
+
+  const x = e.pageX;
+  const walk = x - startX;
+  carousel.scrollLeft = scrollLeft - walk;
+};
+
+// Stop drag
+const dragStop = () => {
+  isDragging = false;
+  carousel.classList.remove("dragging");
+};
+
+// Blokér normal scroll (touchpad, scrollhjul)
+const blockScroll = (e) => {
+  e.preventDefault();
+};
+
+// Event listeners
+carousel.addEventListener("mousedown", dragStart);
+window.addEventListener("mousemove", dragging);
+window.addEventListener("mouseup", dragStop);
+carousel.addEventListener("wheel", blockScroll, { passive: false });
+
+// Bonus: sørg for korrekt cursor (valgfrit)
+carousel.classList.add("custom-drag-cursor");
