@@ -344,6 +344,39 @@ body.page-subs .navbar.transparent a {
   }
 }
 
+.sub-page-navbar {
+  display: flex;
+  justify-content: space-between;
+  /* Logo til venstre, menu til højre */
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 2rem;
+   padding-top: 2.3%;
+  padding-bottom: 0;
+  background-color: var(--white);
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sub-page-navbar a {
+  color: black;
+}
+
+.navbar.solid .nav-links a:after {
+  background: black; /* Gør stregen sort */
+}
+
+.sub-page-navbar .nav-links a:after {
+  background: black; /* Gør stregen sort */
+}
+
+.sub-page-navbar .nav-links a {
+  color: var(--black);
+}
+
 /* --------- NAV BAR END --------- */
 
 /* --------- FORSIDE START --------- */
@@ -723,9 +756,6 @@ body.page-subs {
   background: #fff;
   color: #000;
   margin: 0;
-  padding: 50px 0 0 0; /* Giver plads fra toppen */
-  min-height: 120vh; /* Sørger for, at siden altid har nok højde */
-  overflow-y: auto; /* Bevarer almindelig scrolling uden at "hoppe" */
 }
 
 .product-categories {
