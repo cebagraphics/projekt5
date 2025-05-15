@@ -383,6 +383,8 @@ body.page-subs .navbar.transparent a {
   padding-top: 5%;
   background-color: #fff;
   text-align: center;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .what-are-you-looking-for-section h2 {
@@ -393,7 +395,7 @@ body.page-subs .navbar.transparent a {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 20px;
-  width: 100%;
+
   text-align: center;
   padding: 0%;
 }
@@ -434,12 +436,13 @@ body.page-subs .navbar.transparent a {
   place-items: center;
   align-content: center;
   text-align: center;
-  width: 90%;
+  width: 85%;
   height: 100%;
   padding: 2% 0% 2% 0%;
   margin: 0% 5%;
   gap: 2%;
   background-color: #FFFEFE;
+  margin: 0 auto;
 }
 
 img {
@@ -518,11 +521,11 @@ img {
 
 .front-page-images-caption {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0px;
+  right: 0px;
   background-color: #FFFEFE;
   color: black;
-  padding: 2%;
+  padding: 10px;
   font-size: 20px;
   z-index: 2;
 }
@@ -552,10 +555,6 @@ img {
   .what-are-you-looking-for-section h2 {
     font-size: 20px;
     gap: 10px;
-  }
-
-  .what-are-you-looking-for-section {
-    padding: 5%;
   }
 
   h1 {
