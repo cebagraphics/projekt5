@@ -841,6 +841,7 @@ body.page-subs {
 .store-overlay-bg {
   padding: 2rem;
 }
+
   /* Tekstlag */
   .store-text-content {
     position: absolute;
@@ -883,7 +884,7 @@ body.page-subs {
 
 /* --------- FOOTER START --------- */
 .site-footer {
-  background: #caa7a1;
+  background-color: #B58585 !important;
   color: white;
   padding: 3rem 2rem;
 }
@@ -911,7 +912,7 @@ body.page-subs {
 
 /* Footer tekst ikke bold + skrifttype til LIWIRA */
 .site-footer {
-  background: #caa7a1;
+  background: #B58585;
   color: white;
   padding: 3rem 2rem;
   font-weight: normal;
