@@ -1,21 +1,11 @@
-
-  window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 1) {
-      navbar.classList.add('scrolled');
-      navbar.classList.remove('transparent');
-    } else {
-      navbar.classList.remove('scrolled');
-      navbar.classList.add('transparent');
-    }
-  });
-
-  window.addEventListener("scroll", function () {
+// NAVBAR SOM FØRST ER GENNEMSIGTIG OG BAGEFTER SOLID
+window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
   const searchIcon = document.querySelector(".search-icon");
   const shopIcon = document.querySelector(".shop-icon");
 
   if (window.scrollY > 1) {
+    navbar.classList.add("scrolled");
     navbar.classList.remove("transparent");
     navbar.classList.add("solid");
 
@@ -23,26 +13,15 @@
     searchIcon.src = "img/search-icon_black.png";
     shopIcon.src = "img/shop-icon_black.png";
   } else {
-    navbar.classList.remove("solid");
+    navbar.classList.remove("scrolled");
     navbar.classList.add("transparent");
+    navbar.classList.remove("solid");
 
     // Skift tilbage til hvide ikoner
     searchIcon.src = "img/search_icon-white.png";
     shopIcon.src = "img/shop_icon-white.png";
   }
 });
-
-
-
-  
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-
 
   document.querySelector('.arrow').addEventListener('click', function () {
     window.scrollBy({

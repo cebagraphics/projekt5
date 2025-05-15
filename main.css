@@ -202,6 +202,7 @@ body.page-subs .navbar.transparent a {
   display: flex;
   gap: 1.5rem;
   padding-right: 4rem;
+  z-index: 1000;
   /* Tilføj lidt luft til højre */
 }
 
@@ -292,8 +293,10 @@ body.page-subs .navbar.transparent a {
 
 
 /* Hamburger-menu (mobil) */
-.hamburger {
-  display: none;
+
+  .hamburger {
+  display: block !important;
+  pointer-events: auto !important;
   flex-direction: column;
   cursor: pointer;
 }
@@ -310,23 +313,11 @@ body.page-subs .navbar.transparent a {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
-    flex-direction: column;
-    width: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.active {
-    display: flex;
+    display: flex !important; /* Sørger for, at menuen vises */
   }
-
-  .hamburger {
-    display: flex;
-  }
-
 
   .front-page-images__5 {
     grid-row: 4;
@@ -639,24 +630,6 @@ color: #B58585;
 /* Responsivt design Forside */
 /* Responsiv design */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
-    flex-direction: column;
-    width: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
 
   .what-are-you-looking-for-section h2 {
     font-size: 20px;
