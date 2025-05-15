@@ -826,7 +826,7 @@ body.page-subs {
 /* --------- VISIT OUT SHOP START --------- */
 .visit-store {
   position: relative;
-  height: 500px;
+  height: 100vh;
   margin-top: 4rem;
   overflow: hidden;
 }
