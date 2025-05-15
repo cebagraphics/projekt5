@@ -612,9 +612,9 @@ HEAD
   }
   
   .store-overlay h2 {
-    font-size: 2rem;
+    font-size: 42pt;
     margin-bottom: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inria Serif', sans-serif;
   }
   
   .store-overlay p {
@@ -623,12 +623,13 @@ HEAD
   }
   
   .store-overlay .button {
-    background: white;
-    color: black;
-    padding: 0.8rem 2rem;
+    background: #F9F2F2;
+    color: #B58585;
+    padding: 0.6rem 3rem;
     border-radius: 30px;
-    font-weight: bold;
+    font-weight: normal;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
   }
   
   /* Footer */
@@ -687,18 +688,7 @@ HEAD
   font-weight: normal;
 }
 
-/* "FIND VEJ TIL OS"-knap – tekst ikke bold */
-.store-overlay .button {
-  background: white;
-  color: black;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: normal;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* 4. Produktpris ikke bold */
+/* Produktpris ikke bold */
 .product-price {
   font-weight: normal;
   font-size: 0.95rem;
