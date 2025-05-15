@@ -82,23 +82,51 @@
 
     // TOP BAR SOM SKIFTER TEKST SLUT
 
+// Galleri med leverandører på forside
+const carousel = document.querySelector(".carousel");
 
-    // Video på forsiden
-// Hent videoen og knappen
-var video = document.getElementById("myVideo");
-var playPauseButton = document.getElementById("playPauseButton");
+let isDragging = false;
+let startX;
+let scrollLeft;
 
-// Når knappen bliver klikket
-playPauseButton.addEventListener("click", function() {
-  if (video.paused) {
-    // Hvis videoen er paused, afspil den
-    video.play();
-    // Ændre knaptekst til "Pause"
-    playPauseButton.textContent = "Pause";
-  } else {
-    // Hvis videoen afspilles, pause den
-    video.pause();
-    // Ændre knaptekst til "Play"
-    playPauseButton.textContent = "Play";
-  }
-});
+// Start drag - kun med venstre museknap
+const dragStart = (e) => {
+  if (e.type === "mousedown" && e.button !== 0) return;
+
+  isDragging = true;
+  carousel.classList.add("dragging");
+  startX = e.pageX;
+  scrollLeft = carousel.scrollLeft;
+
+  // Stopper native scroll hvis man forsøger at bruge touchpad
+  e.preventDefault();
+};
+
+// Drag bevægelse
+const dragging = (e) => {
+  if (!isDragging) return;
+
+  const x = e.pageX;
+  const walk = x - startX;
+  carousel.scrollLeft = scrollLeft - walk;
+};
+
+// Stop drag
+const dragStop = () => {
+  isDragging = false;
+  carousel.classList.remove("dragging");
+};
+
+// Blokér normal scroll (touchpad, scrollhjul)
+const blockScroll = (e) => {
+  e.preventDefault();
+};
+
+// Event listeners
+carousel.addEventListener("mousedown", dragStart);
+window.addEventListener("mousemove", dragging);
+window.addEventListener("mouseup", dragStop);
+carousel.addEventListener("wheel", blockScroll, { passive: false });
+
+// Bonus: sørg for korrekt cursor (valgfrit)
+carousel.classList.add("custom-drag-cursor");
