@@ -667,6 +667,12 @@ width: 100%;
 
 
 /* --------- PRODUCTSITE START --------- */
+.content-wrapper {
+  width: 85%;
+  max-width: 1200px; /* valgfrit, for at begrænse meget store skærme */
+  margin: 0 auto;
+}
+
 body.page-subs {
   font-family: 'Montserrat', sans-serif;
   background: #fff;
