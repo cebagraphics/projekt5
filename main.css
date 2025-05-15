@@ -83,6 +83,8 @@ h2 {
   font-family: 'Montserrat';
   font-weight: 400;
   font-size: 32px;
+  padding-top: 180px;
+  padding-left: 90px;
 }
 
 /* BASICS SLUT */
@@ -353,7 +355,8 @@ body.page-subs .navbar.transparent a {
   background-color: black;
   width: 100%;
   display: block;
-  align-self: center; /* centrér stregen vertikalt i grid-rækken */
+  align-self: center;
+  /* centrér stregen vertikalt i grid-rækken */
 }
 
 .front-page-images__button {
@@ -502,69 +505,69 @@ img {
     grid-column: 1;
   }
 }
- 
+
 HEAD
 
-  /* Underside produkter */
-  body.page-subs {
-    font-family: 'Montserrat', sans-serif;
-    background: #fff;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .product-header {
-    padding: 3rem 2rem 1rem;
-    text-align: left;
-  }
-  
-  .product-header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .product-header p {
-    font-size: 1rem;
-    max-width: 600px;
-    color: #333;
-  }
-  
-  .product-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem 2rem 2rem;
-    font-size: 0.9rem;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 2rem;
-    padding: 0 2rem;
-  }
-  
-  .product-card {
-    text-align: center;
-  }
-  
-  .product-card img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .product-title {
-    font-weight: 300;
-    margin-top: 0.5rem;
-  }
-  
-  .product-price {
-    font-weight: 500;
-  }
+/* Underside produkter */
+body.page-subs {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Paginering centreret */
+.product-header {
+  padding: 3rem 2rem 1rem;
+  text-align: left;
+}
+
+.product-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-header p {
+  font-size: 1rem;
+  max-width: 600px;
+  color: #333;
+}
+
+.product-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 2rem 2rem;
+  font-size: 0.9rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.product-card {
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-title {
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+.product-price {
+  font-weight: 500;
+}
+
+/* Paginering centreret */
 .pagination {
   display: flex;
   justify-content: center;
@@ -617,23 +620,24 @@ HEAD
   }
   
   .store-overlay h2 {
-    font-size: 2rem;
+    font-size: 42pt;
     margin-bottom: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inria Serif', sans-serif;
   }
   
   .store-overlay p {
-    max-width: 600px;
+    max-width: 700px;
     margin-bottom: 1.5rem;
   }
   
   .store-overlay .button {
-    background: white;
-    color: black;
-    padding: 0.8rem 2rem;
+    background: #F9F2F2;
+    color: #B58585;
+    padding: 0.6rem 3rem;
     border-radius: 30px;
-    font-weight: bold;
+    font-weight: normal;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
   }
   
   /* Footer */
@@ -664,7 +668,89 @@ HEAD
     margin-left: 1rem;
   }
 
-  /* Footer tekst ikke bold + skrifttype til LIWIRA */
+
+/* Butik overlay med billede */
+.visit-store {
+  position: relative;
+  height: 500px;
+  margin-top: 4rem;
+  overflow: hidden;
+}
+
+.store-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.store-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  /* mørkt overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.store-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.store-overlay p {
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.store-overlay .button {
+  background: white;
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Footer */
+.site-footer {
+  background: #caa7a1;
+  color: white;
+  padding: 3rem 2rem;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  border-top: 1px solid #fff;
+  padding-top: 1rem;
+}
+
+.footer-bottom a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+/* Footer tekst ikke bold + skrifttype til LIWIRA */
 .site-footer {
   background: #caa7a1;
   color: white;
@@ -675,7 +761,8 @@ HEAD
 
 .site-footer h3 {
   font-size: 1rem;
-  font-weight: normal; /* fjerner bold fra h3 */
+  font-weight: normal;
+  /* fjerner bold fra h3 */
   margin-bottom: 0.5rem;
 }
 
@@ -692,18 +779,7 @@ HEAD
   font-weight: normal;
 }
 
-/* "FIND VEJ TIL OS"-knap – tekst ikke bold */
-.store-overlay .button {
-  background: white;
-  color: black;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: normal;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* 4. Produktpris ikke bold */
+/* Produktpris ikke bold */
 .product-price {
   font-weight: normal;
   font-size: 0.95rem;
@@ -712,7 +788,10 @@ HEAD
 
 /* Responsivt layout produktside */
 @media (max-width: 768px) {
-  .product-header, .product-controls, .product-grid {
+
+  .product-header,
+  .product-controls,
+  .product-grid {
     padding: 1rem;
   }
 
@@ -749,27 +828,27 @@ HEAD
     text-align: center;
   }
 }
-  
-  /* Responsiv design */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: #fff;
-      flex-direction: column;
-      width: 200px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-  
-    .hamburger {
-      display: flex;
-    }
+
+/* Responsiv design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 
 
   .front-page-images__5 {
