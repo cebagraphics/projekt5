@@ -1,7 +1,7 @@
 
   window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 40) {
+    if (window.scrollY > 1) {
       navbar.classList.add('scrolled');
       navbar.classList.remove('transparent');
     } else {
@@ -15,7 +15,7 @@
   const searchIcon = document.querySelector(".search-icon");
   const shopIcon = document.querySelector(".shop-icon");
 
-  if (window.scrollY > 50) {
+  if (window.scrollY > 1) {
     navbar.classList.remove("transparent");
     navbar.classList.add("solid");
 
