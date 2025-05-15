@@ -501,7 +501,7 @@ img {
 }
 
 .image-box:hover img {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 
@@ -511,9 +511,11 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(128, 128, 128, 0.4); /* grå wash */
+  background-color: rgba(128, 128, 128, 0.4);
+  /* grå wash */
   z-index: 1;
-  pointer-events: none; /* så hover stadig virker på img */
+  pointer-events: none;
+  /* så hover stadig virker på img */
 }
 
 .front-page-images-caption {
@@ -738,6 +740,55 @@ body.page-subs {
 
 
 /* --------- ABOUT US SITE START --------- */
+.about--us-content,
+.sustainability-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-us-content .text,
+.sustainability-content .text {
+  order: 1;
+}
+
+.about-us-content .image,
+.sustainability-content .image {
+  order: 2;
+}
+
+.sustainability-content .image {
+  order: 1;
+}
+
+.sustainability-content .text {
+  order: 2;
+}
+
+.about-us-section,
+.sustainability-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+@media (max-width: 768px) {
+
+  .about-us-content,
+  .sustainability-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-us-content .image,
+  .sustainability-content .image,
+  .about--us-content .text,
+  .sustainability-content .text {
+    order: initial;
+  }
+}
+
+
 /* --------- ABOUT US SITE END --------- */
 
 
