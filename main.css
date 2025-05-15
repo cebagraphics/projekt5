@@ -530,35 +530,42 @@ img {
   z-index: 2;
 }
 
-/* Stil videoen, så den fylder skærmens bredde */
-.video-container {
-  position: relative; /* Nødvendig for at placere knappen absolut i forhold til containeren */
-  display: inline-block; /* Sørger for at containeren kun fylder den nødvendige bredde */
-}
-
 video {
+width: 100%;
+}
+
+
+.local-suppliers-section {
+  padding: 2%;
+  padding-top: 5%;
+  background-color: #fff;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.local-suppliers-section h2 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+
+  text-align: center;
+  padding: 0%;
+}
+
+.local-suppliers-section h2::before,
+.local-suppliers-section h2::after {
+  content: "";
+  height: 1px;
+  background-color: black;
   width: 100%;
-  display: block; /* Sørger for at videoen fylder hele bredden */
-}
-
-/* Stil knappen */
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  position: absolute;
-  top: 50%; /* Vertikal centrering */
-  left: 50%; /* Horisontal centrering */
-  transform: translate(-50%, -50%); /* Juster knappen til at være præcist centreret */
-  z-index: 10; /* Sørger for at knappen er over videoen */
-}
-
-button:hover {
-  background-color: #45a049; /* Lidt mørkere grøn ved hover */
+  display: block;
+  align-self: center;
+  /* centrér stregen vertikalt i grid-rækken */
 }
 
 
@@ -646,6 +653,11 @@ button:hover {
 
   .front-page-images-caption {
     font-size: 13px;
+  }
+
+  .local-suppliers-section h2 {
+    font-size: 20px;
+    gap: 10px;
   }
 
 }
