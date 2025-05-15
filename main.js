@@ -33,8 +33,8 @@ window.addEventListener("scroll", function () {
   });
 
 
-  // TOP BAR SOM SKIFTER TEKST START
 
+  // TOP BAR SOM SKIFTER TEKST 
   document.addEventListener("DOMContentLoaded", () => {
       const messages = [
           "Gaver til alle anledninger – sammensæt din egen gavekurv",
@@ -62,7 +62,7 @@ window.addEventListener("scroll", function () {
       setInterval(change, 3500);
   });
 
-    // TOP BAR SOM SKIFTER TEKST SLUT
+  
 
 // Galleri med leverandører på forside
 const carousel = document.querySelector(".carousel");
