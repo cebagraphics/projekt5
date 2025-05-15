@@ -530,6 +530,38 @@ img {
   z-index: 2;
 }
 
+/* Stil videoen, så den fylder skærmens bredde */
+.video-container {
+  position: relative; /* Nødvendig for at placere knappen absolut i forhold til containeren */
+  display: inline-block; /* Sørger for at containeren kun fylder den nødvendige bredde */
+}
+
+video {
+  width: 100%;
+  display: block; /* Sørger for at videoen fylder hele bredden */
+}
+
+/* Stil knappen */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%; /* Vertikal centrering */
+  left: 50%; /* Horisontal centrering */
+  transform: translate(-50%, -50%); /* Juster knappen til at være præcist centreret */
+  z-index: 10; /* Sørger for at knappen er over videoen */
+}
+
+button:hover {
+  background-color: #45a049; /* Lidt mørkere grøn ved hover */
+}
+
+
 /* Responsivt design Forside */
 /* Responsiv design */
 @media (max-width: 768px) {
