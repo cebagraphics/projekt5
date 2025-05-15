@@ -747,18 +747,42 @@ body.page-subs {
 
 .product-grid {
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+=======
+  grid-template-columns: repeat(4, 1fr);
+>>>>>>> b04bc7246c62a22d792ba3c319a2f4812ddbae0e
   gap: 2rem;
-  padding: 0 2rem;
+  margin: 0;
 }
 
 .product-card {
   text-align: center;
+<<<<<<< HEAD
 }
 
 .product-card img {
   width: 100%;
   height: auto;
+=======
+  font-family: 'Montserrat', sans-serif;
+}
+
+.image-box {
+  width: 180px;
+  height: 180px;
+  background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.image-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+>>>>>>> b04bc7246c62a22d792ba3c319a2f4812ddbae0e
 }
 
 .product-title {
