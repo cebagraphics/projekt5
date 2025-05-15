@@ -695,7 +695,7 @@ body.page-subs {
 .product-categories {
   display: flex;
   justify-content: center;
-  gap: 10rem; /* mere afstand mellem kategorierne */
+  gap: 10rem;
   margin: 4rem 0;
   flex-wrap: wrap;
   text-align: center;
@@ -708,13 +708,21 @@ body.page-subs {
   max-width: 150px;
 }
 
-.category img {
-  width: 120px;
-  height: 120px;
+.image-circle {
+  background-color: #F3F3F3;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
-  /* Fjernet kant */
+}
+
+.image-circle img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
 }
 
 .category p {
