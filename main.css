@@ -482,6 +482,52 @@ img {
   grid-column: 1/5;
 }
 
+
+
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 3s ease;
+}
+
+.image-box:hover img {
+  transform: scale(1.1); 
+}
+
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.4); /* grå wash */
+  z-index: 1;
+  pointer-events: none; /* så hover stadig virker på img */
+}
+
+.front-page-images-caption {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #FFFEFE;
+  color: black;
+  padding: 2%;
+  font-size: 20px;
+  z-index: 2;
+}
+
+/* Responsivt design Forside */
 /* Responsiv design */
 @media (max-width: 768px) {
   .nav-links {
