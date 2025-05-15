@@ -60,6 +60,25 @@ h1 {
   padding-top: 250px;
 }
 
+h2 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 32px;
+  padding-top: 180px;
+}
+
+h3 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 24px;
+}
+
+h4 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 20px;
+}
+
 p {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
@@ -79,25 +98,6 @@ p {
   margin: 10px;
 }
 
-h2 {
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 32px;
-  padding-top: 180px;
-  padding-left: 90px;
-}
-
-h3 {
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 24px;
-}
-
-h4 {
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 20px;
-}
 
 /* BASICS END */
 
@@ -769,6 +769,7 @@ body.page-subs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  width: 90%;
   align-items: start;
 }
 
@@ -812,7 +813,6 @@ body.page-subs {
   }
 }
 
-
 /* --------- ABOUT US SITE END --------- */
 
 
@@ -838,9 +838,44 @@ body.page-subs {
   display: block;
 }
 
-.store-overlay-bg {
-  padding: 2rem;
+/* Tekstlag */
+.store-text-content {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+  padding: 0.5rem;
 }
+
+/* Overskrift */
+.store-text-content h2 {
+  font-size: 52pt;
+  font-family: 'Inria Serif', sans-serif;
+  margin: 0 0 1rem;
+}
+
+/* Brødtekst */
+.store-text-content p {
+  margin: 0 0 2rem;
+  font-size: 1.1rem;
+}
+
+/* Knap */
+.store-text-content .button {
+  background: #F9F2F2;
+  color: #B58585;
+  padding: 0.6rem 3rem;
+  border-radius: 30px;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
 
   /* Tekstlag */
   .store-text-content {
@@ -879,6 +914,7 @@ body.page-subs {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
   }
+
 
 /* --------- VISIT OUR SHOP END --------- */
 
