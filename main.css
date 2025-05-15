@@ -692,6 +692,37 @@ body.page-subs {
   color: #333;
 }
 
+.product-categories {
+  display: flex;
+  justify-content: center;
+  gap: 10rem; /* mere afstand mellem kategorierne */
+  margin: 4rem 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px;
+}
+
+.category img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  /* Fjernet kant */
+}
+
+.category p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #333;
+}
+
 .product-controls {
   display: flex;
   justify-content: space-between;
