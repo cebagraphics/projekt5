@@ -1,21 +1,11 @@
-
-  window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 1) {
-      navbar.classList.add('scrolled');
-      navbar.classList.remove('transparent');
-    } else {
-      navbar.classList.remove('scrolled');
-      navbar.classList.add('transparent');
-    }
-  });
-
-  window.addEventListener("scroll", function () {
+// NAVBAR SOM FØRST ER GENNEMSIGTIG OG BAGEFTER SOLID
+window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
   const searchIcon = document.querySelector(".search-icon");
   const shopIcon = document.querySelector(".shop-icon");
 
   if (window.scrollY > 1) {
+    navbar.classList.add("scrolled");
     navbar.classList.remove("transparent");
     navbar.classList.add("solid");
 
@@ -23,8 +13,9 @@
     searchIcon.src = "img/search-icon_black.png";
     shopIcon.src = "img/shop-icon_black.png";
   } else {
-    navbar.classList.remove("solid");
+    navbar.classList.remove("scrolled");
     navbar.classList.add("transparent");
+    navbar.classList.remove("solid");
 
     // Skift tilbage til hvide ikoner
     searchIcon.src = "img/search_icon-white.png";
@@ -32,35 +23,8 @@
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.body.classList.contains("page-subs")) {
-    window.scrollTo(0, 50);
 
-    window.addEventListener("scroll", function () {
-      if (window.scrollY < 50) {
-        // Deaktiver native scrolling for en glidende effekt
-        document.body.style.overflow = "hidden";
-        setTimeout(() => {
-          window.scrollTo(0, 50);
-          document.body.style.overflow = "auto";
-        }, 100); // Giver en kort pause, så det føles naturligt
-      }
-    });
-  }
-});
-
-
-
-  
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-
-
+// SMOOTH SCROLL PÅ FORSIDE PIL
   document.querySelector('.arrow').addEventListener('click', function () {
     window.scrollBy({
       top: window.innerHeight,
@@ -69,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  // TOP BAR SOM SKIFTER TEKST START
 
+  // TOP BAR SOM SKIFTER TEKST 
   document.addEventListener("DOMContentLoaded", () => {
       const messages = [
           "Gaver til alle anledninger – sammensæt din egen gavekurv",
@@ -98,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setInterval(change, 3500);
   });
 
-    // TOP BAR SOM SKIFTER TEKST SLUT
+  
 
 // Galleri med leverandører på forside
 const carousel = document.querySelector(".carousel");
