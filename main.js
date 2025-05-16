@@ -112,3 +112,20 @@ carousel.addEventListener("wheel", blockScroll, { passive: false });
 
 // Bonus: sørg for korrekt cursor (valgfrit)
 carousel.classList.add("custom-drag-cursor");
+
+// Pilene
+
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+// Beregn hvor meget vi skal scrolle pr. klik (fx én billedbredde + margin)
+const img = carousel.querySelector("img");
+const imgWidth = img.offsetWidth + 13; // bredde + margin-left
+
+prevBtn.addEventListener("click", () => {
+  carousel.scrollBy({ left: -imgWidth, behavior: "smooth" });
+});
+
+nextBtn.addEventListener("click", () => {
+  carousel.scrollBy({ left: imgWidth, behavior: "smooth" });
+});

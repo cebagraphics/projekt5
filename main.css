@@ -605,7 +605,7 @@ width: 100%;
 
 .wrapper i {
 padding: 2%;
-font-size: 20px;
+font-size: 30px;
 color: #B58585;
 }
 
@@ -627,6 +627,7 @@ color: #B58585;
   margin-left: 0px;
 
 }
+
 
 
 /* Responsivt design Forside */
@@ -705,12 +706,11 @@ color: #B58585;
 
   .carousel img {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 
   .wrapper i {
     padding: 1%;
-    font-size: 15px;
     }
 
 }
