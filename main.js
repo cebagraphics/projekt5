@@ -62,7 +62,7 @@ window.addEventListener("scroll", function () {
       setInterval(change, 3500);
   });
 
-  
+
 
 // Galleri med leverandører på forside
 const carousel = document.querySelector(".carousel");
@@ -128,4 +128,21 @@ prevBtn.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", () => {
   carousel.scrollBy({ left: imgWidth, behavior: "smooth" });
+});
+
+
+
+// JS-filtrering baseret på data-category
+document.querySelectorAll('.category').forEach(button => {
+  button.addEventListener('click', () => {
+    const selectedCategory = button.getAttribute('data-category');
+    document.querySelectorAll('.product-card').forEach(card => {
+      const productImg = card.querySelector('img');
+      if (productImg.getAttribute('data-category') === selectedCategory || selectedCategory === 'alle') {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
 });
