@@ -437,6 +437,8 @@ body.page-subs .navbar.transparent a {
   /* centrér stregen vertikalt i grid-rækken */
 }
 
+
+
 .front-page-images__button {
   padding: 2%;
   margin: 5%;
@@ -595,12 +597,14 @@ width: 100%;
 }
 
 .wrapper {
-  width: 95.5%;
+  width: 98%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 10px;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 .wrapper i {
@@ -627,6 +631,77 @@ color: #B58585;
   margin-left: 0px;
 
 }
+
+/* Hvem er vi section */
+
+.who-are-we-section {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #fff;
+  text-align: center;
+  background-color: #F9F2F2;
+}
+
+.who-are-we-section__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  box-sizing: border-box;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 2%;
+  width: 85%;
+  margin: 0 auto;
+  background-color: #F9F2F2;
+}
+
+
+
+
+.who-are-we-section__h2 {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 0px;
+  padding-left: 3%;
+  justify-self: start;
+}
+
+.who-are-we-section__img {
+  grid-column: 1;
+  grid-row: 1/4;
+}
+
+.who-are-we-section__text {
+  grid-column: 2;
+  grid-row: 2;
+  padding-left: 2%;
+}
+
+.who-are-we-section__text p{
+  text-align: left;
+}
+
+.who-are-we-section__button {
+    grid-row: 3;
+    grid-column: 2;
+    padding: 3%;
+    margin: 5%;
+    background-color: #B58585;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.who-are-we-section__button a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+
 
 
 
@@ -657,6 +732,7 @@ color: #B58585;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 5% 0;
   }
 
   .front-page-images__1 {
@@ -712,6 +788,38 @@ color: #B58585;
   .wrapper i {
     padding: 1%;
     }
+
+  .who-are-we-section__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 5% 0;
+  }
+
+  .who-are-we-section__h2
+  {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .who-are-we-section__text {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .who-are-we-section__button {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .who-are-we-section__img {
+    grid-column: 1;
+    grid-row: 4;
+  }
+h2 {
+  font-size: 20px;
+}
+
+
 
 }
 
