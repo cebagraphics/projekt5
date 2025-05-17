@@ -114,26 +114,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // JS-FILTRERING BASERET PÅ DATA-CATEGORY
-  const categoryButtons = document.querySelectorAll('.image-circle');
+ const categoryButtons = document.querySelectorAll('.image-circle');
   const productCards = document.querySelectorAll('.product-card');
+
+  let activeCategory = 'alle'; // Starter med at vise alle produkter
 
   categoryButtons.forEach(button => {
     button.addEventListener('click', function () {
       const selectedCategory = this.getAttribute('data-category');
 
-      // Fjern 'active' fra alle knapper og tilføj til den valgte
-      categoryButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
+      // Hvis man klikker på den samme kategori igen → reset til "alle"
+      const isAlreadyActive = this.classList.contains('active');
 
-      // Filtrer produkter
+      if (isAlreadyActive) {
+        // Nulstil aktiv kategori
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        activeCategory = 'alle';
+      } else {
+        // Sæt ny aktiv kategori
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        activeCategory = selectedCategory;
+      }
+
+      // Filtrér produkterne
       productCards.forEach(card => {
         const img = card.querySelector('img');
         const productCategory = img?.getAttribute('data-category');
         if (!productCategory) return;
 
-        // Vis eller skjul produkt baseret på kategori
-        card.style.display = (selectedCategory === productCategory || selectedCategory === 'alle') 
-          ? 'block' 
+        card.style.display = (activeCategory === productCategory || activeCategory === 'alle')
+          ? 'block'
           : 'none';
       });
     });
