@@ -866,12 +866,28 @@ body.page-subs {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), 
+              box-shadow 0.4s ease, 
+              filter 0.3s ease;
 }
 
 .image-circle img{
   max-width: 80%;
   max-height: 80%;
   object-fit: contain;
+}
+
+.image-circle:hover {
+  background-color: var(--white);
+   transform: scale(1.05) translateY(-5px); /* Lidt større og opad */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* skygge under */
+  cursor: pointer;
+}
+
+.image-circle.active{
+  background-color: var(--white);
+  transform: scale(1.07) translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
 }
 
 .category p {
