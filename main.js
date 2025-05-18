@@ -110,7 +110,7 @@ wrappers.forEach((wrapper) => {
 
   // Scroll på klik
   const img = carousel.querySelector("img");
-  const imgWidth = img.offsetWidth + 13;
+  const imgWidth = img.offsetWidth + 15;
 
   prevBtn.addEventListener("click", () => {
     carousel.scrollBy({ left: -imgWidth, behavior: "smooth" });
