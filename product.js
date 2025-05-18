@@ -126,12 +126,118 @@ const productGrid = document.querySelector(".product-grid");
 
   productGrid.addEventListener("click", function (e) {
     if (e.target.classList.contains("add-to-cart")) {
-      const productCard = e.target.closest(".product-card");
+      const productCard = e.target.closest(".product-card, .giftwrapping-card");
       const productTitle = productCard.querySelector(".product-title").textContent;
-      alert(`Tilføjet til kurv: ${productTitle}`);
     }
   });
 
   // Første load
   renderProducts();
+
+
+
+
+// KURV
+const cartPopup = document.getElementById("cart-popup");
+const cartItems = document.getElementById("cart-items");
+const cartTotal = document.getElementById("cart-total");
+const shopIcon = document.getElementById("shop-icon");
+
+  // Tilføj klik-event til shop-ikonet
+    shopIcon.addEventListener("click", function (event) {
+        event.preventDefault(); // Undgå at linket følger href="#"
+        cartPopup.classList.toggle("hidden"); // Vis eller skjul kurven
+    });
+
+let cart = [];
+
+document.querySelector(".product-grid").addEventListener("click", function (e) {
+  if (e.target.classList.contains("add-to-cart")) {
+    const card = e.target.closest(".product-card, .giftwrapping-card");
+    const title = card.querySelector(".product-title").textContent;
+    const priceText = card.querySelector(".product-price").textContent;
+    const price = parseFloat(priceText.replace(",", ".").replace(" kr", ""));
+
+    const existing = cart.find(item => item.title === title);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ title, price, quantity: 1 });
+    }
+
+    updateCart();
+    showCart();
+  }
+});
+
+function updateCart() {
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * item.quantity;
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <span>${item.title}</span>
+      <div class="item-controls">
+        <button class="decrease" data-index="${index}">−</button>
+        <span>${item.quantity}</span>
+        <button class="increase" data-index="${index}">+</button>
+      </div>
+    `;
+    cartItems.appendChild(li);
+  });
+
+  cartTotal.textContent = total.toFixed(2).replace(".", ",") + " kr";
+}
+
+cartItems.addEventListener("click", function (e) {
+  const index = parseInt(e.target.dataset.index);
+
+  if (e.target.classList.contains("increase")) {
+    cart[index].quantity += 1;
+    updateCart();
+  }
+
+  if (e.target.classList.contains("decrease")) {
+    cart[index].quantity -= 1;
+    if (cart[index].quantity <= 0) {
+      cart.splice(index, 1);
+    }
+    updateCart();
+  }
+});
+
+function showCart() {
+  cartPopup.classList.remove("hidden");
+  setTimeout(() => cartPopup.classList.add("show"), 10);
+}
+
+cartPopup.addEventListener("click", function (e) {
+  e.stopPropagation(); // Undgå at klik inde i kurven lukker popup’en
+});
+
+document.addEventListener("click", function (e) {
+  const isInsideCart = e.target.closest("#cart-popup");
+  const isAddToCart = e.target.classList.contains("add-to-cart");
+
+  // Kun hvis man klikker UDENFOR både kurven og "add-to-cart" knapper
+  if (!isInsideCart && !isAddToCart && cartPopup.classList.contains("show")) {
+    cartPopup.classList.remove("show");
+    setTimeout(() => cartPopup.classList.add("hidden"), 300);
+  }
+});
+
+const customMessageCheckbox = document.getElementById("custom-message-checkbox");
+const customMessageTextarea = document.getElementById("custom-message");
+
+customMessageCheckbox.addEventListener("change", function () {
+  if (this.checked) {
+    customMessageTextarea.classList.remove("hidden");
+  } else {
+    customMessageTextarea.classList.add("hidden");
+  }
+});
+
 });

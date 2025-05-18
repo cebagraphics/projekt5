@@ -40,7 +40,10 @@
       <li><a href="omos.html">Om os</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
       <li><a href="#"><img class="search-icon" src="img/search-icon_black.png" alt=""></a></li>
-      <li><a href="#"><img class="shop-icon" src="img/shop-icon_black.png" alt=""></a></li>
+      <li><a href="#" id="shop-icon">
+        <img class="shop-icon" src="img/shop-icon_black.png" alt="">
+    </a>
+    </li>
     </ul>
     <div class="hamburger">
       <span></span>
@@ -49,8 +52,51 @@
     </div>
   </nav>
 
-  <!-- DIT UNIKKE INDHOLD HER -->
   <main>
+
+<div class="cart-popup hidden" id="cart-popup">
+  <div class="cart-content">
+    <ul class="cart-items" id="cart-items"></ul>
+    
+<div class="cart-options">
+  <label class="checkbox-label">
+    <input type="checkbox" id="giftwrap-checkbox">
+    Ja tak, pak hele min ordre ind
+  </label>
+
+  <label class="checkbox-label">
+    <input type="checkbox" id="custom-message-checkbox">
+    Jeg ønsker at skrive min egen hilsen
+  </label>
+
+  <textarea id="custom-message" class="hidden" placeholder="Skriv din hilsen her..."></textarea>
+</div>
+
+<div class="delivery-date">
+  <label for="delivery-date-input">Gaven skal leveres den</label>
+  <small>(bestil inden kl 13 for levering næstkommende hverdag)</small>
+
+  <input type="date" id="delivery-date-input" name="delivery-date">
+</div>
+    
+    <div class="cart-summary">
+      <strong>Subtotal</strong>
+      <span id="cart-total">0,00 kr</span>
+    </div>
+
+    <div class="cart-extra">
+      <label>
+        <input type="checkbox" checked>
+        Jeg er enig med <a href="#">vilkårene og betingelserne</a>
+      </label>
+    </div>
+
+
+    <button class="checkout-button">GÅ TIL KASSEN</button>
+  </div>
+</div>
+
+
     <div class="content-wrapper">
           <p class="breadcrumb">Hjem / Sammensæt din egen gave</p>
     <section class="gift-header">
@@ -58,6 +104,14 @@
         <p>
             For at sammensætte din egen gave, tilføj gaveindpakning herunder ved at trykke på plusset og herefter vælg frit imellem produkterne - alt efter hvad du ønsker i din gavekurv.
         </p>
+        <div class="giftwrapping-card">
+        <div class="product-box">
+          <img src="img/hyggekurven-giftbasket.jpg" alt="Produkt 1" data-category="spise">
+        <button class="add-to-cart">+</button>
+        </div>
+        <p class="product-title">Gaveindpakning på hele ordren</p>
+        <p class="product-price">0,00 kr</p>
+      </div>
     </section>
     <!-- Intro med venstrestillet tekst -->
     <section class="product-header">
