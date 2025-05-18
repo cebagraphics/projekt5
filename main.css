@@ -895,14 +895,15 @@ body.page-subs {
   color: #333;
 }
 
+.breadcrumb {
+  padding: 3rem 1.5rem 0.5rem;
+  padding-top: 18vh;
+  padding-bottom: 5vh;
+}
+
 .product-header {
   padding: 3rem 2rem 1rem;
   text-align: left;
-}
-
-.product-header h1 {
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 0.5rem;
 }
 
 .product-header p {
