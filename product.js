@@ -1,3 +1,31 @@
+  // TOP BAR SOM SKIFTER TEKST 
+  document.addEventListener("DOMContentLoaded", () => {
+      const messages = [
+          "Gaver til alle anledninger – sammensæt din egen gavekurv",
+          "Bestil online – afhent i butikken eller få leveret direkte",
+          "Støt lokalt – vi samarbejder med fynske leverandører",
+          "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
+          "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
+      ];
+
+      let index = 0;
+      const el = document.getElementById("changing-text");
+      if (!el) return;
+
+      function change() {
+          el.classList.remove("show-text");
+          setTimeout(() => {
+              el.textContent = messages[index];
+              console.log("Current message:", messages[index]);
+              index = (index + 1) % messages.length;
+              el.classList.add("show-text");
+          }, 50);
+      }
+
+      change();
+      setInterval(change, 3500);
+
+
 const allProducts = [
       { title: "Summerbird heartmade", price: "229,95 kr", image: "img/summerbird-heartmade.png", category: "spise" },
       { title: "Speedtsberg vase blomst", price: "129,95 kr", image: "img/vase-blomst.png", category: "interiør" },
@@ -24,76 +52,86 @@ let currentPage = 1;
 let activeCategory = "alle";
 
 const productGrid = document.querySelector(".product-grid");
-const pagination = document.querySelector(".pagination");
-const categoryButtons = document.querySelectorAll(".image-circle");
+  const pagination = document.querySelector(".pagination");
+  const categoryButtons = document.querySelectorAll(".image-circle");
 
-function renderProducts() {
-  productGrid.innerHTML = "";
+  function renderProducts() {
+    productGrid.innerHTML = "";
 
-  const filtered = activeCategory === "alle"
-    ? allProducts
-    : allProducts.filter(p => p.category === activeCategory);
+    const filtered = activeCategory === "alle"
+      ? allProducts
+      : allProducts.filter(p => p.category === activeCategory);
 
-  const totalPages = Math.ceil(filtered.length / productsPerPage);
-  if (currentPage > totalPages) currentPage = 1;
+    const totalPages = Math.ceil(filtered.length / productsPerPage);
+    if (currentPage > totalPages) currentPage = 1;
 
-  const start = (currentPage - 1) * productsPerPage;
-  const end = start + productsPerPage;
-  const pageProducts = filtered.slice(start, end);
+    const start = (currentPage - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    const pageProducts = filtered.slice(start, end);
 
-  pageProducts.forEach(product => {
-    const html = `
-      <div class="product-card">
-        <div class="product-box">
-          <img src="${product.image}" alt="${product.title}" data-category="${product.category}">
+    pageProducts.forEach(product => {
+      const html = `
+        <div class="product-card">
+          <div class="product-box">
+            <img src="${product.image}" alt="${product.title}" data-category="${product.category}">
+           <button class="add-to-cart">+</button>
+            </div>
+          <p class="product-title">${product.title}</p>
+          <p class="product-price">${product.price}</p>
         </div>
-        <p class="product-title">${product.title}</p>
-        <p class="product-price">${product.price}</p>
-      </div>
-    `;
-    productGrid.insertAdjacentHTML("beforeend", html);
-  });
+      `;
+      productGrid.insertAdjacentHTML("beforeend", html);
+    });
 
-  renderPagination(totalPages);
-}
-
-function renderPagination(totalPages) {
-  pagination.innerHTML = "";
-  for (let i = 1; i <= totalPages; i++) {
-    const link = document.createElement("a");
-    link.href = "#";
-    link.textContent = i;
-    link.dataset.page = i;
-    link.classList.toggle("active", i === currentPage);
-    pagination.appendChild(link);
+    renderPagination(totalPages);
   }
-}
 
-categoryButtons.forEach(button => {
-  button.addEventListener("click", function () {
-    const selected = this.getAttribute("data-category");
-
-    if (this.classList.contains("active")) {
-      categoryButtons.forEach(btn => btn.classList.remove("active"));
-      activeCategory = "alle";
-    } else {
-      categoryButtons.forEach(btn => btn.classList.remove("active"));
-      this.classList.add("active");
-      activeCategory = selected;
+  function renderPagination(totalPages) {
+    pagination.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+      const link = document.createElement("a");
+      link.href = "#";
+      link.textContent = i;
+      link.dataset.page = i;
+      link.classList.toggle("active", i === currentPage);
+      pagination.appendChild(link);
     }
-
-    currentPage = 1;
-    renderProducts();
-  });
-});
-
-pagination.addEventListener("click", function (e) {
-  if (e.target.tagName === "A") {
-    e.preventDefault();
-    currentPage = parseInt(e.target.dataset.page);
-    renderProducts();
   }
-});
 
-// Første load
-renderProducts();
+  categoryButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const selected = this.getAttribute("data-category");
+
+      if (this.classList.contains("active")) {
+        categoryButtons.forEach(btn => btn.classList.remove("active"));
+        activeCategory = "alle";
+      } else {
+        categoryButtons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+        activeCategory = selected;
+      }
+
+      currentPage = 1;
+      renderProducts();
+    });
+  });
+
+  pagination.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") {
+      e.preventDefault();
+      currentPage = parseInt(e.target.dataset.page);
+      renderProducts();
+    }
+  });
+
+  productGrid.addEventListener("click", function (e) {
+    if (e.target.classList.contains("add-to-cart")) {
+      const productCard = e.target.closest(".product-card");
+      const productTitle = productCard.querySelector(".product-title").textContent;
+      alert(`Tilføjet til kurv: ${productTitle}`);
+    }
+  });
+
+  // Første load
+  renderProducts();
+});
