@@ -514,7 +514,7 @@ img, video {
 }
 
 .front-page-images__button:hover {
-  background-color: var(--white);
+  background-color: var(--lightpink);
   border: 2px solid var(--pink);
 } 
 

@@ -136,19 +136,28 @@ const productGrid = document.querySelector(".product-grid");
 
 
 
-
 // KURV
 const cartPopup = document.getElementById("cart-popup");
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const shopIcon = document.getElementById("shop-icon");
 
-
 let cart = [];
 
-document.querySelector(".product-grid").addEventListener("click", function (e) {
+// Fælles funktion til at håndtere tilføjelse
+function handleAddToCartClick(e) {
   if (e.target.classList.contains("add-to-cart")) {
     const card = e.target.closest(".product-card, .giftwrapping-card");
+    if (!card) return;
+
+    // Automatisk vælg 'Ja tak, pak hele min ordre' hvis det er gaveindpakning
+    if (card.classList.contains("giftwrapping-card")) {
+    const wrapCheckbox = document.getElementById("giftwrap-checkbox");
+    if (wrapCheckbox) {
+        wrapCheckbox.checked = true;
+    }
+    }
+
     const title = card.querySelector(".product-title").textContent;
     const priceText = card.querySelector(".product-price").textContent;
     const price = parseFloat(priceText.replace(",", ".").replace(" kr", ""));
@@ -163,7 +172,18 @@ document.querySelector(".product-grid").addEventListener("click", function (e) {
     updateCart();
     showCart();
   }
-});
+}
+
+// Lyt på begge grids
+const giftGrid = document.querySelector(".giftwrapping-grid");
+
+if (productGrid) {
+  productGrid.addEventListener("click", handleAddToCartClick);
+}
+
+if (giftGrid) {
+  giftGrid.addEventListener("click", handleAddToCartClick);
+}
 
 function updateCart() {
   cartItems.innerHTML = "";
@@ -217,7 +237,6 @@ document.addEventListener("click", function (e) {
   const isInsideCart = e.target.closest("#cart-popup");
   const isAddToCart = e.target.classList.contains("add-to-cart");
 
-  // Kun hvis man klikker UDENFOR både kurven og "add-to-cart" knapper
   if (!isInsideCart && !isAddToCart && cartPopup.classList.contains("show")) {
     cartPopup.classList.remove("show");
     setTimeout(() => cartPopup.classList.add("hidden"), 300);
@@ -233,6 +252,14 @@ customMessageCheckbox.addEventListener("change", function () {
   } else {
     customMessageTextarea.classList.add("hidden");
   }
+});
+
+
+// 🛒 Klik på shop-ikonet viser kurv-popup
+shopIcon.addEventListener("click", function (event) {
+  event.preventDefault();
+  cartPopup.classList.remove("hidden");
+  cartPopup.classList.add("show");
 });
 
 });
