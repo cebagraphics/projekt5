@@ -143,11 +143,6 @@ const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const shopIcon = document.getElementById("shop-icon");
 
-  // Tilføj klik-event til shop-ikonet
-    shopIcon.addEventListener("click", function (event) {
-        event.preventDefault(); // Undgå at linket følger href="#"
-        cartPopup.classList.toggle("hidden"); // Vis eller skjul kurven
-    });
 
 let cart = [];
 
