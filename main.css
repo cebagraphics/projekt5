@@ -572,7 +572,7 @@ width: 100%;
 }
 
 
-.local-suppliers-section {
+.local-suppliers-section, .popular-giftbaskets-section {
   padding: 2%;
   padding-top: 5%;
   background-color: #fff;
@@ -581,7 +581,7 @@ width: 100%;
   margin: 0 auto;
 }
 
-.local-suppliers-section h2 {
+.local-suppliers-section h2, .popular-giftbaskets-section h2{
   font-family: 'Montserrat';
   font-weight: 400;
   font-size: 32px;
@@ -595,7 +595,9 @@ width: 100%;
 }
 
 .local-suppliers-section h2::before,
-.local-suppliers-section h2::after {
+.local-suppliers-section h2::after,
+.popular-giftbaskets-section h2::before,
+.popular-giftbaskets-section h2::after {
   content: "";
   height: 1px;
   background-color: black;
@@ -622,21 +624,23 @@ font-size: 30px;
 color: #B58585;
 }
 
-.wrapper .carousel {
+.wrapper .local-suppliers-section__carousel, .popular-giftbaskets-section__carousel {
   font-size: 0px;
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.carousel img {
+.local-suppliers-section__carousel img,
+.popular-giftbaskets-section__carousel img  {
    height: 340px;
    object-fit: cover;
    width: calc(100% / 3);
    margin-left: 13px;
 }
 
-.carousel img:first-child {
+.local-suppliers-section__carousel img:first-child,
+.popular-giftbaskets-section__carousel img:first-child {
   margin-left: 0px;
 
 }
@@ -783,13 +787,15 @@ color: #B58585;
     font-size: 13px;
   }
 
-  .local-suppliers-section h2 {
+  .local-suppliers-section h2,
+  .popular-giftbaskets-section h2 {
     font-size: 20px;
     gap: 10px;
     margin-top: 10%;
   }
 
-  .carousel img {
+  .local-suppliers-section__carousel img,
+  .popular-giftbaskets-section__carousel img {
     width: 100%;
     height: auto;
   }
