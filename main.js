@@ -120,3 +120,6 @@ wrappers.forEach((wrapper) => {
     carousel.scrollBy({ left: imgWidth, behavior: "smooth" });
   });
 });
+
+
+
