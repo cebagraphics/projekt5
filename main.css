@@ -659,7 +659,7 @@ img, video {
 /* Fjern margin fra første billede i carousel */
 .local-suppliers-section__carousel img:first-child,
 .popular-giftbaskets-section__carousel img:first-child {
-  margin-left: 0;
+  margin-left: 0px;
 }
 /* Styling af 'Hvem er vi' sektionen */
 .who-are-we-section {
