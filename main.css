@@ -1096,6 +1096,14 @@ body.page-subs {
   opacity: 1;
   pointer-events: auto;
 }
+
+.section-divider {
+  width: 92%;
+  height: 1px;
+  background-color: var(--pink);
+  margin: 3rem auto;
+  border: none;
+}
 /* --------- GIFT BASKET SITE END --------- */
 
 
