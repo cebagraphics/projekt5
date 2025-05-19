@@ -495,28 +495,57 @@ img, video {
 .front-page-images__6 { grid-row: 1/3; grid-column: 4; }
 
 /* Styling af knap */
-.front-page-images__button {
-  grid-row: 3;
-  grid-column: 1/5;
-  padding: 0.6rem 3rem;
+
+
+.button {
   margin: 5%;
-  background-color: var(--pink);
-  text-align: center;
+  background-color: #B58585;
   border-radius: 50px;
+  text-decoration: none;
+  padding: 0.6rem 3rem;
+  text-align: center;
+  box-sizing: border-box; /* Sørger for at border ikke øger størrelsen */
+  border: 2px solid transparent; /* Sørger for samme størrelse før og efter hover */
+  transition: background-color 0.3s ease, border 0.3s ease;
 }
 
-.front-page-images__button a {
+.button a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #fff;
   text-decoration: none;
   display: inline-block;
   font-weight: 500;
-  font-size: 13px;
-  color: var(--white);
+  white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
-.front-page-images__button:hover {
+.button:hover {
   background-color: var(--lightpink);
   border: 2px solid var(--pink);
-} 
+}
+
+.button:hover a {
+  color: var(--pink);
+}
+
+.who-are-we-section__button{
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.front-page-images__button {
+  grid-row: 3;
+  grid-column: 1/5;
+}
+
+.popular-giftbaskets-section__button,
+.local-suppliers-section__button {
+ justify-self: center;
+}
+
+
+
 
 /* Styling af Image Box */
 .image-box {
@@ -598,8 +627,6 @@ img, video {
   justify-content: center;
   margin: 0 auto;
   padding-top: 2%;
-  padding-bottom: 5%;
-  margin-bottom: 5%;
 }
 
 .wrapper i {
@@ -679,27 +706,6 @@ img, video {
 
 .who-are-we-section__text p {
   text-align: left;
-}
-
-/* Styling af knap i 'Hvem er vi' sektionen */
-.who-are-we-section__button {
-  grid-row: 3;
-  grid-column: 2;
-  padding: 0.6rem 3rem;
-  margin: 5%;
-  background-color: #B58585;
-  border-radius: 50px;
-  text-decoration: none;
-}
-
-.who-are-we-section__button a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 500;
-  font-size: 13px;
 }
 
 /* Styling af gavekurv */
