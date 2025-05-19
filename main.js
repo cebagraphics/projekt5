@@ -76,22 +76,25 @@ wrappers.forEach((wrapper) => {
   let startX;
   let scrollLeft;
 
+  // Mouse drag start
   const dragStart = (e) => {
     if (e.type === "mousedown" && e.button !== 0) return;
     isDragging = true;
     carousel.classList.add("dragging");
-    startX = e.pageX;
+    startX = e.pageX || e.touches?.[0]?.pageX;
     scrollLeft = carousel.scrollLeft;
     e.preventDefault();
   };
 
+  // Mouse/touch move
   const dragging = (e) => {
     if (!isDragging) return;
-    const x = e.pageX;
+    const x = e.pageX || e.touches?.[0]?.pageX;
     const walk = x - startX;
     carousel.scrollLeft = scrollLeft - walk;
   };
 
+  // Mouse/touch end
   const dragStop = () => {
     isDragging = false;
     carousel.classList.remove("dragging");
@@ -101,9 +104,16 @@ wrappers.forEach((wrapper) => {
     e.preventDefault();
   };
 
+  // Mouse events
   carousel.addEventListener("mousedown", dragStart);
   window.addEventListener("mousemove", dragging);
   window.addEventListener("mouseup", dragStop);
+
+  // Touch events
+  carousel.addEventListener("touchstart", dragStart, { passive: false });
+  carousel.addEventListener("touchmove", dragging, { passive: false });
+  carousel.addEventListener("touchend", dragStop);
+
   carousel.addEventListener("wheel", blockScroll, { passive: false });
 
   carousel.classList.add("custom-drag-cursor");
