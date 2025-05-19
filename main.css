@@ -855,8 +855,8 @@ body.page-subs {
 .product-categories {
   display: flex;
   justify-content: center;
-  gap: 13rem;
-  margin: 4rem 0;
+  gap: 10.5rem;
+  margin: 3rem 0;
   flex-wrap: wrap;
   text-align: center;
 }
@@ -870,8 +870,8 @@ body.page-subs {
 
 .image-circle {
   background-color: #F3F3F3;
-  width: 130px;
-  height: 130px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
