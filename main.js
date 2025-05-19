@@ -23,6 +23,14 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Nav
+        function showNav__sidepanel(){
+            const nav__sidepanel = document.querySelector('.nav__sidepanel')
+            nav__sidepanel.style.display = 'flex'}
+        function hideNav__sidepanel(){
+            const nav__sidepanel = document.querySelector('.nav__sidepanel')
+            nav__sidepanel.style.display = 'none'}     
+
 
 // SMOOTH SCROLL PÅ FORSIDE PIL
   document.querySelector('.arrow').addEventListener('click', function () {
@@ -130,6 +138,10 @@ wrappers.forEach((wrapper) => {
     carousel.scrollBy({ left: imgWidth, behavior: "smooth" });
   });
 });
+
+
+
+
 
 
 

@@ -171,119 +171,101 @@ p {
 /* --------- TOP BAR THAT CHANGES TEKST END --------- */
 
 /* --------- NAV BAR START --------- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  /* Logo til venstre, menu til højre */
-  align-items: center;
-  position: fixed;
+ /* NAVIGATION */
+nav {
+  margin-top: 29px;
+  background-color: var(--white);
   width: 100%;
-  top: 0;
-  left: 0;
-  padding: 0.5rem 2rem;
-  padding-top: 2.3%;
-  padding-bottom: 0;
+  position: fixed;
+  z-index: 10001; /* 👈 sørger for at nav ligger øverst */
   transition: background-color 0.3s ease, color 0.3s ease;
-  z-index: 1000;
-}
-
-.navbar .nav-links {
-    margin-left: auto; /* Skubber elementerne mod højre */
-    padding-right: 4rem; /* Matcher forsiden */
 }
 
 .navbar.solid {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
-
 /* Gennemsigtig start */
 .navbar.transparent {
   background-color: transparent;
   color: white;
 }
-
 .navbar.transparent a {
   color: white;
 }
 
-/* For undersiderne ændres tekstfarven til sort */
-body.page-subs .navbar.transparent a {
-  color: black;
-  /* ændrer farven til sort på undersiderne */
-}
-
-/* Efter scroll */
-.navbar.scrolled {
-  background-color: white;
-  color: black;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar.scrolled a {
-  color: black;
-}
-
-.logo img {
-  width: 60px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  z-index: 1000;
-  /* Tilføj lidt luft til højre */
-}
-
-.nav-links li {
+.nav__menulinje a {
   position: relative;
+  display: inline-block; 
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  padding: 0.5rem;
-}
-
-
-.nav-links a {
-  color: #333;
-  font-size: 13px;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  display: inline-block;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.nav-links a:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
+.nav__menulinje a:after {
   content: "";
   display: block;
-  height: 2px;
-  left: 50%;
   position: absolute;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-
-.nav-links a:hover:after {
-  width: 100%;
   left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
 }
 
-.search-icon {
-  width: 23px;
+
+.nav__menulinje a:hover:after {
+  width: 100%;
 }
 
-.shop-icon {
-  width: 22px;
+  nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+justify-content: flex-end;
 }
 
-/* Dropdown-menu skjult som standard */
+nav a {
+  height: 100%; 
+  padding: 0 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: var(--black);}
+
+nav li:first-child {
+  margin-right: auto;}
+
+nav a:last-child {
+  margin-right: 20px;
+}
+
+.search-icon, .shop-icon {
+width: 30px;
+}
+
+.nav__sidepanel {
+  position: fixed; 
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 10000;
+  background-color: rgba(249, 242, 242, 0.857);
+  backdrop-filter: blur(20px);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; }
+
+.nav__sidepanel li {
+  width: 100%; }
+
+.nav__sidepanel a {
+  width: 100%;
+padding-top: 15%;
+padding-left: 0%;}
+.nav__menulinje--knap {
+  display: none;}
+
+  /* Dropdown-menu skjult som standard */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -297,110 +279,41 @@ body.page-subs .navbar.transparent a {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 9999;
 }
-
 .dropdown-menu li a {
   display: block;
   padding: 10px;
-  color: var(--pink);
+  color: var(--black);
   text-decoration: none;
-  font-size: 13px;
 }
-
 .dropdown-menu li a:hover {
   background-color: var(--pink);
 }
-
 /* Vis dropdown ved hover på desktop */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-
 /* Sørg for at .dropdown har position relativ */
 .dropdown {
   position: relative;
 }
 
 
-/* Hamburger-menu (mobil) */
+    /* Navigation */
 
-  .hamburger {
-  display: block !important;
-  pointer-events: auto !important;
-  flex-direction: column;
-  cursor: pointer;
-}
+@media (max-width: 1060px) {
 
-.hamburger span {
-  height: 3px;
-  width: 25px;
-  background: #333;
-  margin: 4px 0;
-  transition: 0.4s;
-}
+  .nav__menulinje--item {
+    display: none;}
+  .nav__menulinje--knap {
+    display: block;}
 
-/* Responsiv design */
-@media (max-width: 768px) {
-  .nav-links {
+.nav__menulinje
+      .dropdown {
     display: none;
   }
-
-  .nav-links.active {
-    display: flex !important; /* Sørger for, at menuen vises */
+    
   }
 
-  .front-page-images__5 {
-    grid-row: 4;
-    grid-column: 1;
-  }
-
-  .front-page-images__6 {
-    grid-row: 3/5;
-    grid-column: 2;
-  }
-
-  .front-page-images__button {
-    grid-row: 5;
-    grid-column: 1/3;
-  }
-}
-
-.sub-page-navbar {
-  display: flex;
-  justify-content: space-between;
-  /* Logo til venstre, menu til højre */
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 0.5rem 2rem;
-   padding-top: 2.3%;
-  padding-bottom: 0;
-  background-color: var(--white);
-  z-index: 100;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.sub-page-navbar .nav-links {
-    margin-left: auto; /* Skubber elementerne mod højre */
-    padding-right: 4rem; /* Matcher forsiden */
-}
-
-.sub-page-navbar a {
-  color: black;
-}
-
-.navbar.solid .nav-links a:after {
-  background: black; /* Gør stregen sort */
-}
-
-.sub-page-navbar .nav-links a:after {
-  background: black; /* Gør stregen sort */
-}
-
-.sub-page-navbar .nav-links a {
-  color: var(--black);
-}
 
 /* --------- NAV BAR END --------- */
 
@@ -929,14 +842,6 @@ body.page-subs {
   font-size: 0.9rem;
 }
 
-.section-divider-products {
-  width: 100%;
-  height: 1px;
-  background-color: var(--pink);
-  margin: 3rem auto;
-  border: none;
-}
-
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1100,14 +1005,6 @@ body.page-subs {
 .product-box:hover .add-to-cart {
   opacity: 1;
   pointer-events: auto;
-}
-
-.section-divider {
-  width: 92%;
-  height: 1px;
-  background-color: var(--pink);
-  margin: 3rem auto;
-  border: none;
 }
 /* --------- GIFT BASKET SITE END --------- */
 
