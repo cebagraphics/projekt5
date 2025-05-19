@@ -710,7 +710,7 @@ img, video {
 .giftbasket {
   position: relative;
   display: inline-block;
-  width: calc(100% / 3);
+  width: calc(98% / 3);
   margin-left: 15px;
   box-shadow: 0px 15px 15px -10px rgba(0, 0, 0, 0.3);
   overflow: hidden;
