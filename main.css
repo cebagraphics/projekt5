@@ -112,7 +112,7 @@ p {
   h2 {
     font-family: 'Montserrat';
     font-weight: 400;
-    font-size: 14px;
+    font-size: 20px;
   }
 
   p {
@@ -1102,6 +1102,9 @@ body.page-subs {
 
 
 /* --------- ABOUT US SITE START --------- */
+.about-us-section h2 {
+  margin-bottom: 60px;
+}
 
 .about-us-section,
 .sustainability-section {
@@ -1147,6 +1150,10 @@ body.page-subs {
 /* Responsivt layout */
 @media (max-width: 768px) {
 
+  .about-us-section h2 {
+    margin-bottom: 30px;
+  }
+
   .about-us-content,
   .sustainability-content {
     grid-template-columns: 1fr;
@@ -1156,8 +1163,8 @@ body.page-subs {
   /* Ændr rækkefølgen i sustainability på mobil */
   .sustainability-content {
     grid-template-areas:
-      "text"
-      "image";
+      "image"
+      "text";
   }
 
   .about-us-image img,
