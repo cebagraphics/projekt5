@@ -1201,6 +1201,23 @@ body.page-subs {
   border: 0;
 }
 
+@media (max-width: 768px) {
+  .contact-section h2 {
+    margin-bottom: 30px;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-map iframe {
+    height: 500px;
+    /* Lavere højde på kortet på små skærme */
+  }
+}
+
+
 /* --------- CONTACT SITE END --------- */
 
 
