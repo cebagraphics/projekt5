@@ -65,7 +65,7 @@ h1 {
 h2 {
   font-family: 'Montserrat';
   font-weight: 400;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 h3 {
@@ -77,7 +77,7 @@ h3 {
 h4 {
   font-family: 'Montserrat';
   font-weight: 400;
-  font-size: 34px;
+  font-size: 20px;
 }
 
 p {
@@ -1101,7 +1101,7 @@ body.page-subs {
 
 
 
-/* --------- ABOUT US SITE START --------- 
+/* --------- ABOUT US SITE START --------- */
 
 .about-us-section,
 .sustainability-section {
@@ -1113,13 +1113,17 @@ body.page-subs {
 .sustainability-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  gap: 50px;
 }
 
 /* Grid areas for sustainability sektionen */
 .sustainability-content {
   grid-template-areas: "image text";
+}
+
+/* for at fjerne den margin der var */
+.sustainability-text h4 {
+  margin-top: 0;
 }
 
 .sustainability-image {
@@ -1128,32 +1132,16 @@ body.page-subs {
   justify-content: center;
 }
 
-.sustainability-text {
-  grid-area: text;
-}
-
 /* Billeder */
 .about-us-image img,
 .sustainability-image img {
   width: 100%;
-  max-width: 500px;
-  object-fit: cover;
 }
 
 .about-us-image,
 .sustainability-image {
   display: flex;
   justify-content: center;
-}
-
-/* Typografi og kontaktinfo */
-h2,
-h4 {
-  margin-bottom: 20px;
-}
-
-.contact-info p {
-  margin: 5px 0;
 }
 
 /* Responsivt layout */
