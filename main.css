@@ -1103,7 +1103,6 @@ body.page-subs {
 
 /* --------- ABOUT US SITE START --------- 
 
-/* Sektioner */
 .about-us-section,
 .sustainability-section {
   margin: 60px 0;
@@ -1118,12 +1117,26 @@ body.page-subs {
   align-items: center;
 }
 
+/* Grid areas for sustainability sektionen */
+.sustainability-content {
+  grid-template-areas: "image text";
+}
+
+.sustainability-image {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+}
+
+.sustainability-text {
+  grid-area: text;
+}
+
 /* Billeder */
 .about-us-image img,
 .sustainability-image img {
   width: 100%;
   max-width: 500px;
-  border-radius: 6px;
   object-fit: cover;
 }
 
@@ -1143,7 +1156,7 @@ h4 {
   margin: 5px 0;
 }
 
-/* Mobilvenligt layout */
+/* Responsivt layout */
 @media (max-width: 768px) {
 
   .about-us-content,
@@ -1152,11 +1165,19 @@ h4 {
     gap: 20px;
   }
 
+  /* Ændr rækkefølgen i sustainability på mobil */
+  .sustainability-content {
+    grid-template-areas:
+      "text"
+      "image";
+  }
+
   .about-us-image img,
   .sustainability-image img {
     max-width: 100%;
   }
 }
+
 
 /* --------- ABOUT US SITE END --------- */
 
