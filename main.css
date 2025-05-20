@@ -1153,6 +1153,55 @@ body.page-subs {
 
 
 /* --------- SUPPLIER SITE START --------- */
+
+.suppliers h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* lidt luft mellem tekst og linje */
+  margin-bottom: 60px;
+}
+
+.suppliers h2::after {
+  content: "";
+  flex-grow: 1;
+  /* fylder resten af pladsen */
+  height: 1px;
+  background-color: var(--black);
+  /* ingen width, flex-grow bestemmer bredden */
+  display: block;
+}
+
+.suppliers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 billeder pr. række */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.suppliers__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  /* valgfrit */
+}
+
+.suppliers__description {
+  padding-bottom: 30px;
+}
+
+/* Tablet og mobil – 2 kolonner */
+@media (max-width: 768px) {
+  .suppliers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
 /* --------- SUPPLIER SITE END --------- */
 
 
@@ -1618,19 +1667,19 @@ body.page-subs {
 }
 
 .company-gifts-section__text {
-grid-column: 1;
-grid-row: 1;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .company-gifts-section__img {
-grid-column: 2;
-grid-row: 1/3;
+  grid-column: 2;
+  grid-row: 1/3;
 }
 
 
 .company-gifts-section__contact {
-grid-column: 1;
-grid-row: 2;
+  grid-column: 1;
+  grid-row: 2;
 }
 
 /* Styling af Firmagaver side i mobilvisning */
@@ -1656,7 +1705,7 @@ grid-row: 2;
   }
 
   .company-gifts-section__contact p {
-   padding: 10% 0;
+    padding: 10% 0;
   }
 
 
