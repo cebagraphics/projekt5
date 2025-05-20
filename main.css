@@ -1101,7 +1101,21 @@ body.page-subs {
 
 /* --------- ABOUT US SITE START --------- */
 .about-us-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* lidt luft mellem tekst og linje */
   margin-bottom: 60px;
+}
+
+.about-us-section h2::after {
+  content: "";
+  flex-grow: 1;
+  /* fylder resten af pladsen */
+  height: 1px;
+  background-color: black;
+  /* ingen width, flex-grow bestemmer bredden */
+  display: block;
 }
 
 .about-us-section,
@@ -1178,9 +1192,22 @@ body.page-subs {
 
 
 /* --------- CONTACT SITE START --------- */
-
 .contact-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* lidt luft mellem tekst og linje */
   margin-bottom: 60px;
+}
+
+.contact-section h2::after {
+  content: "";
+  flex-grow: 1;
+  /* fylder resten af pladsen */
+  height: 1px;
+  background-color: black;
+  /* ingen width, flex-grow bestemmer bredden */
+  display: block;
 }
 
 .contact-section {
