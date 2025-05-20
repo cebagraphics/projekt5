@@ -906,7 +906,6 @@ body.page-subs {
 }
 
 .breadcrumb {
-  /* padding: 3rem 1.5rem 0.5rem;*/
   padding-top: 18vh;
   padding-bottom: 5vh;
 }
@@ -930,19 +929,6 @@ body.page-subs {
   /* ingen width, flex-grow bestemmer bredden */
   display: block;
 }
-
-
-/*
-.product-header {
-  padding: 3rem 2rem 1rem;
-  text-align: left;
-} 
-
-.product-header p {
-  font-size: 1rem;
-  max-width: 600px;
-  color: #333;
-} */
 
 .product-controls {
   display: flex;
