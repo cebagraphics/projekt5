@@ -274,11 +274,9 @@ nav a:last-child {
   padding-left: 0%;
 }
 
-.nav__menulinje--knap {
-  display: none;
-}
 
-/* Dropdown-menu skjult som standard */
+
+  /* Dropdown-menu skjult som standard */
 .dropdown-menu {
   display: none;
   position: absolute;
