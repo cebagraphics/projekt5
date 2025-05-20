@@ -938,6 +938,10 @@ body.page-subs {
   font-size: 0.9rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
