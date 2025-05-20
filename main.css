@@ -1158,8 +1158,9 @@ body.page-subs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* 4 billeder pr. række */
-  gap: 2rem;
+  gap: 3rem;
   margin-top: 2rem;
+  margin-bottom: 9rem;
 }
 
 .suppliers__image {
@@ -1175,14 +1176,12 @@ body.page-subs {
   padding-bottom: 30px;
 }
 
-/* Tablet og mobil – 2 kolonner */
+/* Responsivt layout supllier site */
 @media (max-width: 768px) {
   .suppliers__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-
 
 /* --------- SUPPLIER SITE END --------- */
 
@@ -1248,7 +1247,7 @@ body.page-subs {
   justify-content: center;
 }
 
-/* Responsivt layout */
+/* Responsivt layout about us site */
 @media (max-width: 768px) {
 
   .about-us-section h2 {
@@ -1299,35 +1298,36 @@ body.page-subs {
   display: block;
 }
 
-.contact-content {
+.contact-section__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* to kolonner */
   gap: 50px;
   align-items: start;
+  /* evt. max-width for at undgå for små gridceller */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.contact-map iframe {
+.contact-section__map iframe {
   width: 100%;
-  /* fylder grid-cellen helt ud */
   height: 450px;
   border: 0;
 }
 
+/* Responsive: tablet og mobil */
 @media (max-width: 768px) {
-  .contact-section h2 {
-    margin-bottom: 30px;
-  }
-
-  .contact-content {
+  .contact-section__content {
     grid-template-columns: 1fr;
+    /* kun en kolonne */
     gap: 30px;
   }
 
-  .contact-map iframe {
+  .contact-section__map iframe {
     height: 500px;
-    /* Lavere højde på kortet på små skærme */
   }
 }
+
 
 
 /* --------- CONTACT SITE END --------- */
