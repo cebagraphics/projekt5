@@ -1,8 +1,8 @@
 // NAVBAR SOM FØRST ER GENNEMSIGTIG OG BAGEFTER SOLID
 window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  const searchIcon = document.querySelector(".search-icon");
-  const shopIcon = document.querySelector(".shop-icon");
+  const navbar = document.querySelector(".navbar-frontpage");
+  const searchIcon = document.querySelector(".search-icon-frontpage");
+  const shopIcon = document.querySelector(".shop-icon-frontpage");
 
   if (window.scrollY > 1) {
     navbar.classList.add("scrolled");
