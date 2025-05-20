@@ -263,3 +263,66 @@ shopIcon.addEventListener("click", function (event) {
 });
 
 });
+
+// ✅ Fejlfinding – bekræft scriptet er indlæst
+console.log("product.js er indlæst");
+
+// ✅ Hent DOM-elementer
+const categoryButtons = document.querySelectorAll(".image-circle");
+const productCards = document.querySelectorAll(".product-card");
+const sortSelect = document.getElementById("sorter");
+
+// ✅ Funktion til at filtrere produkter
+function filterProducts(selectedCategory) {
+  productCards.forEach((card) => {
+    const category = card.querySelector("img").dataset.category;
+    if (selectedCategory === "alle" || category === selectedCategory) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+// ✅ Funktion til at sortere produkter
+function sortProducts() {
+  const sortValue = sortSelect.value;
+  console.log("Sortér efter:", sortValue);
+
+  const productGrid = document.querySelector(".product-grid");
+  const productsArray = Array.from(productCards); // ✅ Array og variabel
+
+  // ✅ Kontrolstruktur (if-else) + array sortering
+  if (sortValue === "Pris: Lav til høj") {
+    productsArray.sort((a, b) => extractPrice(a) - extractPrice(b));
+  } else if (sortValue === "Pris: Høj til lav") {
+    productsArray.sort((a, b) => extractPrice(b) - extractPrice(a));
+  } else if (sortValue === "Nyeste") {
+    productsArray.reverse(); // Simpelt eksempel
+  }
+
+  // ✅ DOM: Ryd og tilføj sorteret
+  productGrid.innerHTML = "";
+  productsArray.forEach((card) => productGrid.appendChild(card));
+}
+
+// ✅ Hjælpefunktion til at finde prisen i et kort
+function extractPrice(card) {
+  const priceText = card.querySelector(".product-price").innerText;
+  const priceNumber = parseFloat(priceText.replace("kr", "").replace(",", "."));
+  return priceNumber;
+}
+
+// ✅ Events og scope
+categoryButtons.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const selectedCategory = this.dataset.category;
+    console.log("Kategori valgt:", selectedCategory);
+    filterProducts(selectedCategory);
+  });
+});
+
+sortSelect.addEventListener("change", sortProducts);
+
+// ✅ Initial load
+filterProducts("alle");
