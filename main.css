@@ -1405,20 +1405,24 @@ body.page-subs {
 
 /* --------- VISIT OUR SHOP END --------- */
 
+
 /* --------- FOOTER START --------- */
+
 .site-footer {
-  background-color: #B58585 !important;
+  background-color: #B58585;
   color: white;
   padding: 3rem 2rem;
+  font-weight: normal;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.footer-info {
+.site-footer__info {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.footer-bottom {
+.site-footer__bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1427,39 +1431,28 @@ body.page-subs {
   padding-top: 1rem;
 }
 
-.footer-bottom a {
+.site-footer__bottom a,
+.site-footer__social-links a {
   color: white;
   text-decoration: none;
   margin-left: 1rem;
-}
-
-/* Footer tekst ikke bold + skrifttype til LIWIRA */
-.site-footer {
-  background: #B58585;
-  color: white;
-  padding: 3rem 2rem;
   font-weight: normal;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .site-footer h3 {
   font-size: 1rem;
   font-weight: normal;
-  /* fjerner bold fra h3 */
   margin-bottom: 0.5rem;
 }
 
-.footer-bottom p {
+.site-footer__brand {
   font-family: 'Adamina', serif;
   font-size: 1.2rem;
   margin: 0;
 }
 
-.footer-bottom .social-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 1rem;
-  font-weight: normal;
+.site-footer__hours {
+  text-align: right;
 }
 
 /* --------- FOOTER END --------- */
