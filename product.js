@@ -264,65 +264,77 @@ shopIcon.addEventListener("click", function (event) {
 
 });
 
-// ✅ Fejlfinding – bekræft scriptet er indlæst
-console.log("product.js er indlæst");
+let sortering = "Standard"; // Default sortering
 
-// ✅ Hent DOM-elementer
-const categoryButtons = document.querySelectorAll(".image-circle");
-const productCards = document.querySelectorAll(".product-card");
-const sortSelect = document.getElementById("sorter");
+// Lyt til kategori-knapper
+categoryButtons.forEach(button => {
+  button.addEventListener("click", function () {
+    const selected = this.getAttribute("data-category");
 
-// ✅ Funktion til at filtrere produkter
-function filterProducts(selectedCategory) {
-  productCards.forEach((card) => {
-    const category = card.querySelector("img").dataset.category;
-    if (selectedCategory === "alle" || category === selectedCategory) {
-      card.style.display = "block";
+    if (this.classList.contains("active")) {
+      categoryButtons.forEach(btn => btn.classList.remove("active"));
+      activeCategory = "alle";
     } else {
-      card.style.display = "none";
+      categoryButtons.forEach(btn => btn.classList.remove("active"));
+      this.classList.add("active");
+      activeCategory = selected;
     }
-  });
-}
 
-// ✅ Funktion til at sortere produkter
-function sortProducts() {
-  const sortValue = sortSelect.value;
-  console.log("Sortér efter:", sortValue);
-
-  const productGrid = document.querySelector(".product-grid");
-  const productsArray = Array.from(productCards); // ✅ Array og variabel
-
-  // ✅ Kontrolstruktur (if-else) + array sortering
-  if (sortValue === "Pris: Lav til høj") {
-    productsArray.sort((a, b) => extractPrice(a) - extractPrice(b));
-  } else if (sortValue === "Pris: Høj til lav") {
-    productsArray.sort((a, b) => extractPrice(b) - extractPrice(a));
-  } else if (sortValue === "Nyeste") {
-    productsArray.reverse(); // Simpelt eksempel
-  }
-
-  // ✅ DOM: Ryd og tilføj sorteret
-  productGrid.innerHTML = "";
-  productsArray.forEach((card) => productGrid.appendChild(card));
-}
-
-// ✅ Hjælpefunktion til at finde prisen i et kort
-function extractPrice(card) {
-  const priceText = card.querySelector(".product-price").innerText;
-  const priceNumber = parseFloat(priceText.replace("kr", "").replace(",", "."));
-  return priceNumber;
-}
-
-// ✅ Events og scope
-categoryButtons.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const selectedCategory = this.dataset.category;
-    console.log("Kategori valgt:", selectedCategory);
-    filterProducts(selectedCategory);
+    currentPage = 1;
+    renderProducts();
   });
 });
 
-sortSelect.addEventListener("change", sortProducts);
+// Lyt til sorteringsdropdown
+const sortSelect = document.getElementById("sorter");
+sortSelect.addEventListener("change", function () {
+  sortering = this.value;
+  renderProducts();
+});
 
-// ✅ Initial load
-filterProducts("alle");
+// Pris-konvertering
+function parsePrice(priceString) {
+  return parseFloat(priceString.replace("kr", "").replace(",", ".").trim());
+}
+
+// Opdateret render-funktion med sortering
+function renderProducts() {
+  productGrid.innerHTML = "";
+
+  // Filter først
+  let filtered = activeCategory === "alle"
+    ? allProducts
+    : allProducts.filter(p => p.category === activeCategory);
+
+  // Sortér bagefter
+  if (sortering === "Pris: Lav til høj") {
+    filtered.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+  } else if (sortering === "Pris: Høj til lav") {
+    filtered.sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
+  } else if (sortering === "Nyeste") {
+    filtered.reverse(); // Simpel logik for "nyeste"
+  }
+
+  const totalPages = Math.ceil(filtered.length / productsPerPage);
+  if (currentPage > totalPages) currentPage = 1;
+
+  const start = (currentPage - 1) * productsPerPage;
+  const end = start + productsPerPage;
+  const pageProducts = filtered.slice(start, end);
+
+  pageProducts.forEach(product => {
+    const html = `
+      <div class="product-card">
+        <div class="product-box">
+          <img src="${product.image}" alt="${product.title}" data-category="${product.category}">
+         <button class="add-to-cart">+</button>
+          </div>
+        <p class="product-title">${product.title}</p>
+        <p class="product-price">${product.price}</p>
+      </div>
+    `;
+    productGrid.insertAdjacentHTML("beforeend", html);
+  });
+
+  renderPagination(totalPages);
+}
