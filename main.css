@@ -1222,6 +1222,10 @@ body.page-subs {
   display: block;
 }
 
+.sustainability-section {
+  margin: 60px 0;
+}
+
 /* Grid layout til sektionerne */
 .about-us-content,
 .sustainability-content {
