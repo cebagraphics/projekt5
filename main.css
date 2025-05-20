@@ -182,8 +182,12 @@ nav {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar.solid {
+.navbar {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.transparent {
+  box-shadow: none;
 }
 
 /* Gennemsigtig start */
@@ -209,14 +213,14 @@ nav {
   bottom: 0;
   width: 0;
   height: 2px;
-  background: #fff;
+  background: black;
   transition: width 0.3s ease;
 }
-
 
 .nav__menulinje a:hover:after {
   width: 100%;
 }
+
 
 
 nav ul {
@@ -266,11 +270,11 @@ nav a:last-child {
 
 .nav__sidepanel li {
   width: 100%;
+  padding-top: 10%;
 }
 
 .nav__sidepanel a {
   width: 100%;
-  padding-top: 15%;
   padding-left: 0%;
 }
 
@@ -311,7 +315,8 @@ nav a:last-child {
 .dropdown {
   position: relative;
 }
-
+.nav__menulinje--knap {
+  display: none;}
 
 /* Navigation */
 
@@ -328,6 +333,7 @@ nav a:last-child {
   .nav__menulinje .dropdown {
     display: none;
   }
+
 
 }
 
