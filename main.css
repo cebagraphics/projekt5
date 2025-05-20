@@ -1180,6 +1180,31 @@ body.page-subs {
 
 
 /* --------- CONTACT SITE START --------- */
+
+.contact-section {
+  margin: 60px 0;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+  /* Sørger for at tekst og kort starter i toppen */
+}
+
+.contact-text {
+  /* evt. padding eller styling til teksten */
+}
+
+.contact-map iframe {
+  width: 100%;
+  /* fylder grid-cellen helt ud */
+  height: 450px;
+  border: 0;
+}
+
+
 /* --------- CONTACT SITE END --------- */
 
 
