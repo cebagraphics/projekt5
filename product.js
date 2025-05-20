@@ -266,6 +266,21 @@ shopIcon.addEventListener("click", function (event) {
 
 let sortering = "Standard"; // Default sortering
 
+// Filter-knap og dropdown
+const filterToggle = document.getElementById("filterToggle");
+const filterDropdown = document.getElementById("filterDropdown");
+const filterSelect = document.getElementById("filterSelect");
+
+filterToggle.addEventListener("click", () => {
+  filterDropdown.classList.toggle("hidden");
+});
+
+filterSelect.addEventListener("change", () => {
+  activeCategory = filterSelect.value;
+  currentPage = 1;
+  renderProducts();
+});
+
 // Lyt til kategori-knapper
 categoryButtons.forEach(button => {
   button.addEventListener("click", function () {
