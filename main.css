@@ -178,7 +178,6 @@ nav {
   width: 100%;
   position: fixed;
   z-index: 10001;
-  /* 👈 sørger for at nav ligger øverst */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -321,6 +320,10 @@ nav a:last-child {
 
 @media (max-width: 1060px) {
 
+  .nav__menulinje a {
+    padding-left: 2%;
+  }
+
   .nav__menulinje--item {
     display: none;
   }
@@ -332,6 +335,11 @@ nav a:last-child {
   .nav__menulinje .dropdown {
     display: none;
   }
+
+  .nav__menulinje--logo a {
+    font-size: 20px;
+  }
+
 
 
 }
