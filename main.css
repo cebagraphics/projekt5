@@ -302,9 +302,6 @@ nav a:last-child {
   text-decoration: none;
 }
 
-.dropdown-menu li a:hover {
-  background-color: var(--pink);
-}
 
 /* Vis dropdown ved hover på desktop */
 .dropdown:hover .dropdown-menu {
