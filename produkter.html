@@ -1,45 +1,68 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Liwira – Gaver med omtanke</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liwira – Gaver med omtanke</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Adamina&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Styles og Scripts -->
-  <link rel="stylesheet" href="main.css">
-  <script src="product.js" defer></script>
-  <script src="main.js"></script>
-</head>
+    <!-- Styles og Scripts -->
+    <link rel="stylesheet" href="main.css" />
+    <script src="product.js" defer></script>
+    <script src="main.js"></script>
+  </head>
 
-
+  <body>
   <!-- TOPBAR -->
   <div id="top-bar">
     <span id="changing-text"></span>
   </div>
 
-
-    <!-- navigation --> <!-- Har taget udgangspunkt i denne video https://www.youtube.com/watch?v=U8smiWQ8Seg -->
-    <nav class="nav navbar">
-        <ul class="nav__sidepanel">
-            <li onclick=hideNav__sidepanel()><a href="#lukknap"><svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="produkter.html">PRODUKTER</a></li>
-            <li><a href="gavekurve.html">FÆRDIGE GAVEKURVE</a></li>
-            <li><a href="egengavekurv.html">SAMMENSÆT DIN EGEN GAVEKURV</a></li>
-            <li><a href="firmagaver.html">FIRMAGAVER</a></li>
-            <li><a href="leverandorer.html">LEVERANDØRER</a></li>
-            <li><a href="omos.html">OM OS</a></li>
-            <li><a href="kontakt.html">KONTAKT</a></li>
-        </ul>
-        <ul class="nav__menulinje">
-            <li class="nav__menulinje--logo"><a href="index.html" class="logo">LIWIRA</a></li>
-            <li class="nav__menulinje--item"><a href="produkter.html">PRODUKTER</a></li>
-                  <li class="dropdown">
+  <!-- navigation -->
+  <!-- Har taget udgangspunkt i denne video https://www.youtube.com/watch?v=U8smiWQ8Seg -->
+  <nav class="nav navbar">
+    <ul class="nav__sidepanel">
+      <li onclick="hideNav__sidepanel()">
+        <a href="#lukknap"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="50px"
+            viewBox="0 -960 960 960"
+            width="50px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            /></svg>
+        ></a>
+      </li>
+      <li><a href="produkter.html">PRODUKTER</a></li>
+      <li><a href="gavekurve.html">FÆRDIGE GAVEKURVE</a></li>
+      <li><a href="egengavekurv.html">SAMMENSÆT DIN EGEN GAVEKURV</a></li>
+      <li><a href="firmagaver.html">FIRMAGAVER</a></li>
+      <li><a href="leverandorer.html">LEVERANDØRER</a></li>
+      <li><a href="omos.html">OM OS</a></li>
+      <li><a href="kontakt.html">KONTAKT</a></li>
+    </ul>
+    <ul class="nav__menulinje">
+      <li class="nav__menulinje--logo">
+        <a href="index.html" class="logo">LIWIRA</a>
+      </li>
+      <li class="nav__menulinje--item">
+        <a href="produkter.html">PRODUKTER</a>
+      </li>
+      <li class="dropdown">
         <a href="gavekurve.html">GAVEKURVE</a>
         <ul class="dropdown-menu">
           <li><a href="faerdigegavekurve.html">Færdige Gavekurve</a></li>
@@ -47,255 +70,364 @@
           <li><a href="firmagaver.html">Firmagaver</a></li>
         </ul>
       </li>
-            <li class="nav__menulinje--item"><a href="leverandorer.html">LEVERANDØRER</a></li>
-            <li class="nav__menulinje--item"><a href="omos.html">OM OS</a></li>
-            <li class="nav__menulinje--item"><a href="kontakt.html">KONTAKT</a></li>
-                  <li><a href="#"><img class="search-icon" src="img/search-icon_black.png" alt="search icon"></a></li>
-      <li><a href="kurv.html"><img class="shop-icon" src="img/shop-icon_black.png" alt="shop icon"></a></li>
-            <li class="nav__menulinje--knap" onclick="showNav__sidepanel()"><a href="#menuknap">
-                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill=#000000><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-        </ul>
-        </nav>
+      <li class="nav__menulinje--item">
+        <a href="leverandorer.html">LEVERANDØRER</a>
+      </li>
+      <li class="nav__menulinje--item"><a href="omos.html">OM OS</a></li>
+      <li class="nav__menulinje--item"><a href="kontakt.html">KONTAKT</a></li>
+      <li>
+        <a href="#"
+          ><img
+            class="search-icon"
+            src="img/search-icon_black.png"
+            alt="search icon"
+        /></a>
+      </li>
+      <li>
+        <a href="kurv.html"
+          ><img class="shop-icon" src="img/shop-icon_black.png" alt="shop icon"
+        /></a>
+      </li>
+      <li class="nav__menulinje--knap" onclick="showNav__sidepanel()">
+        <a href="#menuknap">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="50px"
+            viewBox="0 -960 960 960"
+            width="50px"
+            fill="#000000"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            /></svg
+        ></a>
+      </li>
+    </ul>
+  </nav>
 
-<body>
   
-  <!-- DIT UNIKKE INDHOLD HER -->
-  <main>
-    <div class="content-wrapper">
-    <!-- Intro med venstrestillet tekst -->
-     <p class="breadcrumb">Hjem / Produkter</p>
-    <section class="product-header">
-      <h2>VORES PRODUKTER</h2>
-      <p>
-        Alle vores produkter er udvalgt med hjertet – mange fra fynske og danske producenter. Når du handler hos Liwira, støtter du små leverandører og lokalt engagement.
-      </p>
-    </section>
+    <!-- DIT UNIKKE INDHOLD HER -->
+    <main>
+      <div class="content-wrapper">
+        <!-- Intro med venstrestillet tekst -->
+        <p class="breadcrumb">Hjem / Produkter</p>
+        <section class="product-header">
+          <h2>VORES PRODUKTER</h2>
+          <p>
+            Alle vores produkter er udvalgt med hjertet – mange fra fynske og
+            danske producenter. Når du handler hos Liwira, støtter du små
+            leverandører og lokalt engagement.
+          </p>
+        </section>
 
-    <div class="product-categories">
-      <div class="category">
-        <div class="image-circle" data-category="drikke">
-          <img src="img/vodka.png" alt="Drikke">
+        <div class="product-categories">
+          <div class="category">
+            <div class="image-circle" data-category="drikke">
+              <img src="img/vodka.png" alt="Drikke" />
+            </div>
+            <p>Drikke</p>
+          </div>
+          <div class="category">
+            <div class="image-circle" data-category="interiør">
+              <img src="img/krus.png" alt="Interiør" />
+            </div>
+            <p>Interiør</p>
+          </div>
+          <div class="category">
+            <div class="image-circle" data-category="spise">
+              <img src="img/sennep.png" alt="Spise" />
+            </div>
+            <p>Spise</p>
+          </div>
+          <div class="category">
+            <div class="image-circle" data-category="andet">
+              <img src="img/blomsterklemme.png" alt="Andet" />
+            </div>
+            <p>Andet</p>
+          </div>
         </div>
-        <p>Drikke</p>
-      </div>
-      <div class="category">
-        <div class="image-circle" data-category="interiør">
-          <img src="img/krus.png" alt="Interiør">
-        </div>
-        <p>Interiør</p>
-      </div>
-      <div class="category">
-        <div class="image-circle" data-category="spise">
-          <img src="img/sennep.png" alt="Spise">
-        </div>
-        <p>Spise</p>
-      </div>
-      <div class="category">
-        <div class="image-circle" data-category="andet">
-          <img src="img/blomsterklemme.png" alt="Andet">
-        </div>
-        <p>Andet</p>
-      </div>
-    </div>
 
-  <hr class="section-divider-products">
-  
-    <div class="product-controls">
-      <span>Filter ▾</span>
-      <div class="sort-dropdown">
-        <label for="sorter">Sortér efter</label>
-        <select id="sorter">
-          <option>Standard</option>
-          <option>Pris: Lav til høj</option>
-          <option>Pris: Høj til lav</option>
-          <option>Nyeste</option>
-        </select>
-      </div>
-    </div>
-  
-    <!-- Produktgrid -->
-    <section class="product-grid">
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/summerbird-heartmade.png" alt="Produkt 1" data-category="spise">
+        <hr class="section-divider-products" />
+
+        <div class="product-controls">
+          <span>Filter ▾</span>
+          <div class="sort-dropdown">
+            <label for="sorter">Sortér efter</label>
+            <select id="sorter">
+              <option>Standard</option>
+              <option>Pris: Lav til høj</option>
+              <option>Pris: Høj til lav</option>
+              <option>Nyeste</option>
+            </select>
+          </div>
         </div>
-        <p class="product-title">Summerbird heartmade</p>
-        <p class="product-price">229,95 kr</p>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/vase-blomst.png" alt="Produkt 2" data-category="interiør">
+
+        <!-- Produktgrid -->
+        <section class="product-grid">
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/summerbird-heartmade.png"
+                alt="Produkt 1"
+                data-category="spise"
+              />
+            </div>
+            <p class="product-title">Summerbird heartmade</p>
+            <p class="product-price">229,95 kr</p>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/vase-blomst.png"
+                alt="Produkt 2"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Speedtsberg vase blomst</p>
+            <p class="product-price">129,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/summerbird-flodeboller.png"
+                alt="Produkt 3"
+                data-category="spise"
+              />
+            </div>
+            <p class="product-title">Summerbird flødeboller 6 stk</p>
+            <p class="product-price">89,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/spicebyspice.png"
+                alt="Produkt 4"
+                data-category="drikke"
+              />
+            </div>
+            <p class="product-title">SpicebySpice likør n19</p>
+            <p class="product-price">149,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/flag.png"
+                alt="Produkt 5"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Speedtsberg keramik flag</p>
+            <p class="product-price">149,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/summerbird-boks.png"
+                alt="Produkt 6"
+                data-category="spise"
+              />
+            </div>
+            <p class="product-title">Summerbird collection 48 stk</p>
+            <p class="product-price">229,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/springcopenhagen-pingvin.png"
+                alt="Produkt 7"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Spring Copenhagen Frost</p>
+            <p class="product-price">449,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/vase.png"
+                alt="Produkt 8"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Speedtsberg vase</p>
+            <p class="product-price">59,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/springcopenhagen-egern.png"
+                alt="Produkt 9"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Spring Copenhagen Peanut</p>
+            <p class="product-price">399,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/log-chutney.png"
+                alt="Produkt 10"
+                data-category="spise"
+              />
+            </div>
+            <p class="product-title">Kær løgchutney</p>
+            <p class="product-price">49,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/vase-opsaetning.png"
+                alt="Produkt 11"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Vase opsætning</p>
+            <p class="product-price">149,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/springcopenhagen-svane.png"
+                alt="Produkt 12"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Spring Copenhagen Svaneunge</p>
+            <p class="product-price">399,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/svane-med-krone.png"
+                alt="Produkt 13"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Speedtsberg svane med krone</p>
+            <p class="product-price">69,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/summerbird-praline.png"
+                alt="Produkt 14"
+                data-category="spise"
+              />
+            </div>
+            <p class="product-title">Summerbird praliné cocoa 100g</p>
+            <p class="product-price">89,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/springccopenhagen-ugle.png"
+                alt="Produkt 15"
+                data-category="interiør"
+              />
+            </div>
+            <p class="product-title">Spring Copenhagen Clever</p>
+            <p class="product-price">299,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/spicebyspice-baconsalt.png"
+                alt="Produkt 16"
+                data-category="spise"
+              />
+            </div>
+            <p class="product-title">SpicebySpice baconsalt</p>
+            <p class="product-price">89,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/merakiduftpinde.jpg"
+                alt="Produkt 17"
+                data-category="andet"
+              />
+            </div>
+            <p class="product-title">Meraki duftpinde - Fresh linen</p>
+            <p class="product-price">189,95 kr</p>
+          </div>
+          <div class="product-card">
+            <div class="product-box">
+              <img
+                src="img/merakibadeolie.jpg.webp"
+                alt="Produkt 18"
+                data-category="andet"
+              />
+            </div>
+            <p class="product-title">Meraki badeolie - Velvet mood</p>
+            <p class="product-price">220 kr</p>
+          </div>
+        </section>
+
+        <!-- Paginering -->
+        <div class="pagination">
+          <a href="#">&#60;</a>
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <span>…</span>
+          <a href="#">16</a>
+          <a href="#">&#62;</a>
         </div>
-        <p class="product-title">Speedtsberg vase blomst</p>
-        <p class="product-price">129,95 kr</p>
       </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/summerbird-flodeboller.png" alt="Produkt 3" data-category="spise">
+
+      <!-- Besøg vores butik -->
+      <div class="visit-store">
+        <img
+          src="img/footer-image.png"
+          class="store-bg"
+          alt="Baggrundsbillede"
+        />
+
+        <!-- Overlay baggrund -->
+        <div class="store-overlay-bg"></div>
+
+        <!-- Centreret tekst-indhold -->
+        <div class="store-text-content">
+          <h4>Besøg vores hyggelige butik i Langeskov</h4>
+          <br />
+          <h2>
+            Hos os finder du et nøje udvalgt sortiment af kunst, interiør og
+            delikatesser – og altid en varm velkomst. Kig forbi, smag på noget
+            nyt og lad dig inspirere.
+          </h2>
+          <br /><br /><br />
+          <a href="kontakt.html" class="button">FIND VEJ TIL OS</a>
         </div>
-        <p class="product-title">Summerbird flødeboller 6 stk</p>
-        <p class="product-price">89,95 kr</p>
       </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/spicebyspice.png" alt="Produkt 4" data-category="drikke">
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-info">
+          <div class="contact">
+            <h3>KONTAKT</h3>
+            <p>Jernbanegade 16<br />DK-5550 Langeskov<br />Danmark</p>
+            <p>📞 +45 2426 7971<br />✉️ kontakt@dinpejs.dk</p>
+          </div>
+          <div class="hours">
+            <h3>ÅBNINGSTIDER</h3>
+            <p>
+              Man-fre: 11.00–17.00<br />Lørdag: 10.00–12.00, samt efter aftale
+            </p>
+            <p>LUKKET PÅ HELLIGDAGE</p>
+          </div>
         </div>
-        <p class="product-title">SpicebySpice likør n19</p>
-        <p class="product-price">149,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/flag.png" alt="Produkt 5" data-category="interiør">
+        <div class="footer-bottom">
+          <p>LIWIRA</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/liwira_/">Instagram</a>
+            <a href="https://www.facebook.com/Liwira.gavebutik">Facebook</a>
+          </div>
         </div>
-        <p class="product-title">Speedtsberg keramik flag</p>
-        <p class="product-price">149,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/summerbird-boks.png" alt="Produkt 6" data-category="spise">
-        </div>
-        <p class="product-title">Summerbird collection 48 stk</p>
-        <p class="product-price">229,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/springcopenhagen-pingvin.png" alt="Produkt 7" data-category="interiør">
-        </div>
-        <p class="product-title">Spring Copenhagen Frost</p>
-        <p class="product-price">449,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/vase.png" alt="Produkt 8" data-category="interiør">
-        </div>
-        <p class="product-title">Speedtsberg vase</p>
-        <p class="product-price">59,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/springcopenhagen-egern.png" alt="Produkt 9" data-category="interiør">
-        </div>
-        <p class="product-title">Spring Copenhagen Peanut</p>
-        <p class="product-price">399,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/log-chutney.png" alt="Produkt 10" data-category="spise">
-        </div>
-        <p class="product-title">Kær løgchutney</p>
-        <p class="product-price">49,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/vase-opsaetning.png" alt="Produkt 11" data-category="interiør">
-        </div>
-        <p class="product-title">Vase opsætning</p>
-        <p class="product-price">149,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/springcopenhagen-svane.png" alt="Produkt 12" data-category="interiør">
-        </div>
-        <p class="product-title">Spring Copenhagen Svaneunge</p>
-        <p class="product-price">399,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/svane-med-krone.png" alt="Produkt 13" data-category="interiør">
-        </div>
-        <p class="product-title">Speedtsberg svane med krone</p>
-        <p class="product-price">69,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/summerbird-praline.png" alt="Produkt 14" data-category="spise">
-        </div>
-        <p class="product-title">Summerbird praliné cocoa 100g</p>
-        <p class="product-price">89,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/springccopenhagen-ugle.png" alt="Produkt 15" data-category="interiør">
-        </div>
-        <p class="product-title">Spring Copenhagen Clever</p>
-        <p class="product-price">299,95 kr</p>
-      </div>
-      <div class="product-card">
-        <div class="product-box">
-          <img src="img/spicebyspice-baconsalt.png" alt="Produkt 16" data-category="spise">
-        </div>
-        <p class="product-title">SpicebySpice baconsalt</p>
-        <p class="product-price">89,95 kr</p>
-      </div>
-       <div class="product-card">
-        <div class="product-box">
-          <img src="img/merakiduftpinde.jpg" alt="Produkt 17" data-category="andet">
-        </div>
-        <p class="product-title">Meraki duftpinde - Fresh linen</p>
-        <p class="product-price">189,95 kr</p>
-      </div>
-       <div class="product-card">
-        <div class="product-box">
-          <img src="img/merakibadeolie.jpg.webp" alt="Produkt 18" data-category="andet">
-        </div>
-        <p class="product-title">Meraki badeolie - Velvet mood</p>
-        <p class="product-price">220 kr</p>
-      </div>
-    </section>
-  
-    <!-- Paginering -->
-    <div class="pagination">
-      <a href="#">&#60;</a>
-      <a href="#" class="active">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <span>…</span>
-      <a href="#">16</a>
-      <a href="#">&#62;</a>
-    </div>
-    </div>
-  
-    <!-- Besøg vores butik -->
-    <div class="visit-store">
-      <img src="img/footer-image.png" class="store-bg" alt="Baggrundsbillede">
+      </footer>
     
-      <!-- Overlay baggrund -->
-      <div class="store-overlay-bg"></div>
-    
-      <!-- Centreret tekst-indhold -->
-      <div class="store-text-content">
-        <h4>Besøg vores hyggelige butik i Langeskov</h4>
-        <br>
-        <h2>Hos os finder du et nøje udvalgt sortiment af kunst, interiør og delikatesser – og altid en varm velkomst. Kig forbi, smag på noget nyt og lad dig inspirere.</h2>
-        <br><br><br>
-        <a href="kontakt.html" class="button">FIND VEJ TIL OS</a>
-      </div>
-    </div>
-  
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-info">
-        <div class="contact">
-          <h3>KONTAKT</h3>
-          <p>Jernbanegade 16<br>DK-5550 Langeskov<br>Danmark</p>
-          <p>📞 +45 2426 7971<br>✉️ kontakt@dinpejs.dk</p>
-        </div>
-        <div class="hours">
-          <h3>ÅBNINGSTIDER</h3>
-          <p>Man-fre: 11.00–17.00<br>Lørdag: 10.00–12.00, samt efter aftale</p>
-          <p>LUKKET PÅ HELLIGDAGE</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>LIWIRA</p>
-        <div class="social-links">
-          <a href="https://www.instagram.com/liwira_/">Instagram</a>
-          <a href="https://www.facebook.com/Liwira.gavebutik">Facebook</a>
-        </div>
-      </div>
-    </footer>
-  </main>
+    </main>
+  </body>
 
-</body>
 </html>
