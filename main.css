@@ -243,7 +243,7 @@ nav li:first-child {
 }
 
 nav a:last-child {
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .search-icon,
@@ -310,6 +310,10 @@ nav a:last-child {
 /* Sørg for at .dropdown har position relativ */
 .dropdown {
   position: relative;
+}
+
+.dropdown-menu a {
+  font-size: 13px;
 }
 
 .nav__menulinje--knap {
