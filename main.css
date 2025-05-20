@@ -192,11 +192,11 @@ nav {
 /* Gennemsigtig start */
 .navbar.transparent {
   background-color: transparent;
-  color: white;
+  color: var(--white);
 }
 
 .navbar.transparent a {
-  color: white;
+  color: var(--white);
 }
 
 .nav__menulinje a {
@@ -212,7 +212,7 @@ nav {
   bottom: 0;
   width: 0;
   height: 2px;
-  background: black;
+  background: var(--black);
   transition: width 0.3s ease;
 }
 
@@ -412,7 +412,7 @@ video {
 .what-are-you-looking-for-section h3::after {
   content: "";
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   width: 100%;
   display: block;
   align-self: center;
@@ -431,7 +431,7 @@ video {
   height: 100%;
   padding: 2% 0;
   gap: 2%;
-  background-color: #FFFEFE;
+  background-color: var(--white);
   margin: 0 auto;
 }
 
@@ -470,7 +470,7 @@ video {
 /* Styling af knap */
 .button {
   margin: 5%;
-  background-color: #B58585;
+  background-color: var(--pink);
   border-radius: 50px;
   text-decoration: none;
   padding: 0.6rem 3rem;
@@ -551,8 +551,8 @@ video {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #FFFEFE;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   padding: 10px;
   font-size: 20px;
   z-index: 2;
@@ -587,7 +587,7 @@ video {
 .popular-giftbaskets-section h3::after {
   content: "";
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   width: 100%;
   display: block;
   align-self: center;
@@ -605,7 +605,7 @@ video {
 .wrapper i {
   padding: 2%;
   font-size: 30px;
-  color: #B58585;
+  color: var(--pink);
   cursor: pointer;
 }
 
@@ -637,7 +637,7 @@ video {
 /* Styling af 'Hvem er vi' sektionen */
 .who-are-we-section {
   padding: 5% 0;
-  background-color: #F9F2F2;
+  background-color: var(--lightpink);
   text-align: center;
 }
 
@@ -653,7 +653,7 @@ video {
   gap: 2%;
   width: 85%;
   margin: 0 auto;
-  background-color: #F9F2F2;
+  background-color: var(--lightpink);
 }
 
 /* Styling af h3 i 'Hvem er vi' sektionen */
@@ -704,8 +704,8 @@ video {
   position: absolute;
   bottom: -20px;
   right: 0px;
-  background-color: #FFFEFE;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   padding: 10px;
   font-size: 20px;
   z-index: 2;
@@ -848,7 +848,7 @@ video {
 body.page-subs {
   font-family: 'Montserrat', sans-serif;
   background: #fff;
-  color: #000;
+  color: var(--black);
   margin: 0;
 }
 
@@ -929,7 +929,7 @@ body.page-subs {
   flex-grow: 1;
   /* fylder resten af pladsen */
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   /* ingen width, flex-grow bestemmer bredden */
   display: block;
 }
@@ -1210,7 +1210,7 @@ body.page-subs {
   flex-grow: 1;
   /* fylder resten af pladsen */
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   /* ingen width, flex-grow bestemmer bredden */
   display: block;
 }
@@ -1301,7 +1301,7 @@ body.page-subs {
   flex-grow: 1;
   /* fylder resten af pladsen */
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   /* ingen width, flex-grow bestemmer bredden */
   display: block;
 }
@@ -1364,7 +1364,7 @@ body.page-subs {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  color: white;
+  color: var(--white);
   text-align: center;
   max-width: 100%;
   width: 800px;
@@ -1380,8 +1380,8 @@ body.page-subs {
 
 /* Knap */
 .store-text-content .button {
-  background: #F9F2F2;
-  color: #B58585;
+  background: var(--lightpink);
+  color: var(--pink);
   padding: 0.6rem 3rem;
   border-radius: 30px;
   font-weight: normal;
@@ -1409,8 +1409,8 @@ body.page-subs {
 /* --------- FOOTER START --------- */
 
 .site-footer {
-  background-color: #B58585;
-  color: white;
+  background-color: var(--pink);
+  color: var(--white);
   padding: 3rem 2rem;
   font-weight: normal;
   font-family: 'Montserrat', sans-serif;
@@ -1427,13 +1427,13 @@ body.page-subs {
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
-  border-top: 1px solid #fff;
+  border-top: 1px solid var(--white);
   padding-top: 1rem;
 }
 
 .site-footer__bottom a,
 .site-footer__social-links a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   margin-left: 1rem;
   font-weight: normal;
@@ -1474,8 +1474,8 @@ body.page-subs {
   top: 100px;
   right: 20px;
   width: 350px;
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: var(--white);
+  border: 1px solid var(--black);
   z-index: 9999;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -1560,12 +1560,12 @@ body.page-subs {
 
 .cart-extra a {
   text-decoration: underline;
-  color: #000;
+  color: var(--black);
 }
 
 .checkout-button {
-  background-color: #B88383;
-  color: white;
+  background-color: var(--pink);
+  color: var(--white);
   padding: 0.8rem;
   font-size: 1rem;
   border: none;
