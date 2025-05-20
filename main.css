@@ -1128,6 +1128,33 @@ body.page-subs {
 
 
 /* --------- SUPPLIER SITE START --------- */
+
+.suppliers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 billeder pr. række */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.suppliers__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  /* valgfrit */
+}
+
+/* Tablet og mobil – 2 kolonner */
+@media (max-width: 768px) {
+  .suppliers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
 /* --------- SUPPLIER SITE END --------- */
 
 
