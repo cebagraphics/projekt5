@@ -891,21 +891,44 @@ body.page-subs {
 }
 
 .breadcrumb {
-  padding: 3rem 1.5rem 0.5rem;
+  /* padding: 3rem 1.5rem 0.5rem;*/
   padding-top: 18vh;
   padding-bottom: 5vh;
 }
 
+.product-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* lidt luft mellem tekst og linje */
+  margin-bottom: 60px;
+}
+
+.product-header h2::after {
+  content: "";
+  flex-grow: 1;
+  /* fylder resten af pladsen */
+  height: 1px;
+  background-color: black;
+  /* ingen width, flex-grow bestemmer bredden */
+  display: block;
+}
+
+.product-header {
+  margin: 60px 0;
+}
+
+/*
 .product-header {
   padding: 3rem 2rem 1rem;
   text-align: left;
-}
+} 
 
 .product-header p {
   font-size: 1rem;
   max-width: 600px;
   color: #333;
-}
+} */
 
 .product-controls {
   display: flex;
