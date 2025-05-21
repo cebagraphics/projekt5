@@ -46,41 +46,40 @@
           <li><a href="firmagaver.html">Firmagaver</a></li>
         </ul>
       </li>
-      <li><a href="leverandorer.html">LEVERANDØRER</a></li>
-      <li><a href="omos.html">OM OS</a></li>
-      <li><a href="kontakt.html">KONTAKT</a></li>
-      <li><a href="#"><img class="search-icon" src="img/search-icon_black.png" alt=""></a></li>
-      <li><a href="#"><img class="shop-icon" src="img/shop-icon_black.png" alt=""></a></li>
-    </ul>
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
+            <li class="nav__menulinje--item"><a href="leverandorer.html">LEVERANDØRER</a></li>
+            <li class="nav__menulinje--item"><a href="omos.html">OM OS</a></li>
+            <li class="nav__menulinje--item"><a href="kontakt.html">KONTAKT</a></li>
+                  <li><a href="#"><img class="search-icon" src="img/search-icon_black.png" alt="search icon"></a></li>
+      <li><a href="kurv.html"><img class="shop-icon" src="img/shop-icon_black.png" alt="shop icon"></a></li>
+            <li class="nav__menulinje--knap" onclick="showNav__sidepanel()"><a href="#menuknap">
+                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill=#000000><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+        </nav>
 
-  <main>
-    <div class="content-wrapper">
+  <main class="page">
+    <div class="page__content-wrapper content-wrapper">
       <p class="breadcrumb">Hjem / Kontakt</p>
   
       <section class="contact-section">
-        <h2>BESØG VORES BUTIK</h2>
-        <div class="contact-content">
-          <div class="contact-text">
-            <p>Har du nogle spørgsmål, eller vil du vide mere, er du velkommen til at benytte dig af oplysningerne her på siden.<br><br>Vi glæder os til at se dig i vores butik i Langeskov.</p>
-            <br>
-            <br>
-            <br>
-            <br>
+        <h2 class="contact-section__title">BESØG VORES BUTIK</h2>
+      
+        <div class="contact-section__content">
+          <div class="contact-section__text">
+            <p>
+              Har du nogle spørgsmål, eller vil du vide mere, er du velkommen til at benytte dig af oplysningerne her på siden.<br><br>
+              Vi glæder os til at se dig i vores butik i Langeskov.
+            </p>
+            <br><br><br><br>
             <p>
               <strong>Tlf:</strong> <a href="tel:+4524267971">+45 24 26 79 71</a>
-              <br> <br>
+              <br><br>
               <strong>Mail:</strong> <a href="mailto:kontakt@dinpejs.dk">kontakt@dinpejs.dk</a>
-              <br> <br>
+              <br><br>
               <strong>Adresse:</strong> Jernbanegade 16, 5550 Langeskov
             </p>
           </div>
-          <div class="contact-map"> <!-- https://www.youtube.com/watch?v=4U_AAGHzTok -->
+      
+          <div class="contact-section__map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2267.8855341789713!2d10.588910576397708!3d55.36000122217797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464d19da8ae2a177%3A0x4755fff4d180b7b0!2sPejsemontering%20Fyn%20%26%20LIWIRA!5e0!3m2!1sda!2sdk!4v1747735210302!5m2!1sda!2sdk"
               width="100%"
@@ -89,11 +88,11 @@
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+              ></iframe>
           </div>
-        </div>
-      </section>
+      </div>
     </div>
+      
 
         <!-- Besøg vores butik -->
     <div class="visit-store">
@@ -112,33 +111,29 @@
       </div>
     </div>
     
-
-
-          <!-- Footer -->
-          <footer class="site-footer">
-            <div class="footer-info">
-              <div class="contact">
-                <h3>KONTAKT</h3>
-                <p>Jernbanegade 16<br>DK-5550 Langeskov<br>Danmark</p>
-                <p>📞 +45 2426 7971<br>✉️ kontakt@dinpejs.dk</p>
-              </div>
-              <div class="hours">
-                <h3>ÅBNINGSTIDER</h3>
-                <p>Man-fre: 11.00–17.00<br>Lørdag: 10.00–12.00, samt efter aftale</p>
-                <p>LUKKET PÅ HELLIGDAGE</p>
-              </div>
-            </div>
-            <div class="footer-bottom">
-              <p>LIWIRA</p>
-              <div class="social-links">
-                <a href="https://www.instagram.com/liwira_/">Instagram</a>
-                <a href="https://www.facebook.com/Liwira.gavebutik">Facebook</a>
-              </div>
-            </div>
-          </footer>
   </main>
 
-
-
+  <footer class="site-footer">
+    <div class="site-footer__info">
+      <div class="site-footer__contact">
+        <h3>KONTAKT</h3>
+        <p>Jernbanegade 16<br>DK-5550 Langeskov<br>Danmark</p>
+        <br>
+        <p>📞 +45 2426 7971<br>✉️ kontakt@dinpejs.dk</p>
+      </div>
+      <div class="site-footer__hours">
+        <h3>ÅBNINGSTIDER</h3>
+        <p>Man-fre: 11.00–17.00<br>Lørdag: 10.00–12.00, samt efter aftale</p>
+        <p>LUKKET PÅ HELLIGDAGE</p>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__brand">LIWIRA</p>
+      <div class="site-footer__social-links">
+        <a href="https://www.instagram.com/liwira_/">Instagram</a>
+        <a href="https://www.facebook.com/Liwira.gavebutik">Facebook</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

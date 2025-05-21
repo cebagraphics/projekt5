@@ -263,3 +263,93 @@ shopIcon.addEventListener("click", function (event) {
 });
 
 });
+
+let sortering = "Standard"; // Default sortering
+
+// Filter-knap og dropdown
+const filterToggle = document.getElementById("filterToggle");
+const filterDropdown = document.getElementById("filterDropdown");
+const filterSelect = document.getElementById("filterSelect");
+
+filterToggle.addEventListener("click", () => {
+  filterDropdown.classList.toggle("hidden");
+});
+
+filterSelect.addEventListener("change", () => {
+  activeCategory = filterSelect.value;
+  currentPage = 1;
+  renderProducts();
+});
+
+// Lyt til kategori-knapper
+categoryButtons.forEach(button => {
+  button.addEventListener("click", function () {
+    const selected = this.getAttribute("data-category");
+
+    if (this.classList.contains("active")) {
+      categoryButtons.forEach(btn => btn.classList.remove("active"));
+      activeCategory = "alle";
+    } else {
+      categoryButtons.forEach(btn => btn.classList.remove("active"));
+      this.classList.add("active");
+      activeCategory = selected;
+    }
+
+    currentPage = 1;
+    renderProducts();
+  });
+});
+
+// Lyt til sorteringsdropdown
+const sortSelect = document.getElementById("sorter");
+sortSelect.addEventListener("change", function () {
+  sortering = this.value;
+  renderProducts();
+});
+
+// Pris-konvertering
+function parsePrice(priceString) {
+  return parseFloat(priceString.replace("kr", "").replace(",", ".").trim());
+}
+
+// Opdateret render-funktion med sortering
+function renderProducts() {
+  productGrid.innerHTML = "";
+
+  // Filter først
+  let filtered = activeCategory === "alle"
+    ? allProducts
+    : allProducts.filter(p => p.category === activeCategory);
+
+  // Sortér bagefter
+  if (sortering === "Pris: Lav til høj") {
+    filtered.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+  } else if (sortering === "Pris: Høj til lav") {
+    filtered.sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
+  } else if (sortering === "Nyeste") {
+    filtered.reverse(); // Simpel logik for "nyeste"
+  }
+
+  const totalPages = Math.ceil(filtered.length / productsPerPage);
+  if (currentPage > totalPages) currentPage = 1;
+
+  const start = (currentPage - 1) * productsPerPage;
+  const end = start + productsPerPage;
+  const pageProducts = filtered.slice(start, end);
+
+  pageProducts.forEach(product => {
+    const html = `
+      <div class="product-card">
+        <div class="product-box">
+          <img src="${product.image}" alt="${product.title}" data-category="${product.category}">
+         <button class="add-to-cart">+</button>
+          </div>
+        <p class="product-title">${product.title}</p>
+        <p class="product-price">${product.price}</p>
+      </div>
+    `;
+    productGrid.insertAdjacentHTML("beforeend", html);
+  });
+
+  renderPagination(totalPages);
+}

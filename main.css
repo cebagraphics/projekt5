@@ -178,7 +178,6 @@ nav {
   width: 100%;
   position: fixed;
   z-index: 10001;
-  /* 👈 sørger for at nav ligger øverst */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -193,11 +192,11 @@ nav {
 /* Gennemsigtig start */
 .navbar.transparent {
   background-color: transparent;
-  color: white;
+  color: var(--white);
 }
 
 .navbar.transparent a {
-  color: white;
+  color: var(--white);
 }
 
 .nav__menulinje a {
@@ -213,7 +212,7 @@ nav {
   bottom: 0;
   width: 0;
   height: 2px;
-  background: black;
+  background: var(--black);
   transition: width 0.3s ease;
 }
 
@@ -244,7 +243,7 @@ nav li:first-child {
 }
 
 nav a:last-child {
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .search-icon,
@@ -313,6 +312,10 @@ nav a:last-child {
   position: relative;
 }
 
+.dropdown-menu a {
+  font-size: 13px;
+}
+
 .nav__menulinje--knap {
   display: none;
 }
@@ -320,6 +323,10 @@ nav a:last-child {
 /* Navigation */
 
 @media (max-width: 1060px) {
+
+  .nav__menulinje a {
+    padding-left: 2%;
+  }
 
   .nav__menulinje--item {
     display: none;
@@ -332,6 +339,11 @@ nav a:last-child {
   .nav__menulinje .dropdown {
     display: none;
   }
+
+  .nav__menulinje--logo a {
+    font-size: 20px;
+  }
+
 
 
 }
@@ -400,7 +412,7 @@ video {
 .what-are-you-looking-for-section h3::after {
   content: "";
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   width: 100%;
   display: block;
   align-self: center;
@@ -419,7 +431,7 @@ video {
   height: 100%;
   padding: 2% 0;
   gap: 2%;
-  background-color: #FFFEFE;
+  background-color: var(--white);
   margin: 0 auto;
 }
 
@@ -458,7 +470,7 @@ video {
 /* Styling af knap */
 .button {
   margin: 5%;
-  background-color: #B58585;
+  background-color: var(--pink);
   border-radius: 50px;
   text-decoration: none;
   padding: 0.6rem 3rem;
@@ -539,8 +551,8 @@ video {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #FFFEFE;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   padding: 10px;
   font-size: 20px;
   z-index: 2;
@@ -575,7 +587,7 @@ video {
 .popular-giftbaskets-section h3::after {
   content: "";
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   width: 100%;
   display: block;
   align-self: center;
@@ -593,7 +605,7 @@ video {
 .wrapper i {
   padding: 2%;
   font-size: 30px;
-  color: #B58585;
+  color: var(--pink);
   cursor: pointer;
 }
 
@@ -621,12 +633,14 @@ video {
   margin-left: 0px;
 }
 
+
 /* Styling af 'Hvem er vi' sektionen */
 .who-are-we-section {
   padding: 5% 0;
-  background-color: #F9F2F2;
+  background-color: var(--lightpink);
   text-align: center;
 }
+
 
 /* Styling af container i 'Hvem er vi' sektionen */
 .who-are-we-section__container {
@@ -639,7 +653,7 @@ video {
   gap: 2%;
   width: 85%;
   margin: 0 auto;
-  background-color: #F9F2F2;
+  background-color: var(--lightpink);
 }
 
 /* Styling af h3 i 'Hvem er vi' sektionen */
@@ -690,8 +704,8 @@ video {
   position: absolute;
   bottom: -20px;
   right: 0px;
-  background-color: #FFFEFE;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   padding: 10px;
   font-size: 20px;
   z-index: 2;
@@ -834,7 +848,7 @@ video {
 body.page-subs {
   font-family: 'Montserrat', sans-serif;
   background: #fff;
-  color: #000;
+  color: var(--black);
   margin: 0;
 }
 
@@ -896,12 +910,12 @@ body.page-subs {
 }
 
 .breadcrumb {
-  /* padding: 3rem 1.5rem 0.5rem;*/
   padding-top: 18vh;
   padding-bottom: 5vh;
 }
 
-.product-header h2 {
+.product-header h2,
+.company-gifts-header h2 {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -909,18 +923,15 @@ body.page-subs {
   margin-bottom: 60px;
 }
 
-.product-header h2::after {
+.product-header h2::after,
+.company-gifts-header h2:after {
   content: "";
   flex-grow: 1;
   /* fylder resten af pladsen */
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   /* ingen width, flex-grow bestemmer bredden */
   display: block;
-}
-
-.product-header {
-  margin: 60px 0;
 }
 
 .product-controls {
@@ -929,6 +940,10 @@ body.page-subs {
   align-items: center;
   margin: 1rem 2rem 2rem;
   font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .product-grid {
@@ -1128,6 +1143,54 @@ body.page-subs {
 
 
 /* --------- SUPPLIER SITE START --------- */
+
+.suppliers h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* lidt luft mellem tekst og linje */
+  margin-bottom: 60px;
+}
+
+.suppliers h2::after {
+  content: "";
+  flex-grow: 1;
+  /* fylder resten af pladsen */
+  height: 1px;
+  background-color: var(--black);
+  /* ingen width, flex-grow bestemmer bredden */
+  display: block;
+}
+
+.suppliers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 billeder pr. række */
+  gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 9rem;
+}
+
+.suppliers__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  /* valgfrit */
+}
+
+.suppliers__description {
+  padding-bottom: 30px;
+}
+
+/* Responsivt layout supllier site */
+@media (max-width: 768px) {
+  .suppliers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* --------- SUPPLIER SITE END --------- */
 
 
@@ -1147,12 +1210,11 @@ body.page-subs {
   flex-grow: 1;
   /* fylder resten af pladsen */
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   /* ingen width, flex-grow bestemmer bredden */
   display: block;
 }
 
-.about-us-section,
 .sustainability-section {
   margin: 60px 0;
 }
@@ -1193,7 +1255,7 @@ body.page-subs {
   justify-content: center;
 }
 
-/* Responsivt layout */
+/* Responsivt layout about us site */
 @media (max-width: 768px) {
 
   .about-us-section h2 {
@@ -1239,44 +1301,41 @@ body.page-subs {
   flex-grow: 1;
   /* fylder resten af pladsen */
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
   /* ingen width, flex-grow bestemmer bredden */
   display: block;
 }
 
-.contact-section {
-  margin: 60px 0;
-}
-
-.contact-content {
+.contact-section__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* to kolonner */
   gap: 50px;
   align-items: start;
+  /* evt. max-width for at undgå for små gridceller */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.contact-map iframe {
+.contact-section__map iframe {
   width: 100%;
-  /* fylder grid-cellen helt ud */
   height: 450px;
   border: 0;
 }
 
+/* Responsive: tablet og mobil */
 @media (max-width: 768px) {
-  .contact-section h2 {
-    margin-bottom: 30px;
-  }
-
-  .contact-content {
+  .contact-section__content {
     grid-template-columns: 1fr;
+    /* kun en kolonne */
     gap: 30px;
   }
 
-  .contact-map iframe {
+  .contact-section__map iframe {
     height: 500px;
-    /* Lavere højde på kortet på små skærme */
   }
 }
+
 
 
 /* --------- CONTACT SITE END --------- */
@@ -1305,7 +1364,7 @@ body.page-subs {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  color: white;
+  color: var(--white);
   text-align: center;
   max-width: 100%;
   width: 800px;
@@ -1321,8 +1380,8 @@ body.page-subs {
 
 /* Knap */
 .store-text-content .button {
-  background: #F9F2F2;
-  color: #B58585;
+  background: var(--lightpink);
+  color: var(--pink);
   padding: 0.6rem 3rem;
   border-radius: 30px;
   font-weight: normal;
@@ -1346,61 +1405,54 @@ body.page-subs {
 
 /* --------- VISIT OUR SHOP END --------- */
 
+
 /* --------- FOOTER START --------- */
+
 .site-footer {
-  background-color: #B58585 !important;
-  color: white;
-  padding: 3rem 2rem;
-}
-
-.footer-info {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  border-top: 1px solid #fff;
-  padding-top: 1rem;
-}
-
-.footer-bottom a {
-  color: white;
-  text-decoration: none;
-  margin-left: 1rem;
-}
-
-/* Footer tekst ikke bold + skrifttype til LIWIRA */
-.site-footer {
-  background: #B58585;
-  color: white;
+  background-color: var(--pink);
+  color: var(--white);
   padding: 3rem 2rem;
   font-weight: normal;
   font-family: 'Montserrat', sans-serif;
 }
 
+.site-footer__info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  border-top: 1px solid var(--white);
+  padding-top: 1rem;
+}
+
+.site-footer__bottom a,
+.site-footer__social-links a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: normal;
+}
+
 .site-footer h3 {
   font-size: 1rem;
   font-weight: normal;
-  /* fjerner bold fra h3 */
   margin-bottom: 0.5rem;
 }
 
-.footer-bottom p {
+.site-footer__brand {
   font-family: 'Adamina', serif;
   font-size: 1.2rem;
   margin: 0;
 }
 
-.footer-bottom .social-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 1rem;
-  font-weight: normal;
+.site-footer__hours {
+  text-align: right;
 }
 
 /* --------- FOOTER END --------- */
@@ -1422,8 +1474,8 @@ body.page-subs {
   top: 100px;
   right: 20px;
   width: 350px;
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: var(--white);
+  border: 1px solid var(--black);
   z-index: 9999;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -1508,12 +1560,12 @@ body.page-subs {
 
 .cart-extra a {
   text-decoration: underline;
-  color: #000;
+  color: var(--black);
 }
 
 .checkout-button {
-  background-color: #B88383;
-  color: white;
+  background-color: var(--pink);
+  color: var(--white);
   padding: 0.8rem;
   font-size: 1rem;
   border: none;
@@ -1580,4 +1632,63 @@ body.page-subs {
 
 .hidden {
   display: none;
+}
+
+
+/* FIRMAGAVER SIDE STYLING */
+
+.company-gifts-section__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.company-gifts-section__text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.company-gifts-section__img {
+  grid-column: 2;
+  grid-row: 1/3;
+}
+
+
+.company-gifts-section__contact {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Styling af Firmagaver side i mobilvisning */
+@media (max-width: 768px) {
+  .company-gifts-section__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .company-gifts-section__text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .company-gifts-section__text p {
+    padding-bottom: 10%;
+  }
+
+
+  .company-gifts-section__contact {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .company-gifts-section__contact p {
+    padding: 10% 0;
+  }
+
+
+  .company-gifts-section__img {
+    grid-column: 1;
+    grid-row: 2;
+  }
 }
