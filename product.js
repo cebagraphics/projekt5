@@ -1,4 +1,4 @@
-  // TOP BAR SOM SKIFTER TEKST 
+ // TOP BAR SOM SKIFTER TEKST 
   document.addEventListener("DOMContentLoaded", () => {
       const messages = [
           "Gaver til alle anledninger – sammensæt din egen gavekurv",

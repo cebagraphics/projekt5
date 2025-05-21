@@ -29,6 +29,49 @@
     <span id="changing-text"></span>
   </div>
 
+  <div class="cart-popup hidden" id="cart-popup">
+  <div class="cart-content">
+    <ul class="cart-items" id="cart-items"></ul>
+    
+<div class="cart-options">
+  <label class="checkbox-label">
+    <input type="checkbox" id="giftwrap-checkbox">
+    Ja tak, pak hele min ordre ind
+  </label>
+
+  <label class="checkbox-label">
+    <input type="checkbox" id="custom-message-checkbox">
+    Jeg ønsker at skrive min egen hilsen
+  </label>
+
+  <textarea id="custom-message" class="hidden" placeholder="Skriv din hilsen her..."></textarea>
+</div>
+
+<div class="delivery-date">
+  <label for="delivery-date-input">Gavekurven skal leveres den</label>
+  <small>(bestil inden kl 13 for levering næstkommende hverdag)</small>
+
+  <input type="date" id="delivery-date-input" name="delivery-date">
+</div>
+    
+    <div class="cart-summary">
+      <strong>Subtotal</strong>
+      <span id="cart-total">0,00 kr</span>
+    </div>
+
+    <div class="cart-extra">
+      <label>
+        <input type="checkbox" checked>
+        Jeg er enig med <a href="#">vilkårene og betingelserne</a>
+      </label>
+    </div>
+
+
+    <button class="checkout-button">GÅ TIL KASSEN</button>
+  </div>
+</div>
+
+
   <!-- navigation --> <!-- Har taget udgangspunkt i denne video https://www.youtube.com/watch?v=U8smiWQ8Seg -->
     <nav class="nav navbar">
         <ul class="nav__sidepanel">
@@ -337,9 +380,6 @@
           <a href="#">&#60;</a>
           <a href="#" class="active">1</a>
           <a href="#">2</a>
-          <a href="#">3</a>
-          <span>…</span>
-          <a href="#">16</a>
           <a href="#">&#62;</a>
         </div>
       </div>
