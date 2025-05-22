@@ -815,8 +815,6 @@ body.page-subs {
 
 .product-card {
   position: relative;
-  width: 180px;
-  margin: 0 auto 2rem auto;
   text-align: start;
 }
 
@@ -834,8 +832,6 @@ body.page-subs {
 }
 
 .product-box {
-  width: 180px;
-  height: 180px;
   background-color: #F3F3F3;
   display: flex;
   align-items: center;
