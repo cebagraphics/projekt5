@@ -26,6 +26,7 @@
       setInterval(change, 3500);
     });
 
+
 let sortering = "Standard";
 let activeCategory = "alle";
 let currentPage = 1;
