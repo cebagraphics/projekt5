@@ -725,7 +725,8 @@ body.page-subs {
   max-width: 150px;
 }
 
-.image-circle {
+.image-circle,
+.category__image-circle {
   background-color: #F3F3F3;
   width: 180px;
   height: 180px;
@@ -745,7 +746,8 @@ body.page-subs {
   object-fit: contain;
 }
 
-.image-circle:hover {
+.image-circle:hover,
+.category__image-circle:hover {
   background-color: var(--white);
   transform: scale(1.05) translateY(-5px);
   /* Lidt større og opad */
@@ -754,7 +756,8 @@ body.page-subs {
   cursor: pointer;
 }
 
-.image-circle.active {
+.image-circle.active,
+.category__image-circle.active {
   background-color: var(--white);
   transform: scale(1.07) translateY(-6px);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
@@ -1065,7 +1068,6 @@ body.page-subs {
 
 
 /* --------- GIFT BASKET SITE END --------- */
-
 
 
 /* --------- SUPPLIER SITE START --------- */
