@@ -53,7 +53,7 @@ let activeCategory = "alle";
 
 const productGrid = document.querySelector(".product-grid");
   const pagination = document.querySelector(".pagination");
-  const categoryButtons = document.querySelectorAll(".image-circle");
+  const categoryButtons = document.querySelectorAll(".category__image-circle");
 
   function renderProducts() {
     productGrid.innerHTML = "";
