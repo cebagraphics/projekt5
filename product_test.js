@@ -1,3 +1,4 @@
+
 let sortering = "Standard";
 let activeCategory = "alle";
 let currentPage = 1;
