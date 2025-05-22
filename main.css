@@ -993,11 +993,17 @@ body.page-subs {
   width: 100%;
 }
 
+
 .product-categories-section__category {
   display: inline-block;
   width: calc(100% / 3); /* Samme som andre carousels */
   margin-right: 10%;
   margin-bottom: 20px;
+}
+
+.productsite-product-categories-section__category {
+  width: calc(100% / 4);
+  margin-right: 15%;
 }
 
 .product-categories-section__category:first-child {
@@ -1014,14 +1020,20 @@ body.page-subs {
   transition: transform 0.3s ease;
 }
 
+
 .category__image-circle:hover {
   transform: scale(1.05);
 }
 
 .category__image-circle img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.category__image-circle__giftbaskets img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .category__label {
