@@ -85,6 +85,7 @@ p {
   font-weight: 300;
   font-style: normal;
   font-size: 16px;
+  padding-bottom: 2%;
 }
 
 .logo {
@@ -774,16 +775,18 @@ body.page-subs {
 }
 
 .product-header h2,
-.company-gifts-header h2 {
+.company-gifts-header h2,
+.gift-header h2 {
   display: flex;
   align-items: center;
   gap: 1rem;
   /* lidt luft mellem tekst og linje */
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .product-header h2::after,
-.company-gifts-header h2:after {
+.company-gifts-header h2:after,
+.gift-header h2:after{
   content: "";
   flex-grow: 1;
   /* fylder resten af pladsen */
@@ -929,23 +932,8 @@ body.page-subs {
 .gift-header h2 {
   display: flex;
   align-items: center;
-
 }
 
-.gift-header h2::after {
-  content: "";
-  flex-grow: 1;
-  /* fylder resten af pladsen */
-  height: 1px;
-  background-color: var(--black);
-  /* ingen width, flex-grow bestemmer bredden */
-  display: block;
-}
-
-.gift-header {
-  margin: 60px 0;
-  text-align: left;
-}
 
 .add-to-cart {
   position: absolute;
