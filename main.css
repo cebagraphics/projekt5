@@ -571,6 +571,10 @@ video {
   display: block;
 }
 
+.giftbasket-title {
+  bottom: 3px;
+}
+
 /* Hvem er vi sektion */
 .who-are-we-section {
   padding: 5% 0;
@@ -641,14 +645,18 @@ video {
   .front-page-images__6 { grid-column: 2; grid-row: 3 / 5; }
   .front-page-images__button { grid-column: 1 / 3; grid-row: 5; }
 
-  .front-page-images__caption,
-  .giftbasket-title {
+  .front-page-images__caption {
     font-size: 13px;
     bottom: -11px;
   }
 
   .giftbasket {
     width: 100%;
+  }
+
+  .giftbasket-title {
+    font-size: 13px;
+    bottom: 9px;
   }
 
   .local-suppliers-section__carousel img,
@@ -769,7 +777,7 @@ body.page-subs {
   align-items: center;
   gap: 1rem;
   /* lidt luft mellem tekst og linje */
-  margin-bottom: 60px;
+  margin-bottom: 10%;
 }
 
 .product-header h2::after,
@@ -880,7 +888,7 @@ body.page-subs {
 /* Responsivt layout produktside */
 @media (max-width: 768px) {
 
-  .product-header,
+
   .product-controls,
   .product-grid {
     padding: 1rem;
@@ -928,9 +936,7 @@ body.page-subs {
 .gift-header h2 {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  /* lidt luft mellem tekst og linje */
-  margin-bottom: 60px;
+
 }
 
 .gift-header h2::after {
@@ -980,12 +986,83 @@ body.page-subs {
 }
 
 .section-divider {
-  width: 92%;
   height: 1px;
   background-color: var(--black);
   margin: 3rem auto;
   border: none;
 }
+
+
+/*------CAROUSEL GAVEKURVE SIDE----------*/
+
+
+
+.product-categories-section__carousel {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  width: 100%;
+}
+
+.product-categories-section__category {
+  display: inline-block;
+  width: calc(100% / 3); /* Samme som andre carousels */
+  margin-right: 12%;
+  margin-bottom: 20px;
+}
+
+.product-categories-section__category:first-child {
+  margin-left: 0;
+}
+
+.category__image-circle {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 10px auto;
+  box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.category__image-circle:hover {
+  transform: scale(1.05);
+}
+
+.category__image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category__label {
+  font-size: 0.95rem;
+  color: var(--dark);
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+.product-categories-section__category
+{
+  margin-right: 2%;
+}
+  .category__image-circle{
+    width: 120px;
+    height: 120px;
+  }
+
+  .product-categories-section__carousel p {
+    font-size: 13px;
+  }
+
+  .product-categories-section__category {
+  width: 100%; /* Samme som andre carousels */
+}
+}
+
 
 /* --------- GIFT BASKET SITE END --------- */
 
@@ -1025,9 +1102,9 @@ body.page-subs {
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 8px;
-  /* valgfrit */
+   box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.3);
 }
+
 
 .suppliers__description {
   padding-bottom: 30px;
@@ -1585,3 +1662,7 @@ body.page-subs {
     grid-row: 2;
   }
 }
+
+
+
+

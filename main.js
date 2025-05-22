@@ -76,7 +76,8 @@ window.addEventListener("scroll", function () {
 const wrappers = document.querySelectorAll(".wrapper");
 
 wrappers.forEach((wrapper) => {
-  const carousel = wrapper.querySelector(".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel");
+const carousel = wrapper.querySelector(
+  ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel, .product-categories-section__carousel.category");
   const prevBtn = wrapper.querySelector(".prev");
   const nextBtn = wrapper.querySelector(".next");
 
