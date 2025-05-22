@@ -1319,7 +1319,7 @@ body.page-subs {
   color: var(--white);
   text-align: center;
   max-width: 100%;
-  width: 800px;
+  width: 85%;
   padding: 0.5rem;
 }
 
@@ -1354,13 +1354,13 @@ body.page-subs {
     padding-right: 20px;
     text-align: center;
     line-height: 1.6;
-    max-width: 500px;
     margin: 0 auto;
   }
 
   .visit-store__heading {
     font-size: 24px;
     margin-bottom: 1.5rem;
+  
   }
 
   .visit-store__subheading {
@@ -1422,6 +1422,18 @@ body.page-subs {
 .site-footer__hours {
   text-align: right;
 }
+
+@media (max-width: 768px) {
+  .site-footer__info {
+    flex-direction: column;
+  }
+
+  .site-footer__hours {
+    margin-top: 10%;
+    text-align: left;
+  }
+}
+
 
 /* --------- FOOTER END --------- */
 
