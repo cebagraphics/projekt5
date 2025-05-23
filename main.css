@@ -500,6 +500,10 @@ video {
   color: var(--pink);
 }
 
+.button:hover {
+  color: var(--lightpink);
+}
+
 .who-are-we-section__button {
   grid-row: 3;
   grid-column: 2;
@@ -1503,7 +1507,14 @@ body.page-subs {
   font-size: 13px;
   display: inline-block;
   margin-top: 2rem;
+  font-weight: 500;
 }
+
+.visit-store__button:hover {
+  background-color: var(--pink);
+}
+
+
 
 @media (max-width: 768px) {
   .visit-store__text-content {
