@@ -1,3 +1,32 @@
+  // TOP BAR SOM SKIFTER TEKST 
+  document.addEventListener("DOMContentLoaded", () => {
+      const messages = [
+          "Gaver til alle anledninger – sammensæt din egen gavekurv",
+          "Bestil online – afhent i butikken eller få leveret direkte",
+          "Støt lokalt – vi samarbejder med fynske leverandører",
+          "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
+          "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
+      ];
+
+      let index = 0;
+      const el = document.getElementById("changing-text");
+      if (!el) return;
+
+      function change() {
+          el.classList.remove("show-text");
+          setTimeout(() => {
+              el.textContent = messages[index];
+              console.log("Current message:", messages[index]);
+              index = (index + 1) % messages.length;
+              el.classList.add("show-text");
+          }, 50);
+      }
+
+      change();
+      setInterval(change, 3500);
+  });
+
+
 // NAVBAR SOM FØRST ER GENNEMSIGTIG OG BAGEFTER SOLID
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar-frontpage");
@@ -40,37 +69,6 @@ window.addEventListener("scroll", function () {
     });
   });
 
-
-
-  // TOP BAR SOM SKIFTER TEKST 
-  document.addEventListener("DOMContentLoaded", () => {
-      const messages = [
-          "Gaver til alle anledninger – sammensæt din egen gavekurv",
-          "Bestil online – afhent i butikken eller få leveret direkte",
-          "Støt lokalt – vi samarbejder med fynske leverandører",
-          "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
-          "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
-      ];
-
-      let index = 0;
-      const el = document.getElementById("changing-text");
-      if (!el) return;
-
-      function change() {
-          el.classList.remove("show-text");
-          setTimeout(() => {
-              el.textContent = messages[index];
-              console.log("Current message:", messages[index]);
-              index = (index + 1) % messages.length;
-              el.classList.add("show-text");
-          }, 50);
-      }
-
-      change();
-      setInterval(change, 3500);
-  });
-
-  
 
 // Find alle wrappers (som hver indeholder én carousel + pile)
 const wrappers = document.querySelectorAll(".wrapper");
