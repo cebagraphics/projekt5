@@ -519,7 +519,6 @@ video {
   justify-self: center;
 }
 
-
 /* Styling af Image Box */
 .image-box {
   position: relative;
@@ -549,7 +548,7 @@ video {
 }
 
 /* Styling af billede caption */
-.front-page-images-caption {
+.front-page-images__caption {
   position: absolute;
   bottom: 0;
   right: 0;
