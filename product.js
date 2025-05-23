@@ -1,3 +1,4 @@
+ 
  // TOP BAR SOM SKIFTER TEKST 
   document.addEventListener("DOMContentLoaded", () => {
       const messages = [
