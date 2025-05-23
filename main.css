@@ -366,7 +366,7 @@ nav a:last-child {
   align-items: center;
   text-align: center;
   color: #fff;
-   width: 85%;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -1150,7 +1150,8 @@ body.page-subs {
 
 .product-categories-section__category {
   display: inline-block;
-  width: calc(100% / 3); /* Samme som andre carousels */
+  width: calc(100% / 3);
+  /* Samme som andre carousels */
   margin-right: 10%;
   margin-bottom: 20px;
 }
@@ -1205,11 +1206,11 @@ body.page-subs {
 
 @media (max-width: 768px) {
 
-.product-categories-section__category
-{
-  margin-right: 2%;
-}
-  .category__image-circle{
+  .product-categories-section__category {
+    margin-right: 2%;
+  }
+
+  .category__image-circle {
     width: 120px;
     height: 120px;
   }
@@ -1219,8 +1220,9 @@ body.page-subs {
   }
 
   .product-categories-section__category {
-  width: 100%; /* Samme som andre carousels */
-}
+    width: 100%;
+    /* Samme som andre carousels */
+  }
 }
 
 
@@ -1367,8 +1369,8 @@ body.page-subs {
   /* Ændr rækkefølgen i sustainability på mobil */
   .sustainability-content {
     grid-template-areas:
-      "image"
-      "text";
+      "text"
+      "image";
   }
 
   .about-us-image img,
