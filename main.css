@@ -600,7 +600,6 @@ video {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding-top: 5%;
 }
 
 .wrapper i {
@@ -1145,7 +1144,7 @@ body.page-subs {
   overflow-y: hidden;
   cursor: grab;
   width: 100%;
-  padding-top: 1%;
+  padding-top: 2%;
 }
 
 
