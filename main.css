@@ -898,10 +898,11 @@ body.page-subs {
 .image-circle,
 .category__image-circle {
   background-color: #F3F3F3;
-  width: 180px;
-  height: 180px;
+  width: 170px;
+  height: 170px;
   object-fit: contain;
 }
+
 .image-circle:hover,
 .category__image-circle:hover {
   background-color: var(--white);
@@ -1144,6 +1145,7 @@ body.page-subs {
   overflow-y: hidden;
   cursor: grab;
   width: 100%;
+  padding-top: 1%;
 }
 
 
