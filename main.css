@@ -1565,6 +1565,14 @@ body.page-subs {
   font-family: 'Montserrat', sans-serif;
 }
 
+.site-footer a {
+ color: var(--white);
+}
+
+.site-footer a:hover {
+ color: var(--black);
+}
+
 .site-footer__info {
   display: flex;
   justify-content: space-between;
