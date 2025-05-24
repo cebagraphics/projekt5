@@ -7,6 +7,7 @@
   --lightpink: #F9F2F2;
   --black: #211111;
   --white: #FFFEFE;
+  --menu: #FFFEFE;
 }
 
 .inria-serif-light {
@@ -183,6 +184,7 @@ nav {
   position: fixed;
   z-index: 10001;
   transition: background-color 0.3s ease, color 0.3s ease;
+  --menu: #000000;
 }
 
 .navbar {
@@ -201,6 +203,7 @@ nav {
 
 .navbar.transparent a {
   color: var(--white);
+  --menu: #FFFEFE;
 }
 
 .nav__menulinje a {
@@ -216,15 +219,14 @@ nav {
   bottom: 0;
   width: 0;
   height: 2px;
-  background: var(--black);
+  background: var(--menu);
   transition: width 0.3s ease;
 }
+
 
 .nav__menulinje a:hover:after {
   width: 100%;
 }
-
-
 
 nav ul {
   list-style: none;
@@ -295,12 +297,13 @@ nav a:last-child {
   min-width: 150px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 9999;
+  --menu: #FFFEFE;
 }
 
 .dropdown-menu li a {
   display: block;
   padding: 10px;
-  color: var(--black);
+  color: var(--white);
   text-decoration: none;
 }
 
