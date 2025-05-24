@@ -14,6 +14,7 @@
   <!-- Styles og Scripts -->
   <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="product_test.js" defer></script>
   <script defer src="main.js"></script>
 </head>
 
@@ -23,6 +24,49 @@
   <div id="top-bar">
     <span id="changing-text"></span>
   </div>
+
+  <div class="cart-popup hidden" id="cart-popup">
+  <div class="cart-content">
+    <ul class="cart-items" id="cart-items"></ul>
+    
+<div class="cart-options">
+  <label class="checkbox-label">
+    <input type="checkbox" id="giftwrap-checkbox">
+    Ja tak, pak hele min ordre ind
+  </label>
+
+  <label class="checkbox-label">
+    <input type="checkbox" id="custom-message-checkbox">
+    Jeg ønsker at skrive min egen hilsen
+  </label>
+
+  <textarea id="custom-message" class="hidden" placeholder="Skriv din hilsen her..."></textarea>
+</div>
+
+<div class="delivery-date">
+  <label for="delivery-date-input">Gavekurven skal leveres den</label>
+  <small>(bestil inden kl 13 for levering næstkommende hverdag)</small>
+
+  <input type="date" id="delivery-date-input" name="delivery-date">
+</div>
+    
+    <div class="cart-summary">
+      <strong>Subtotal</strong>
+      <span id="cart-total">0,00 kr</span>
+    </div>
+
+    <div class="cart-extra">
+      <label>
+        <input type="checkbox" checked>
+        Jeg er enig med <a href="#">vilkårene og betingelserne</a>
+      </label>
+    </div>
+
+
+    <button class="checkout-button">GÅ TIL KASSEN</button>
+  </div>
+</div>
+
 
   <!-- navigation --> <!-- Har taget udgangspunkt i denne video https://www.youtube.com/watch?v=U8smiWQ8Seg -->
     <nav class="nav navbar">
@@ -51,7 +95,7 @@
             <li class="nav__menulinje--item"><a href="omos.html">OM OS</a></li>
             <li class="nav__menulinje--item"><a href="kontakt.html">KONTAKT</a></li>
                   <li><a href="#"><img class="search-icon" src="img/search-icon_black.png" alt="search icon"></a></li>
-      <li><a href="index.html"><img class="shop-icon" src="img/shop-icon_black.png" alt="shop icon"></a></li>
+      <li><a><img id="shop-icon" class="shop-icon" src="img/shop-icon_black.png" alt="shop icon"></a></li>
             <li class="nav__menulinje--knap" onclick="showNav__sidepanel()"><a href="#menuknap">
                 <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill=#000000><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>

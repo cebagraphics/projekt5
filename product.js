@@ -143,6 +143,7 @@ const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const shopIcon = document.getElementById("shop-icon");
 
+
 let cart = [];
 
 // Fælles funktion til at håndtere tilføjelse
@@ -173,6 +174,7 @@ function handleAddToCartClick(e) {
     updateCart();
     showCart();
   }
+
 }
 
 // Lyt på begge grids
@@ -237,12 +239,21 @@ cartPopup.addEventListener("click", function (e) {
 document.addEventListener("click", function (e) {
   const isInsideCart = e.target.closest("#cart-popup");
   const isAddToCart = e.target.classList.contains("add-to-cart");
+  const isShopIcon = e.target.closest("#shop-icon");
 
-  if (!isInsideCart && !isAddToCart && cartPopup.classList.contains("show")) {
+  if (!isInsideCart && !isAddToCart && !isShopIcon && cartPopup.classList.contains("show")) {
     cartPopup.classList.remove("show");
     setTimeout(() => cartPopup.classList.add("hidden"), 300);
   }
 });
+
+shopIcon.addEventListener("click", function (event) {
+    event.preventDefault();
+    cartPopup.classList.remove("hidden");
+    setTimeout(() => {
+      cartPopup.classList.add("show");
+      }, 10);
+    });
 
 const customMessageCheckbox = document.getElementById("custom-message-checkbox");
 const customMessageTextarea = document.getElementById("custom-message");
@@ -253,14 +264,6 @@ customMessageCheckbox.addEventListener("change", function () {
   } else {
     customMessageTextarea.classList.add("hidden");
   }
-});
-
-
-// 🛒 Klik på shop-ikonet viser kurv-popup
-shopIcon.addEventListener("click", function (event) {
-  event.preventDefault();
-  cartPopup.classList.remove("hidden");
-  cartPopup.classList.add("show");
 });
 
 });

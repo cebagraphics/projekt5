@@ -255,6 +255,7 @@ nav a:last-child {
 .search-icon,
 .shop-icon {
   width: 25px;
+  cursor: pointer;
 }
 
 .nav__sidepanel {
