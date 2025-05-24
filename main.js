@@ -108,10 +108,6 @@ const carousel = wrapper.querySelector(
     carousel.classList.remove("dragging");
   };
 
-  const blockScroll = (e) => {
-    e.preventDefault();
-  };
-
   carousel.addEventListener("mousedown", dragStart);
   window.addEventListener("mousemove", dragging);
   window.addEventListener("mouseup", dragStop);
@@ -121,7 +117,11 @@ const carousel = wrapper.querySelector(
   carousel.addEventListener("touchmove", dragging, { passive: false });
   carousel.addEventListener("touchend", dragStop);
 
-  carousel.addEventListener("wheel", blockScroll, { passive: false });
+  carousel.addEventListener("wheel", function(e) {
+  if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+    e.preventDefault(); // Kun blokér hvis brugeren ruller vandret
+  }
+}, { passive: false });
 
   carousel.classList.add("custom-drag-cursor");
 
