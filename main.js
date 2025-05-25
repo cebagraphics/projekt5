@@ -1,31 +1,44 @@
   
   // TOP BAR SOM SKIFTER TEKST 
   document.addEventListener("DOMContentLoaded", () => {
-      const messages = [
-          "Gaver til alle anledninger – sammensæt din egen gavekurv",
-          "Bestil online – afhent i butikken eller få leveret direkte",
-          "Støt lokalt – vi samarbejder med fynske leverandører",
-          "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
-          "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
-      ];
+    
+    const messageHandler = {
+        messages: [
+            "Gaver til alle anledninger – sammensæt din egen gavekurv",
+            "Bestil online – afhent i butikken eller få leveret direkte",
+            "Støt lokalt – vi samarbejder med fynske leverandører",
+            "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
+            "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
+        ],
+        index: 0,
+        nextMessage() {
+            const msg = this.messages[this.index];
+            this.index = (this.index + 1) % this.messages.length;
+            return msg;
+        }
+    };
 
-      let index = 0;
-      const el = document.getElementById("changing-text");
-      if (!el) return;
+    const el = document.getElementById("changing-text");
+    if (!el) return;
 
-      function change() {
-          el.classList.remove("show-text");
-          setTimeout(() => {
-              el.textContent = messages[index];
-              console.log("Current message:", messages[index]);
-              index = (index + 1) % messages.length;
-              el.classList.add("show-text");
-          }, 50);
-      }
+    for (let i = 0; i < messageHandler.messages.length; i++) {
+        console.log("Besked nr.", i + 1, ":", messageHandler.messages[i]);
+    }
 
-      change();
-      setInterval(change, 3500);
+    function change() {
+        el.classList.remove("show-text");
+        setTimeout(() => {
+            const newText = messageHandler.nextMessage();
+            el.textContent = newText;
+            console.log("Current message:", newText);
+            el.classList.add("show-text");
+        }, 50);
+    }
+
+    change();
+    setInterval(change, 3500);
   });
+
 
 
 // NAVBAR SOM FØRST ER GENNEMSIGTIG OG BAGEFTER SOLID

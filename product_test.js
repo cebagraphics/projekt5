@@ -48,13 +48,21 @@
       cart.push({ title, price, quantity: 1 });
     }
 
+     // Automatisk sæt gaveindpakning til checked
+    if (title.includes("Gaveindpakning")) {
+      const giftwrapCheckbox = document.getElementById("giftwrap-checkbox");
+      if (giftwrapCheckbox) {
+        giftwrapCheckbox.checked = true;
+      }
+    }
+
     updateCart();
     showCart();
   }
 }
 
 if (productGrid) {
-  productGrid.addEventListener("click", handleAddToCartClick);
+  document.addEventListener("click", handleAddToCartClick);
 }
 
 function updateCart() {
