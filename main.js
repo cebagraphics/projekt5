@@ -1,3 +1,4 @@
+  
   // TOP BAR SOM SKIFTER TEKST 
   document.addEventListener("DOMContentLoaded", () => {
       const messages = [
@@ -52,7 +53,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Nav
+// NAVBAR TIL BURGERMENU
         function showNav__sidepanel(){
             const nav__sidepanel = document.querySelector('.nav__sidepanel')
             nav__sidepanel.style.display = 'flex'}
@@ -70,12 +71,15 @@ window.addEventListener("scroll", function () {
   });
 
 
-// Find alle wrappers (som hver indeholder én carousel + pile)
+
+  // DRAGGABLE + CLICK IMAGE SLIDER - JOHANNE
+  // Udgangspunkt i denne video: https://www.youtube.com/watch?app=desktop&v=7HPsdVQhpRw
+
 const wrappers = document.querySelectorAll(".wrapper");
 
 wrappers.forEach((wrapper) => {
 const carousel = wrapper.querySelector(
-  ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel, .product-categories-section__carousel.category");
+  ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel, .product-categories-section__carousel");
   const prevBtn = wrapper.querySelector(".prev");
   const nextBtn = wrapper.querySelector(".next");
 
@@ -83,7 +87,6 @@ const carousel = wrapper.querySelector(
   let startX;
   let scrollLeft;
 
-  // Mouse drag start
   const dragStart = (e) => {
     if (e.type === "mousedown" && e.button !== 0) return;
     isDragging = true;
@@ -93,7 +96,6 @@ const carousel = wrapper.querySelector(
     e.preventDefault();
   };
 
-  // Mouse/touch move
   const dragging = (e) => {
     if (!isDragging) return;
     const x = e.pageX || e.touches?.[0]?.pageX;
@@ -101,31 +103,28 @@ const carousel = wrapper.querySelector(
     carousel.scrollLeft = scrollLeft - walk;
   };
 
-  // Mouse/touch end
   const dragStop = () => {
     isDragging = false;
     carousel.classList.remove("dragging");
   };
 
-  const blockScroll = (e) => {
-    e.preventDefault();
-  };
-
-  // Mouse events
   carousel.addEventListener("mousedown", dragStart);
   window.addEventListener("mousemove", dragging);
   window.addEventListener("mouseup", dragStop);
 
-  // Touch events
+
   carousel.addEventListener("touchstart", dragStart, { passive: false });
   carousel.addEventListener("touchmove", dragging, { passive: false });
   carousel.addEventListener("touchend", dragStop);
 
-  carousel.addEventListener("wheel", blockScroll, { passive: false });
+  carousel.addEventListener("wheel", function(e) {
+  if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+    e.preventDefault(); // Kun blokér hvis brugeren ruller vandret
+  }
+}, { passive: false });
 
   carousel.classList.add("custom-drag-cursor");
 
-  // Scroll på klik
   const img = carousel.querySelector("img");
   const imgWidth = img.offsetWidth + 15;
 

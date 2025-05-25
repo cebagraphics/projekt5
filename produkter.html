@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liwira – Gaver med omtanke</title>
+    <link rel="icon" type="image/x-icon" href="img/Favicon_Liwira.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -99,7 +100,7 @@
             <li class="nav__menulinje--item"><a href="omos.html">OM OS</a></li>
             <li class="nav__menulinje--item"><a href="kontakt.html">KONTAKT</a></li>
                   <li><a href="#"><img class="search-icon" src="img/search-icon_black.png" alt="search icon"></a></li>
-      <li><a href="kurv.html"><img class="shop-icon" src="img/shop-icon_black.png" alt="shop icon"></a></li>
+      <li><a><img id="shop-icon" class="shop-icon" src="img/shop-icon_black.png" alt="shop icon"></a></li>
             <li class="nav__menulinje--knap" onclick="showNav__sidepanel()"><a href="#menuknap">
                 <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill=#000000><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
@@ -418,7 +419,10 @@
           <h3>KONTAKT</h3>
           <p>Jernbanegade 16<br>DK-5550 Langeskov<br>Danmark</p>
           <br>
-          <p>📞 +45 2426 7971<br>✉️ kontakt@dinpejs.dk</p>
+          <p>
+            📞 <a href="tel:+4524267971">+45 24 26 79 71</a><br>
+            ✉️ <a href="mailto:kontakt@dinpejs.dk">kontakt@dinpejs.dk</a>
+          </p>
         </div>
         <div class="site-footer__hours">
           <h3>ÅBNINGSTIDER</h3>
@@ -429,8 +433,8 @@
       <div class="site-footer__bottom">
         <p class="site-footer__brand">LIWIRA</p>
         <div class="site-footer__social-links">
-          <a href="https://www.instagram.com/liwira_/">Instagram</a>
-          <a href="https://www.facebook.com/Liwira.gavebutik">Facebook</a>
+          <a href="https://www.instagram.com/liwira_/" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/Liwira.gavebutik" target="_blank">Facebook</a>
         </div>
       </div>
     </footer>

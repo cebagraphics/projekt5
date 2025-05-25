@@ -108,18 +108,21 @@ cartPopup.addEventListener("click", function (e) {
 document.addEventListener("click", function (e) {
   const isInsideCart = e.target.closest("#cart-popup");
   const isAddToCart = e.target.classList.contains("add-to-cart");
+  const isShopIcon = e.target.closest("#shop-icon");
 
-  if (!isInsideCart && !isAddToCart && cartPopup.classList.contains("show")) {
+  if (!isInsideCart && !isAddToCart && !isShopIcon && cartPopup.classList.contains("show")) {
     cartPopup.classList.remove("show");
     setTimeout(() => cartPopup.classList.add("hidden"), 300);
   }
 });
 
-shopIcon.addEventListener("click", function (event) {
-  event.preventDefault();
-  cartPopup.classList.remove("hidden");
-  cartPopup.classList.add("show");
-});
+  shopIcon.addEventListener("click", function (event) {
+    event.preventDefault();
+    cartPopup.classList.remove("hidden");
+    setTimeout(() => {
+      cartPopup.classList.add("show");
+      }, 10);
+    });
 
     });
 
