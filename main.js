@@ -1,7 +1,29 @@
-  
-  // TOP BAR SOM SKIFTER TEKST 
+
   document.addEventListener("DOMContentLoaded", () => {
-    
+
+  // Søgefunktion (pop-up)
+const searchIcon = document.querySelector(".search-icon");
+  const popup = document.getElementById("search-popup");
+  const closeBtn = document.getElementById("close-search-popup");
+
+  if (searchIcon && popup && closeBtn) {
+    searchIcon.addEventListener("click", (e) => {
+      e.preventDefault();
+      popup.classList.remove("hidden");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      popup.classList.add("hidden");
+    });
+
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.classList.add("hidden");
+      }
+    });
+  }
+
+  // TOP BAR SOM SKIFTER TEKST 
     const messageHandler = {
         messages: [
             "Gaver til alle anledninger – sammensæt din egen gavekurv",
@@ -148,7 +170,11 @@ const carousel = wrapper.querySelector(
   nextBtn.addEventListener("click", () => {
     carousel.scrollBy({ left: imgWidth, behavior: "smooth" });
   });
+
+
 });
+
+
 
 
 
