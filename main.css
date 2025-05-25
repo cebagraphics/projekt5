@@ -1917,7 +1917,6 @@ body.page-subs {
 .search-popup__content {
   background: var(--lightpink);
   padding: 30px;
-  border-radius: 10px;
   position: relative;
   width: 90%;
   max-width: 400px;

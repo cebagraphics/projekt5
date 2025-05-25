@@ -40,20 +40,20 @@ const searchIcon = document.querySelector(".search-icon");
         }
     };
 
-    const el = document.getElementById("changing-text");
-    if (!el) return;
+    const element = document.getElementById("changing-text");
+    if (!element) return;
 
     for (let i = 0; i < messageHandler.messages.length; i++) {
         console.log("Besked nr.", i + 1, ":", messageHandler.messages[i]);
     }
 
     function change() {
-        el.classList.remove("show-text");
+        element.classList.remove("show-text");
         setTimeout(() => {
             const newText = messageHandler.nextMessage();
-            el.textContent = newText;
+            element.textContent = newText;
             console.log("Current message:", newText);
-            el.classList.add("show-text");
+            element.classList.add("show-text");
         }, 50);
     }
 

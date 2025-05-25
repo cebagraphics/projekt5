@@ -132,6 +132,18 @@ document.addEventListener("click", function (e) {
       }, 10);
     });
 
+
+const customMessageCheckbox = document.getElementById("custom-message-checkbox");
+const customMessageTextarea = document.getElementById("custom-message");
+
+customMessageCheckbox.addEventListener("change", function () {
+  if (this.checked) {
+    customMessageTextarea.classList.remove("hidden");
+  } else {
+    customMessageTextarea.classList.add("hidden");
+  }
+});
+
     });
 
 
