@@ -122,6 +122,7 @@ document.addEventListener("click", function (e) {
     cartPopup.classList.remove("show");
     setTimeout(() => cartPopup.classList.add("hidden"), 300);
   }
+  
 });
 
   shopIcon.addEventListener("click", function (event) {
