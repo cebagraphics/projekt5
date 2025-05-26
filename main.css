@@ -792,7 +792,7 @@ video {
   }
 
   /* Justering af billede captions og tekst */
-  .front-page-images-caption,
+  .front-page-images__caption,
   .giftbasket-title {
     font-size: 13px;
   }
@@ -1621,6 +1621,10 @@ body.page-subs {
   .site-footer__hours {
     margin-top: 10%;
     text-align: left;
+  }
+
+  .site-footer__info p {
+    font-size: 13px;
   }
 }
 
