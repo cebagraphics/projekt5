@@ -88,7 +88,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// NAVBAR TIL BURGERMENU
+// BURGERMENU
         function showNav__sidepanel(){
             const nav__sidepanel = document.querySelector('.nav__sidepanel')
             nav__sidepanel.style.display = 'flex'}
@@ -107,8 +107,36 @@ window.addEventListener("scroll", function () {
 
 
 
-  // DRAGGABLE + CLICK IMAGE SLIDER - JOHANNE
-  // Udgangspunkt i denne video: https://www.youtube.com/watch?app=desktop&v=7HPsdVQhpRw
+// JOHANNE: Nedenstående kode markeret i kommentar er det JavaScript-kodeudsnit, jeg gennemgår i min individuelle videoopgave. 
+// Det er udvalgte dele fra det samlede script 'DRAGGABLE + CLICK IMAGE SLIDER'.
+//
+// Både klik-navigation og drag-scroll er inspireret af følgende video:
+// https://www.youtube.com/watch?app=desktop&v=7HPsdVQhpRw
+//
+//  const wrappers = document.querySelectorAll(".wrapper");
+
+//  wrappers.forEach((wrapper) => {
+//    const carousel = wrapper.querySelector(
+//      ".local-suppliers-section__carousel"
+//    );
+//   const prevBtn = wrapper.querySelector(".prev");
+//    const nextBtn = wrapper.querySelector(".next");
+
+//    const img = carousel.querySelector("img");
+//    const imgWidth = img.offsetWidth + 15;
+
+//    prevBtn.addEventListener("click", () => {
+//      carousel.scrollBy({ left: -imgWidth, behavior: "smooth" });
+//    });
+
+//    nextBtn.addEventListener("click", () => {
+//      carousel.scrollBy({ left: imgWidth, behavior: "smooth" });
+//    });
+//  });
+//});
+
+
+// DRAGGABLE + CLICK IMAGE SLIDER - JOHANNE
 
 const wrappers = document.querySelectorAll(".wrapper");
 
