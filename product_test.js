@@ -1,3 +1,67 @@
+// KONTAKTFORMULAR
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const toast = document.getElementById("toast");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("Submit event udløst");
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    // Simpel validering med if-else og flere operatorer
+    if (!name) {
+      alert("Udfyld venligst dit navn.");
+      return;
+    }
+    if (!email) {
+      alert("Udfyld venligst din email.");
+      return;
+    }
+    if (!(email.includes("@") && email.includes("."))) {
+      alert("Indtast venligst en gyldig emailadresse.");
+      return;
+    }
+    if (!message) {
+      alert("Skriv venligst en besked.");
+      return;
+    }
+
+    // Objekt med metode
+    const user = {
+      name,
+      greet() {
+        return `Tak for din besked, ${this.name}! Vi vender tilbage hurtigst muligt.`;
+      }
+    };
+
+    // Eksempel på for-loop (bruges her til at tilføje en række velkomstbeskeder)
+    const feedbackMessages = [
+      "Din besked er sendt.",
+      "Vi sætter pris på din henvendelse.",
+      user.greet()
+    ];
+    for (let i = 0; i < feedbackMessages.length; i++) {
+      console.log(`Besked ${i + 1}: ${feedbackMessages[i]}`);
+    }
+
+    // Vis toast-besked
+    toast.textContent = user.greet();
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
+
+    // Reset form efter afsendelse
+    form.reset();
+  });
+});
+
+
+
 // TOP BAR SOM SKIFTER TEKST 
 document.addEventListener("DOMContentLoaded", () => {
   const messages = [
