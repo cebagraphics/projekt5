@@ -1419,13 +1419,11 @@ body.page-subs {
   grid-template-columns: 1fr 1fr;
   /* to kolonner */
   gap: 50px;
-  align-items: start;
-  /* evt. max-width for at undgå for små gridceller */
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.contact-section__map iframe {
+.contact-section__map-wrapper iframe {
   width: 100%;
   height: 450px;
   border: 0;
@@ -1440,6 +1438,77 @@ body.page-subs {
   margin-bottom: 0;
 }
 
+/* Kontaktformular styling */
+.contact-section__form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.contact-section__form-wrapper label {
+  margin-bottom: 5px;
+}
+
+.contact-section__form-wrapper input,
+.contact-section__form-wrapper textarea {
+  padding: 10px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-section__form-wrapper input:focus,
+.contact-section__form-wrapper textarea:focus {
+  border-color: var(--black);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.contact-btn {
+  display: inline-block;
+  margin: 2%;
+  border-radius: 25px;
+  width: auto;
+  max-width: fit-content;
+}
+
+.contact-section__map-wrapper {
+  grid-column: 1 / -1;
+}
+
+.contact-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: var(--white);
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.contact-btn:hover {
+  color: var(--pink);
+}
+
+.thank-you-message {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--black);
+  background-color: #e6ffe6;
+  /* en lys grøn baggrund for positiv feedback */
+  border: 1.5px solid #4CAF50;
+  /* grøn kant */
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 /* Responsive: tablet og mobil */
 @media (max-width: 768px) {
   .contact-section__content {
@@ -1448,10 +1517,12 @@ body.page-subs {
     gap: 30px;
   }
 
-  .contact-section__map iframe {
+  .contact-section__map-wrapper iframe {
     height: 500px;
   }
 }
+
+
 
 /* --------- CONTACT SITE END --------- */
 
@@ -1525,7 +1596,6 @@ body.page-subs {
 .visit-store__button:hover {
   background-color: var(--pink);
 }
-
 
 
 @media (max-width: 768px) {

@@ -1,8 +1,8 @@
 
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
   // Søgefunktion (pop-up)
-const searchIcon = document.querySelector(".search-icon");
+  const searchIcon = document.querySelector(".search-icon");
   const popup = document.getElementById("search-popup");
   const closeBtn = document.getElementById("close-search-popup");
 
@@ -24,42 +24,42 @@ const searchIcon = document.querySelector(".search-icon");
   }
 
   // TOP BAR SOM SKIFTER TEKST 
-    const messageHandler = {
-        messages: [
-            "Gaver til alle anledninger – sammensæt din egen gavekurv",
-            "Bestil online – afhent i butikken eller få leveret direkte",
-            "Støt lokalt – vi samarbejder med fynske leverandører",
-            "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
-            "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
-        ],
-        index: 0,
-        nextMessage() {
-            const msg = this.messages[this.index];
-            this.index = (this.index + 1) % this.messages.length;
-            return msg;
-        }
-    };
-
-    const element = document.getElementById("changing-text");
-    if (!element) return;
-
-    for (let i = 0; i < messageHandler.messages.length; i++) {
-        console.log("Besked nr.", i + 1, ":", messageHandler.messages[i]);
+  const messageHandler = {
+    messages: [
+      "Gaver til alle anledninger – sammensæt din egen gavekurv",
+      "Bestil online – afhent i butikken eller få leveret direkte",
+      "Støt lokalt – vi samarbejder med fynske leverandører",
+      "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
+      "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
+    ],
+    index: 0,
+    nextMessage() {
+      const msg = this.messages[this.index];
+      this.index = (this.index + 1) % this.messages.length;
+      return msg;
     }
+  };
 
-    function change() {
-        element.classList.remove("show-text");
-        setTimeout(() => {
-            const newText = messageHandler.nextMessage();
-            element.textContent = newText;
-            console.log("Current message:", newText);
-            element.classList.add("show-text");
-        }, 50);
-    }
+  const element = document.getElementById("changing-text");
+  if (!element) return;
 
-    change();
-    setInterval(change, 3500);
-  });
+  for (let i = 0; i < messageHandler.messages.length; i++) {
+    console.log("Besked nr.", i + 1, ":", messageHandler.messages[i]);
+  }
+
+  function change() {
+    element.classList.remove("show-text");
+    setTimeout(() => {
+      const newText = messageHandler.nextMessage();
+      element.textContent = newText;
+      console.log("Current message:", newText);
+      element.classList.add("show-text");
+    }, 50);
+  }
+
+  change();
+  setInterval(change, 3500);
+});
 
 
 
@@ -89,32 +89,34 @@ window.addEventListener("scroll", function () {
 });
 
 // NAVBAR TIL BURGERMENU
-        function showNav__sidepanel(){
-            const nav__sidepanel = document.querySelector('.nav__sidepanel')
-            nav__sidepanel.style.display = 'flex'}
-        function hideNav__sidepanel(){
-            const nav__sidepanel = document.querySelector('.nav__sidepanel')
-            nav__sidepanel.style.display = 'none'}     
+function showNav__sidepanel() {
+  const nav__sidepanel = document.querySelector('.nav__sidepanel')
+  nav__sidepanel.style.display = 'flex'
+}
+function hideNav__sidepanel() {
+  const nav__sidepanel = document.querySelector('.nav__sidepanel')
+  nav__sidepanel.style.display = 'none'
+}
 
 
 // SMOOTH SCROLL PÅ FORSIDE PIL
-  document.querySelector('.arrow').addEventListener('click', function () {
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
+document.querySelector('.arrow').addEventListener('click', function () {
+  window.scrollBy({
+    top: window.innerHeight,
+    behavior: 'smooth'
   });
+});
 
 
 
-  // DRAGGABLE + CLICK IMAGE SLIDER - JOHANNE
-  // Udgangspunkt i denne video: https://www.youtube.com/watch?app=desktop&v=7HPsdVQhpRw
+// DRAGGABLE + CLICK IMAGE SLIDER - JOHANNE
+// Udgangspunkt i denne video: https://www.youtube.com/watch?app=desktop&v=7HPsdVQhpRw
 
 const wrappers = document.querySelectorAll(".wrapper");
 
 wrappers.forEach((wrapper) => {
-const carousel = wrapper.querySelector(
-  ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel, .product-categories-section__carousel");
+  const carousel = wrapper.querySelector(
+    ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel, .product-categories-section__carousel");
   const prevBtn = wrapper.querySelector(".prev");
   const nextBtn = wrapper.querySelector(".next");
 
@@ -152,11 +154,11 @@ const carousel = wrapper.querySelector(
   carousel.addEventListener("touchmove", dragging, { passive: false });
   carousel.addEventListener("touchend", dragStop);
 
-  carousel.addEventListener("wheel", function(e) {
-  if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-    e.preventDefault(); // Kun blokér hvis brugeren ruller vandret
-  }
-}, { passive: false });
+  carousel.addEventListener("wheel", function (e) {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      e.preventDefault(); // Kun blokér hvis brugeren ruller vandret
+    }
+  }, { passive: false });
 
   carousel.classList.add("custom-drag-cursor");
 
@@ -174,12 +176,114 @@ const carousel = wrapper.querySelector(
 
 });
 
+// KONTAKTFORMULAR
+// Variabler og typer - her med let (blokscope)
+let form = document.getElementById("contactForm");
+let feedback = document.getElementById("feedback");
+
+// Funktion til validering af email (enkelt tjek med includes)
+function isValidEmail(email) {
+  return email.includes("@") && email.includes(".");
+}
+
+// Funktion til at clear feedback
+function clearFeedback() {
+  feedback.textContent = "";
+  feedback.className = "";
+}
+
+// Event (submit) - lyt til formen
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Stop formen i at sende
+
+  clearFeedback();
+
+  // DOM: Hent værdier fra inputfelter
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let message = document.getElementById("message").value.trim();
+
+  console.log("Validerer form..."); // Fejlfinding
+
+  // Kontrolstruktur (if-else) og operatorer
+  if (name.length < 2) {
+    feedback.textContent = "Navn skal være mindst 2 tegn.";
+    feedback.className = "error";
+    console.log("Navn for kort");
+    return;
+  }
+
+  if (!isValidEmail(email)) {
+    feedback.textContent = "Indtast en gyldig email.";
+    feedback.className = "error";
+    console.log("Email ugyldig");
+    return;
+  }
+
+  if (message.length < 10) {
+    feedback.textContent = "Beskeden skal være mindst 10 tegn.";
+    feedback.className = "error";
+    console.log("Besked for kort");
+    return;
+  }
+
+  // Success - vis besked og nulstil form
+  feedback.textContent = "Tak for din besked, " + name + "! Vi vender tilbage hurtigst muligt.";
+  feedback.className = "success";
+
+  form.reset();
+
+  // Eksempel på array og loop til at logge alle input værdier (pensum)
+  let inputs = [name, email, message]; // Array med værdier
+
+  for (let i = 0; i < inputs.length; i++) { // Loop gennem array
+    console.log("Input " + i + ": " + inputs[i]);
+  }
+});
 
 
 
+// KONTAKTFORMULAR
+document.addEventListener('DOMContentLoaded', () => {
+  const formular = document.getElementById('contactForm');
+  const takBesked = document.createElement('p');
+  takBesked.classList.add('thank-you-message');
+  takBesked.style.display = 'none';
+  takBesked.textContent = 'Tak for din besked!';
 
+  formular.parentNode.appendChild(takBesked);
 
+  function validerInput() {
+    const navn = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const besked = document.getElementById('message').value.trim();
 
+    console.log('Validerer input:', { navn, email, besked });
+
+    if (navn === '' || email === '' || besked === '') {
+      return false;
+    }
+
+    // Simpel e-mail validering
+    if (!email.includes('@') || !email.includes('.')) {
+      return false;
+    }
+
+    return true;
+  }
+
+  formular.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (validerInput()) {
+      console.log('Formular valideret korrekt');
+      formular.style.display = 'none';
+      takBesked.style.display = 'block';
+    } else {
+      alert('Udfyld venligst alle felter korrekt.');
+    }
+  });
+});
 
 
 

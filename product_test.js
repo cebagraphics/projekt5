@@ -1,79 +1,79 @@
 // TOP BAR SOM SKIFTER TEKST 
-  document.addEventListener("DOMContentLoaded", () => {
-      const messages = [
-          "Gaver til alle anledninger – sammensæt din egen gavekurv",
-          "Bestil online – afhent i butikken eller få leveret direkte",
-          "Støt lokalt – vi samarbejder med fynske leverandører",
-          "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
-          "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
-      ];
+document.addEventListener("DOMContentLoaded", () => {
+  const messages = [
+    "Gaver til alle anledninger – sammensæt din egen gavekurv",
+    "Bestil online – afhent i butikken eller få leveret direkte",
+    "Støt lokalt – vi samarbejder med fynske leverandører",
+    "Giv en gave med omtanke – pakket med kærlighed i Langeskov",
+    "Håndplukkede delikatesser og interiør – fra Fyn til din hoveddør"
+  ];
 
-      let index = 0;
-      const el = document.getElementById("changing-text");
-      if (!el) return;
+  let index = 0;
+  const el = document.getElementById("changing-text");
+  if (!el) return;
 
-      function change() {
-          el.classList.remove("show-text");
-          setTimeout(() => {
-              el.textContent = messages[index];
-              console.log("Current message:", messages[index]);
-              index = (index + 1) % messages.length;
-              el.classList.add("show-text");
-          }, 50);
-      }
-
-      change();
-      setInterval(change, 3500);
-
-      const cartPopup = document.getElementById("cart-popup");
-      const cartItems = document.getElementById("cart-items");
-      const cartTotal = document.getElementById("cart-total");
-      const shopIcon = document.getElementById("shop-icon");
-
-      let cart = [];
-
-      function handleAddToCartClick(e) {
-  if (e.target.classList.contains("add-to-cart")) {
-    const card = e.target.closest(".product-card, .giftwrapping-card");
-    if (!card) return;
-
-    const title = card.querySelector(".product-title").textContent;
-    const priceText = card.querySelector(".product-price").textContent;
-    const price = parseFloat(priceText.replace(",", ".").replace(" kr", ""));
-
-    const existing = cart.find(item => item.title === title);
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      cart.push({ title, price, quantity: 1 });
-    }
-
-     // Automatisk sæt gaveindpakning til checked
-    if (title.includes("Gaveindpakning")) {
-      const giftwrapCheckbox = document.getElementById("giftwrap-checkbox");
-      if (giftwrapCheckbox) {
-        giftwrapCheckbox.checked = true;
-      }
-    }
-
-    updateCart();
-    showCart();
+  function change() {
+    el.classList.remove("show-text");
+    setTimeout(() => {
+      el.textContent = messages[index];
+      console.log("Current message:", messages[index]);
+      index = (index + 1) % messages.length;
+      el.classList.add("show-text");
+    }, 50);
   }
-}
 
-if (productGrid) {
-  document.addEventListener("click", handleAddToCartClick);
-}
+  change();
+  setInterval(change, 3500);
 
-function updateCart() {
-  cartItems.innerHTML = "";
-  let total = 0;
+  const cartPopup = document.getElementById("cart-popup");
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  const shopIcon = document.getElementById("shop-icon");
 
-  cart.forEach((item, index) => {
-    total += item.price * item.quantity;
+  let cart = [];
 
-    const li = document.createElement("li");
-    li.innerHTML = `
+  function handleAddToCartClick(e) {
+    if (e.target.classList.contains("add-to-cart")) {
+      const card = e.target.closest(".product-card, .giftwrapping-card");
+      if (!card) return;
+
+      const title = card.querySelector(".product-title").textContent;
+      const priceText = card.querySelector(".product-price").textContent;
+      const price = parseFloat(priceText.replace(",", ".").replace(" kr", ""));
+
+      const existing = cart.find(item => item.title === title);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ title, price, quantity: 1 });
+      }
+
+      // Automatisk sæt gaveindpakning til checked
+      if (title.includes("Gaveindpakning")) {
+        const giftwrapCheckbox = document.getElementById("giftwrap-checkbox");
+        if (giftwrapCheckbox) {
+          giftwrapCheckbox.checked = true;
+        }
+      }
+
+      updateCart();
+      showCart();
+    }
+  }
+
+  if (productGrid) {
+    document.addEventListener("click", handleAddToCartClick);
+  }
+
+  function updateCart() {
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
+
+      const li = document.createElement("li");
+      li.innerHTML = `
       <span>${item.title}</span>
       <div class="item-controls">
         <button class="decrease" data-index="${index}">−</button>
@@ -81,71 +81,71 @@ function updateCart() {
         <button class="increase" data-index="${index}">+</button>
       </div>
     `;
-    cartItems.appendChild(li);
+      cartItems.appendChild(li);
+    });
+
+    cartTotal.textContent = total.toFixed(2).replace(".", ",") + " kr";
+  }
+
+  function showCart() {
+    cartPopup.classList.remove("hidden");
+    setTimeout(() => cartPopup.classList.add("show"), 10);
+  }
+
+  cartItems.addEventListener("click", function (e) {
+    const index = parseInt(e.target.dataset.index);
+
+    if (e.target.classList.contains("increase")) {
+      cart[index].quantity += 1;
+      updateCart();
+    }
+
+    if (e.target.classList.contains("decrease")) {
+      cart[index].quantity -= 1;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCart();
+    }
   });
 
-  cartTotal.textContent = total.toFixed(2).replace(".", ",") + " kr";
-}
+  cartPopup.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
 
-function showCart() {
-  cartPopup.classList.remove("hidden");
-  setTimeout(() => cartPopup.classList.add("show"), 10);
-}
+  document.addEventListener("click", function (e) {
+    const isInsideCart = e.target.closest("#cart-popup");
+    const isAddToCart = e.target.classList.contains("add-to-cart");
+    const isShopIcon = e.target.closest("#shop-icon");
 
-cartItems.addEventListener("click", function (e) {
-  const index = parseInt(e.target.dataset.index);
-
-  if (e.target.classList.contains("increase")) {
-    cart[index].quantity += 1;
-    updateCart();
-  }
-
-  if (e.target.classList.contains("decrease")) {
-    cart[index].quantity -= 1;
-    if (cart[index].quantity <= 0) {
-      cart.splice(index, 1);
+    if (!isInsideCart && !isAddToCart && !isShopIcon && cartPopup.classList.contains("show")) {
+      cartPopup.classList.remove("show");
+      setTimeout(() => cartPopup.classList.add("hidden"), 300);
     }
-    updateCart();
-  }
-});
 
-cartPopup.addEventListener("click", function (e) {
-  e.stopPropagation();
-});
-
-document.addEventListener("click", function (e) {
-  const isInsideCart = e.target.closest("#cart-popup");
-  const isAddToCart = e.target.classList.contains("add-to-cart");
-  const isShopIcon = e.target.closest("#shop-icon");
-
-  if (!isInsideCart && !isAddToCart && !isShopIcon && cartPopup.classList.contains("show")) {
-    cartPopup.classList.remove("show");
-    setTimeout(() => cartPopup.classList.add("hidden"), 300);
-  }
-  
-});
+  });
 
   shopIcon.addEventListener("click", function (event) {
     event.preventDefault();
     cartPopup.classList.remove("hidden");
     setTimeout(() => {
       cartPopup.classList.add("show");
-      }, 10);
-    });
+    }, 10);
+  });
 
 
-const customMessageCheckbox = document.getElementById("custom-message-checkbox");
-const customMessageTextarea = document.getElementById("custom-message");
+  const customMessageCheckbox = document.getElementById("custom-message-checkbox");
+  const customMessageTextarea = document.getElementById("custom-message");
 
-customMessageCheckbox.addEventListener("change", function () {
-  if (this.checked) {
-    customMessageTextarea.classList.remove("hidden");
-  } else {
-    customMessageTextarea.classList.add("hidden");
-  }
+  customMessageCheckbox.addEventListener("change", function () {
+    if (this.checked) {
+      customMessageTextarea.classList.remove("hidden");
+    } else {
+      customMessageTextarea.classList.add("hidden");
+    }
+  });
+
 });
-
-    });
 
 
 let sortering = "Standard";
@@ -269,40 +269,40 @@ pagination.addEventListener("click", function (e) {
 
 
   // Søgefunktion (pop-up)
-document.addEventListener("DOMContentLoaded", () => {
-  const popup = document.getElementById("search-popup");
-  const closeBtn = document.getElementById("close-search-popup");
+  document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("search-popup");
+    const closeBtn = document.getElementById("close-search-popup");
 
-  // Find alle søgeikoner
-  const searchIcons = document.querySelectorAll(".search-icon");
+    // Find alle søgeikoner
+    const searchIcons = document.querySelectorAll(".search-icon");
 
-  searchIcons.forEach(icon => {
-    icon.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (popup) {
-        popup.classList.remove("hidden");
-        const input = popup.querySelector(".search-popup__input");
-        if (input) input.focus();
-      }
+    searchIcons.forEach(icon => {
+      icon.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (popup) {
+          popup.classList.remove("hidden");
+          const input = popup.querySelector(".search-popup__input");
+          if (input) input.focus();
+        }
+      });
     });
-  });
 
-  // Luk popup på klik på kryds
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      popup.classList.add("hidden");
-    });
-  }
-
-  // Luk popup ved klik udenfor boksen
-  if (popup) {
-    popup.addEventListener("click", (e) => {
-      if (e.target === popup) {
+    // Luk popup på klik på kryds
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
         popup.classList.add("hidden");
-      }
-    });
-  }
-});
+      });
+    }
+
+    // Luk popup ved klik udenfor boksen
+    if (popup) {
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+          popup.classList.add("hidden");
+        }
+      });
+    }
+  });
 
 });
 
@@ -310,4 +310,43 @@ document.addEventListener("DOMContentLoaded", () => {
 // Første gang siden loader
 renderProducts();
 
-  
+
+
+// KONTAKTFORMULAR
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('contactForm');
+  var nameInput = document.getElementById('name');
+  var emailInput = document.getElementById('email');
+  var messageInput = document.getElementById('message');
+
+  function isValidEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (nameInput.value.trim() === '') {
+      alert('Indtast venligst dit navn');
+      nameInput.focus();
+      return;
+    }
+
+    if (!isValidEmail(emailInput.value)) {
+      alert('Indtast venligst en gyldig email');
+      emailInput.focus();
+      return;
+    }
+
+    if (messageInput.value.trim() === '') {
+      alert('Skriv venligst en besked');
+      messageInput.focus();
+      return;
+    }
+
+    alert('Tak for din besked!');
+
+    form.reset();
+  });
+});
