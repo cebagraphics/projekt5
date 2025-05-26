@@ -243,47 +243,5 @@ form.addEventListener("submit", function (event) {
 
 
 
-// KONTAKTFORMULAR
-document.addEventListener('DOMContentLoaded', () => {
-  const formular = document.getElementById('contactForm');
-  const takBesked = document.createElement('p');
-  takBesked.classList.add('thank-you-message');
-  takBesked.style.display = 'none';
-  takBesked.textContent = 'Tak for din besked!';
-
-  formular.parentNode.appendChild(takBesked);
-
-  function validerInput() {
-    const navn = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const besked = document.getElementById('message').value.trim();
-
-    console.log('Validerer input:', { navn, email, besked });
-
-    if (navn === '' || email === '' || besked === '') {
-      return false;
-    }
-
-    // Simpel e-mail validering
-    if (!email.includes('@') || !email.includes('.')) {
-      return false;
-    }
-
-    return true;
-  }
-
-  formular.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    if (validerInput()) {
-      console.log('Formular valideret korrekt');
-      formular.style.display = 'none';
-      takBesked.style.display = 'block';
-    } else {
-      alert('Udfyld venligst alle felter korrekt.');
-    }
-  });
-});
-
 
 
