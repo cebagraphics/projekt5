@@ -1,4 +1,4 @@
-// KONTAKTFORMULAR
+// KONTAKTFORMULAR - Der er til dette stykke kode blevet brugt ChatGPT til hjælp
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   const toast = document.getElementById("toast");
