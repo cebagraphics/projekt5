@@ -1493,21 +1493,6 @@ body.page-subs {
   color: var(--pink);
 }
 
-.thank-you-message {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  color: var(--black);
-  background-color: #e6ffe6;
-  /* en lys grøn baggrund for positiv feedback */
-  border: 1.5px solid #4CAF50;
-  /* grøn kant */
-  border-radius: 6px;
-  padding: 12px;
-  margin-top: 10px;
-  max-width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-}
 
 /* Responsive: tablet og mobil */
 @media (max-width: 768px) {
