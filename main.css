@@ -1487,6 +1487,7 @@ body.page-subs {
   font-weight: 500;
   white-space: nowrap;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .contact-btn:hover {
@@ -1514,6 +1515,12 @@ body.page-subs {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+}
+
+#name,
+#email,
+#message {
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Responsive: tablet og mobil */
