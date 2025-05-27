@@ -252,23 +252,22 @@ function parsePrice(priceString) {
 function renderProducts() {
   productGrid.innerHTML = "";
 
-  let filtered = activeCategory === "alle"
-    ? [...allProducts]
-    : allProducts.filter(p => p.category === activeCategory);
-
+  let sorted;
   if (sortering === "Pris: Lav til høj") {
-    filtered.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+    sorted = [...allProducts].sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
   } else if (sortering === "Pris: Høj til lav") {
-    filtered.sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
+    sorted = [...allProducts].sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
   } else if (sortering === "Nyeste") {
-    filtered = [...originalProducts].reverse().filter(p =>
-      activeCategory === "alle" ? true : p.category === activeCategory
-    );
+    sorted = [...originalProducts].reverse();
   } else if (sortering === "Standard") {
-    filtered = [...originalProducts].filter(p =>
-      activeCategory === "alle" ? true : p.category === activeCategory
-    );
+    sorted = [...originalProducts];
+  } else {
+    sorted = [...allProducts];
   }
+
+  let filtered = activeCategory === "alle"
+    ? sorted
+    : sorted.filter(p => p.category === activeCategory);
 
   const totalPages = Math.ceil(filtered.length / productsPerPage);
   if (currentPage > totalPages) currentPage = 1;
@@ -306,12 +305,38 @@ function renderPagination(totalPages) {
   }
 }
 
+// Event listeners
 sortSelect.addEventListener("change", function () {
   sortering = this.value;
   currentPage = 1;
   renderProducts();
 });
 
+categoryButtons.forEach(button => {
+  button.addEventListener("click", function () {
+    const selected = this.getAttribute("data-category");
+
+    if (this.classList.contains("active")) {
+      categoryButtons.forEach(btn => btn.classList.remove("active"));
+      activeCategory = "alle";
+    } else {
+      categoryButtons.forEach(btn => btn.classList.remove("active"));
+      this.classList.add("active");
+      activeCategory = selected;
+    }
+
+    currentPage = 1;
+    renderProducts();
+  });
+});
+
+pagination.addEventListener("click", function (e) {
+  if (e.target.tagName === "A") {
+    e.preventDefault();
+    currentPage = parseInt(e.target.dataset.page);
+    renderProducts();
+  }
+});
 
 
   // Søgefunktion (pop-up)
