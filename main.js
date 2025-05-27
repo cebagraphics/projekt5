@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   wrappers.forEach((wrapper) => {
     const carousel = wrapper.querySelector(
-      ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel, .product-categories-section__carousel"
+      ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel"
     );
     const prevBtn = wrapper.querySelector(".prev");
     const nextBtn = wrapper.querySelector(".next");
