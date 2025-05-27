@@ -112,67 +112,72 @@ document.querySelector('.arrow').addEventListener('click', function () {
 // DRAGGABLE + CLICK IMAGE SLIDER - JOHANNE
 // Udgangspunkt i denne video: https://www.youtube.com/watch?app=desktop&v=7HPsdVQhpRw
 
-const wrappers = document.querySelectorAll(".wrapper");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM er loaded og script kører");
 
-wrappers.forEach((wrapper) => {
-  const carousel = wrapper.querySelector(
-    ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel, .product-categories-section__carousel");
-  const prevBtn = wrapper.querySelector(".prev");
-  const nextBtn = wrapper.querySelector(".next");
+  const wrappers = document.querySelectorAll(".wrapper");
 
-  let isDragging = false;
-  let startX;
-  let scrollLeft;
+  wrappers.forEach((wrapper) => {
+    const carousel = wrapper.querySelector(
+      ".local-suppliers-section__carousel, .popular-giftbaskets-section__carousel, .product-categories-section__carousel"
+    );
+    const prevBtn = wrapper.querySelector(".prev");
+    const nextBtn = wrapper.querySelector(".next");
 
-  const dragStart = (e) => {
-    if (e.type === "mousedown" && e.button !== 0) return;
-    isDragging = true;
-    carousel.classList.add("dragging");
-    startX = e.pageX || e.touches?.[0]?.pageX;
-    scrollLeft = carousel.scrollLeft;
-    e.preventDefault();
-  };
+    const img = carousel.querySelector("img");
+    const imgWidth = img ? img.offsetWidth + 15 : 200;
 
-  const dragging = (e) => {
-    if (!isDragging) return;
-    const x = e.pageX || e.touches?.[0]?.pageX;
-    const walk = x - startX;
-    carousel.scrollLeft = scrollLeft - walk;
-  };
-
-  const dragStop = () => {
-    isDragging = false;
-    carousel.classList.remove("dragging");
-  };
-
-  carousel.addEventListener("mousedown", dragStart);
-  window.addEventListener("mousemove", dragging);
-  window.addEventListener("mouseup", dragStop);
-
-
-  carousel.addEventListener("touchstart", dragStart, { passive: false });
-  carousel.addEventListener("touchmove", dragging, { passive: false });
-  carousel.addEventListener("touchend", dragStop);
-
-  carousel.addEventListener("wheel", function (e) {
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-      e.preventDefault(); // Kun blokér hvis brugeren ruller vandret
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: -imgWidth, behavior: "smooth" });
+      });
     }
-  }, { passive: false });
 
-  carousel.classList.add("custom-drag-cursor");
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: imgWidth, behavior: "smooth" });
+      });
+    }
 
-  const img = carousel.querySelector("img");
-  const imgWidth = img.offsetWidth + 15;
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
 
-  prevBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: -imgWidth, behavior: "smooth" });
+    const dragStart = (e) => {
+      if (e.type === "mousedown" && e.button !== 0) return;
+      isDragging = true;
+      carousel.classList.add("dragging");
+      startX = e.pageX || e.touches?.[0]?.pageX;
+      scrollLeft = carousel.scrollLeft;
+      e.preventDefault();
+    };
+
+    const dragging = (e) => {
+      if (!isDragging) return;
+      const x = e.pageX || e.touches?.[0]?.pageX;
+      const walk = x - startX;
+      carousel.scrollLeft = scrollLeft - walk;
+    };
+
+    const dragStop = () => {
+      isDragging = false;
+      carousel.classList.remove("dragging");
+    };
+
+    carousel.addEventListener("mousedown", dragStart);
+    window.addEventListener("mousemove", dragging);
+    window.addEventListener("mouseup", dragStop);
+
+    carousel.addEventListener("touchstart", dragStart, { passive: false });
+    carousel.addEventListener("touchmove", dragging, { passive: false });
+    carousel.addEventListener("touchend", dragStop);
+
+    carousel.addEventListener("wheel", function (e) {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    carousel.classList.add("custom-drag-cursor");
   });
-
-  nextBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: imgWidth, behavior: "smooth" });
-  });
-
-
 });
-
