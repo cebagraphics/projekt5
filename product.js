@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = form.email.value.trim();
     const message = form.message.value.trim();
 
-    // Simpel validering med if-else og flere operatorer
+    // If-sætninger til inputfelterne
     if (!name) {
       alert("Udfyld venligst dit navn.");
       return;
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // Eksempel på for-loop (bruges her til at tilføje en række velkomstbeskeder)
+    // Array og loop
     const feedbackMessages = [
       "Din besked er sendt.",
       "Vi sætter pris på din henvendelse.",
@@ -339,41 +339,41 @@ pagination.addEventListener("click", function (e) {
 });
 
 
-  // Søgefunktion (pop-up)
-  document.addEventListener("DOMContentLoaded", () => {
-    const popup = document.getElementById("search-popup");
-    const closeBtn = document.getElementById("close-search-popup");
+// Søgefunktion (pop-up)
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("search-popup");
+  const closeBtn = document.getElementById("close-search-popup");
 
-    // Find alle søgeikoner
-    const searchIcons = document.querySelectorAll(".search-icon");
+  // Find alle søgeikoner
+  const searchIcons = document.querySelectorAll(".search-icon");
 
-    searchIcons.forEach(icon => {
-      icon.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (popup) {
-          popup.classList.remove("hidden");
-          const input = popup.querySelector(".search-popup__input");
-          if (input) input.focus();
-        }
-      });
+  searchIcons.forEach(icon => {
+    icon.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (popup) {
+        popup.classList.remove("hidden");
+        const input = popup.querySelector(".search-popup__input");
+        if (input) input.focus();
+      }
     });
-
-    // Luk popup på klik på kryds
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        popup.classList.add("hidden");
-      });
-    }
-
-    // Luk popup ved klik udenfor boksen
-    if (popup) {
-      popup.addEventListener("click", (e) => {
-        if (e.target === popup) {
-          popup.classList.add("hidden");
-        }
-      });
-    }
   });
+
+  // Luk popup på klik på kryds
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      popup.classList.add("hidden");
+    });
+  }
+
+  // Luk popup ved klik udenfor boksen
+  if (popup) {
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.classList.add("hidden");
+      }
+    });
+  }
+});
 
 
 // Første gang siden loader
