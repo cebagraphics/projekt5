@@ -112,7 +112,6 @@ document.querySelector('.arrow').addEventListener('click', function () {
 // DRAGGABLE + CLICK IMAGE SLIDER - JOHANNE
 // Udgangspunkt i denne video: https://www.youtube.com/watch?app=desktop&v=7HPsdVQhpRw
 
-document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM er loaded og script kører");
 
   const wrappers = document.querySelectorAll(".wrapper");
@@ -125,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = wrapper.querySelector(".next");
 
     const img = carousel.querySelector("img");
-    const imgWidth = img ? img.offsetWidth + 15 : 200;
+    const imgWidth = img.offsetWidth + 15;
 
     if (prevBtn) {
       prevBtn.addEventListener("click", () => {
@@ -180,4 +179,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     carousel.classList.add("custom-drag-cursor");
   });
-});

@@ -1610,6 +1610,7 @@ body.page-subs {
 
 .visit-store__button:hover {
   background-color: var(--pink);
+  color: var(--lightpink);
 }
 
 
